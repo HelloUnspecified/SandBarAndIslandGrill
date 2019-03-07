@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "name": "SandBarAndIslandGrill",
+  "alias": "sandbarandislandgrill.com",
+  "env": {
+    "SENTRY_DSN": "TODO"
+  },
+  "builds": [
+    { "src": "www/package.json", "use": "@now/next" },
+    { "src": "api/*.js", "use": "@now/node" },
+    { "src": "graph/server.js", "use": "@now/node-server" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/$1" },
+    { "src": "/graph/(.*)", "dest": "/graph/$1" },
+    { "src": "/(.*)", "dest": "/www/$1" }
+  ]
+}

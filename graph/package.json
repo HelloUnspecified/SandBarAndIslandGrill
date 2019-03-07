@@ -1,0 +1,33 @@
+{
+  "main": "server.js",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "",
+    "now-build": "BABEL HERE?"
+  },
+  "engines": {
+    "node": "^10"
+  },
+  "dependencies": {
+    "apollo-server": "^2.4.8",
+    "graphql": "^14.1.1"
+  },
+  "devDependencies": {},
+  "name": "sandbargraph",
+  "license": "ISC",
+  "description": "sand bar and island grill graph endpoint",
+  "keywords": [
+    "Slack, node, web, nextjs, now, react, that conference"
+  ],
+  "homepage": "https://sandbarandislandgrill.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hellounspecified/sandbarandislandgrill.com.git"
+  },
+  "contributors": [
+    {
+      "name": "Clark Sell",
+      "email": "hello@unspecified.io"
+    }
+  ]
+}
