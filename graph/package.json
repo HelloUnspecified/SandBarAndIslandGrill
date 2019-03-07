@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "",
-    "now-build": "BABEL HERE?"
+    "ex-now-build": "BABEL HERE?"
   },
   "engines": {
     "node": "^10"
