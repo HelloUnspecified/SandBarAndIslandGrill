@@ -14,7 +14,7 @@
   },
   "devDependencies": {},
   "name": "sandbargraph",
-  "license": "ISC",
+  "license": "GNU GPLv3",
   "description": "sand bar and island grill graph endpoint",
   "keywords": [
     "Slack, node, web, nextjs, now, react, that conference"

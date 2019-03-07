@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
+  "license": "GNU GPLv3",
   "dependencies": {
     "apollo-boost": "^0.1.27",
     "graphql": "^14.1.1",
