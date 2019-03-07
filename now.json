@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "SandBarAndIslandGrill",
-  "alias": "sandbarandislandgrill.com",
+  "_alias": "sandbarandislandgrill.com",
   "env": {
     "SENTRY_DSN": "TODO"
   },
