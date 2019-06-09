@@ -15,6 +15,13 @@ const HeroImageText = styled.div`
   width: 100%;
 `;
 
+const HeroImage = styled.img`
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+`;
+
 const ContentSection = styled.section`
   display: grid;
   grid-template-columns: 1fr auto 10px minmax(320px, 1024px) 10px auto 1fr;
@@ -26,25 +33,9 @@ const ContentSection = styled.section`
 
 const home = props => (
   <Fragment>
-    <ParallaxProvider>
-      <ParallaxBanner
-        className="your-class"
-        layers={[
-          {
-            image: '/static/images/testImage.jpg',
-            amount: 0.1,
-            slowerScrollRate: false
-          }
-        ]}
-        style={{
-          height: '600px'
-        }}
-      >
-        <HeroImageText>
-          <span>Sand Bar and Island Grill</span>
-        </HeroImageText>
-      </ParallaxBanner>
-    </ParallaxProvider>
+    <HeroImage
+      src='/static/images/testImage.jpg'
+    />
 
     <ContentSection>
       <article>
