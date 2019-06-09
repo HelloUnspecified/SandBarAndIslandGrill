@@ -17,16 +17,16 @@ const HeroImageText = styled.div`
   width: 100%;
 `;
 
-const HeroImage = styled.img`
+const HeroImage = styled.div`
   height: 100vh;
   max-width: 100%;
+  background-image: url('/static/images/testImage.jpg');
+  background-size: cover;
 `;
 
 const home = props => (
   <Fragment>
-    <HeroImage
-      src='/static/images/testImage.jpg'
-    />
+    <HeroImage/>
 
     <ContentSection
       image='../static/images/Gallery-Oysters2-1.jpg'
