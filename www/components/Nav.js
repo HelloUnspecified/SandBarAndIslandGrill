@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 import NavItem from './NavItem';
 
 const Nav = ({ className }) => (

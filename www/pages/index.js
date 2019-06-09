@@ -18,8 +18,6 @@ const HeroImageText = styled.div`
 const HeroImage = styled.img`
   height: 100vh;
   width: 100%;
-  position: absolute;
-  top: 0;
 `;
 
 const ContentSection = styled.section`
