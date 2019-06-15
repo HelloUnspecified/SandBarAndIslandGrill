@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
+import {above, below} from '../utitlies/breakpoint.js';
 
 const StyledLink = styled.a`
   text-transform: uppercase;
@@ -10,6 +11,26 @@ const StyledLink = styled.a`
   &:hover {
     color: orange;
   }
+
+  ${below.med`
+    flex-direction: column
+    ${({ display }) => display === "desktop" && `
+      display: none;
+    `}
+    ${({ display }) => display === "mobile" && `
+      display: inline;
+    `}
+  `}
+
+  ${above.med`
+    flex-direction: column
+    ${({ display }) => display === "desktop" && `
+      display: inline;
+    `}
+    ${({ display }) => display === "mobile" && `
+      display: none;
+    `}
+  `}
 `;
 
 const NavImage = styled.img`
@@ -30,7 +51,7 @@ const NavItem = props => {
 
   return(
     <Link href={props.href} passHref>
-      <StyledLink>{displayedLink()}</StyledLink>
+      <StyledLink display={ props.display }>{displayedLink()}</StyledLink>
     </Link>
   )
 };

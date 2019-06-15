@@ -21,6 +21,7 @@ const HeroImage = styled.div`
   height: 100vh;
   max-width: 100%;
   background-image: url('/static/images/testImage.jpg');
+  background-position: center;
   background-size: cover;
 `;
 
