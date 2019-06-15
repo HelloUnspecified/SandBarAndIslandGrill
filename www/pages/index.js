@@ -35,13 +35,7 @@ const HeroFooterContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-
-  ${({ theme }) => `
-    color: ${theme.colors.light};
-    svg {
-      fill: ${theme.colors.light};
-    }
-  `}
+  color: ${({ theme }) => theme.colors.light};
 
   div {
     flex-grow: 1;
@@ -50,6 +44,7 @@ const HeroFooterContainer = styled.div`
   svg {
     margin: 7px;
     height: 30px;
+    fill: ${({ theme }) => theme.colors.light};
   }
 `;
 

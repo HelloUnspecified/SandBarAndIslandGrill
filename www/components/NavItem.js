@@ -6,10 +6,10 @@ const StyledLink = styled.a`
   text-transform: uppercase;
   font-size: 11px;
   text-align: center;
-  color: white;
+  color: ${({ theme }) => theme.colors.light};
 
   &:hover {
-    color: orange;
+    color: ${({ theme }) => theme.colors.orange};
   }
 
   ${below.med`

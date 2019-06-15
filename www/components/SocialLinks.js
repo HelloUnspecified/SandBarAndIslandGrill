@@ -6,11 +6,9 @@ const SocialLinksContainer = styled.div`
   justify-content: center;
 
   a:hover {
-    ${({ theme }) => `
-      svg {
-        fill: ${theme.colors.orange};
-      }
-    `}
+    svg {
+      fill: ${({ theme }) => theme.colors.orange};
+    }
   }
 `;
 

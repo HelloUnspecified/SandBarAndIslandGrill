@@ -56,10 +56,10 @@ export default styled(Header)`
   transition: background-color 0.5s ease;
 
   &.scrolled {
-    background-color: white;
+    background-color: ${({ theme }) => theme.colors.light};
 
     a {
-      color: black;
+      color: ${({ theme }) => theme.colors.dark};
     }
   }
 `;

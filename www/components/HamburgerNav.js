@@ -38,12 +38,13 @@ const HamburgerInner = styled.span`
   margin-top: -2px;
   width: 40px;
   height: 4px;
-  background-color: orange;
   border-radius: 4px;
   position: absolute;
   transition-property: transform;
   transition-duration: 0.075s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+  background-color: ${({ theme }) => theme.colors.orange};
 
   ${({ menuOpen }) => menuOpen && `
     transform: rotate(45deg);
@@ -54,12 +55,12 @@ const HamburgerInner = styled.span`
   &::before, &::after {
     width: 40px;
     height: 4px;
-    background-color: orange;
     border-radius: 4px;
     position: absolute;
     transition-property: transform;
     transition-duration: 0.15s;
     transition-timing-function: ease;
+    background-color: ${({ theme }) => theme.colors.orange};
   }
   &::before, &::after {
     content: "";
