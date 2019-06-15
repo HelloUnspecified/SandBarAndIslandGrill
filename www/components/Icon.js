@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import svgs from '../utitlies/svgs.js';
 
 const Svg = styled.svg`
-  width: 20px;
-  height: 20px;
+  width: auto;
+  height: 100%;
 `;
 
 const Icon = props => {

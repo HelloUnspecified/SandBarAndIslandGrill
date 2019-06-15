@@ -3,7 +3,6 @@ import Icon from './Icon';
 
 const IconBlock = styled.div`
   display: flex;
-  width: 100%;
   align-items: center;
 
   svg {
@@ -12,6 +11,7 @@ const IconBlock = styled.div`
 `;
 
 const IconText = props => {
+  console.log(props);
   return(
     <IconBlock>
       <Icon icon={props.icon} />
