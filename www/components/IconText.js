@@ -11,7 +11,6 @@ const IconBlock = styled.div`
 `;
 
 const IconText = props => {
-  console.log(props);
   return(
     <IconBlock>
       <Icon icon={props.icon} />
