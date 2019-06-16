@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 import IconText from './IconText';
 import SocialLinks from './SocialLinks';
+import {above, below} from '../utitlies/breakpoint.js';
 
 const FOOTER_MODIFIERS = {
   site: ({ theme }) => `
@@ -12,8 +13,9 @@ const FOOTER_MODIFIERS = {
 
 const Heading = styled.h1`
   text-transform: uppercase;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 18px;
+  color: ${({ theme }) => theme.colors.orange};
 `;
 
 const Text = styled.p`
@@ -27,10 +29,17 @@ const Title = styled.p`
 `;
 
 const FooterColumn = styled.div`
+  padding: 0 2rem;
   flex-basis: 30%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
+  ${below.small`
+    &:not(:first-child) {
+      padding-top: 20px;
+    }
+  `}
 `;
 
 const Trademark = styled.p`
@@ -89,15 +98,25 @@ const Footer = ({ className }) => (
 export default styled(Footer)`
   font-size: 13px;
 
-  h1 {
-    color: ${({ theme }) => theme.colors.orange};
-  }
-
   section {
     margin: 20px;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: center;
+
+    ${below.small`
+      flex-direction: column;
+    `}
+
+    ${above.small`
+      flex-direction: row;
+    `}
+
+    svg {
+      height: 20px;
+
+      padding-right: 1rem;
+    }
   }
 
   ${applyStyleModifiers(FOOTER_MODIFIERS)};

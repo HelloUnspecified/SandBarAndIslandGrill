@@ -4,10 +4,6 @@ import Icon from './Icon';
 const IconBlock = styled.div`
   display: flex;
   align-items: center;
-
-  svg {
-    margin-right: 10px;
-  }
 `;
 
 const IconText = props => {
