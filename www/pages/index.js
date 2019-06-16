@@ -5,6 +5,8 @@ import ContentSection from '../components/ContentSection'
 import IconText from '../components/IconText'
 import Map from '../components/Map'
 import SocialLinks from '../components/SocialLinks'
+import React, { Component} from 'react';
+import { FacebookProvider, Page } from 'react-facebook';
 import {above, below} from '../utitlies/breakpoint.js';
 
 const HeroImageText = styled.div`
@@ -128,6 +130,10 @@ const home = props => (
         title="some kind of oyster something"
         align='right'
       />
+
+      <FacebookProvider appId="249643311490">
+        <Page href="https://www.facebook.com/SandBarAndIslandGrill" tabs="timeline" />
+      </FacebookProvider>
 
       <Map />
     </Fragment>
