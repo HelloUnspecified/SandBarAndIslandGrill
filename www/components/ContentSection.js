@@ -2,8 +2,10 @@ import styled from 'styled-components';
 import {above, below} from '../utitlies/breakpoint.js';
 
 const Container = styled.div`
-  width: 100vw;
+  /* width: 100vw; */
   padding: 40px 40px;
+  margin: auto;
+  max-width: 1100px;
 `;
 
 const DetailContainer = styled.div`
@@ -11,13 +13,36 @@ const DetailContainer = styled.div`
   display: flex;
   ${below.med`
     flex-direction: column;
+    text-align: center;
+    max-width: 700px;
   `};
+  align-items: center;
 `;
 
 const ImageContainer = styled.div`
   order: ${({ align }) => align === 'left' ? 0 : 2};
-  padding-left: ${({ align }) => align === 'left' ? 0 : '30px'};
-  padding-right: ${({ align }) => align === 'left' ? '30px' : 0};
+  margin-left: ${({ align }) => align === 'left' ? 0 : '30px'};
+  margin-right: ${({ align }) => align === 'left' ? '30px' : 0};
+  position: relative;
+
+  &:before {
+    top: 5%;
+
+    ${({ align }) => align === "left" && `
+      right: 8%;
+    `}
+
+    ${({ align }) => align === "right" && `
+      left: 8%;
+    `}
+
+
+    border: 3px solid ${({ theme }) => theme.colors.orange};
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+  }
 `;
 
 const TextContainer = styled.div`
@@ -29,6 +54,7 @@ const FeaturedImage = styled.img`
   object-fit: cover;
   width: auto;
   height: 200px;
+  position: relative;
 
   ${below.med`
     width: 70%;
@@ -36,11 +62,12 @@ const FeaturedImage = styled.img`
   `};
 `;
 
-const Title = styled.p`
-  font-size: 2.5rem;
+const Title = styled.h2`
+  font-size: 3rem;
   text-align: center;
   margin-top: 0;
   line-height: 1.2;
+  font-family: 'Great Vibes', cursive;
 `;
 
 const Description = styled.p`
@@ -50,13 +77,16 @@ const Description = styled.p`
 const ContentSection = props => {
   return(
     <Container>
+      <Title>{props.title}</Title>
       <DetailContainer>
         <ImageContainer align={ props.align }>
           <FeaturedImage src={props.image}/>
         </ImageContainer>
         <TextContainer>
-          <Title>{props.title}</Title>
-          <Description>{props.description}</Description>
+          { props.description &&
+            <Description>{props.description}</Description>
+          }
+          { props.children }
         </TextContainer>
       </DetailContainer>
     </Container>

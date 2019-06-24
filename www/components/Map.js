@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import styled from 'styled-components';
-
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+import MapMarker from './MapMarker';
 
  const customStyles = [
   {
@@ -101,7 +100,7 @@ class Map extends Component {
       lat: 42.497540,
       lng: -88.272200
     },
-    zoom: 11
+    zoom: 13
   };
 
   render() {
@@ -115,10 +114,9 @@ class Map extends Component {
             styles: customStyles
           }}
         >
-          <AnyReactComponent
+          <MapMarker
             lat={this.props.center.lat}
             lng={this.props.center.lng}
-            text="My Marker"
           />
         </GoogleMapReact>
       </div>
