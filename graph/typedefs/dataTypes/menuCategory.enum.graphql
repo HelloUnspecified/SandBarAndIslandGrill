@@ -1,0 +1,8 @@
+enum MenuCategory {
+  DRINK
+  APPETISER
+  SALAD
+  DINNER
+  DESERT
+  KIDS
+}

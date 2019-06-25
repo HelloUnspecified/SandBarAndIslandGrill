@@ -1,0 +1,10 @@
+# import MenuItem from './menuItem.interface.graphql'
+
+type MenuItem implements MenuItem {
+  id: ID!
+  name: String!
+  description: String!
+  category: MenuCategory!
+  price: Float
+  imageUrl: String
+}

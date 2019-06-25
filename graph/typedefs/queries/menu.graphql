@@ -1,0 +1,21 @@
+# import MenuItem from "../../dataTypes/menu/menuItem.graphql"
+
+type Query {
+  "query the entire menu"
+  menu: [MenuItem]
+
+  "qurey the drink menu"
+  drinks: [MenuItem]
+
+  "query the appetiser menu"
+  appetisers: [MenuItem]
+
+  "query the dinner menu"
+  dinners: [MenuItem]
+
+  "query the desert menue"
+  deserts: [MenuItem]
+
+  "query the kids menu"
+  kids: [MenuItem]
+}
