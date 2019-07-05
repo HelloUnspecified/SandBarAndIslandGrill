@@ -5,7 +5,11 @@
     "SENTRY_DSN": "TODO"
   },
   "builds": [
-    { "src": "graph/index.js", "use": "@now/node@canary" },
+    {
+      "src": "graph/index.js",
+      "use": "@now/node@canary",
+      "includeFiles": ["**/*.graphql"]
+    },
     { "src": "www/package.json", "use": "@now/next" }
   ],
   "routes": [

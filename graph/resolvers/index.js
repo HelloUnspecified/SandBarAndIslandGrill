@@ -11,9 +11,9 @@ const createServer = {
   Query: {
     ...queries
   },
-  Mutation: {
-    ...mutations
-  },
+  // Mutation: {
+  //   ...mutations
+  // },
   ...fieldResolvers
 };
 

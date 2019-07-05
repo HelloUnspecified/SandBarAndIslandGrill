@@ -5,10 +5,7 @@ import resolvers from './resolvers';
 
 const server = new ApolloServer({
   typeDefs,
-  resolvers,
-  introspection: true,
-  playground: true
+  resolvers
 });
 
-console.log('temp directory:', __dirname);
 export default server.createHandler({ path: '/graph' });
