@@ -4,7 +4,7 @@ type MenuItem {
   id: ID!
   name: String!
   description: String!
-  category: MenuCategory
+  category: MenuCategory!
   price: Float
   imageUrl: String
 }
