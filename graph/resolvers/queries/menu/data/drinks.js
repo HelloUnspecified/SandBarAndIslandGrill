@@ -102,21 +102,5 @@ export default [
     name: 'Blue Beach',
     description:
       'Smirnoff Raspberry, Blue Curacao, Pineapple juice and Sweet and Sour'
-  },
-  {
-    id: '14',
-    imageUrl: '',
-    category: 'DRINK',
-    name: 'Sutter Home Wines By The Glass',
-    description:
-      'Merlot • Cabernet • Chardonnay • Sauvignon BlancPinot Grigio • White Zinfandel'
-  },
-  {
-    id: '15',
-    imageUrl: '',
-    category: 'DRINK',
-    name: 'Premium Wines Available By The Bottle',
-    description:
-      'Merlot • Cabernet • Chardonnay • Sauvignon Blanc • Pinot Grigio'
   }
 ];

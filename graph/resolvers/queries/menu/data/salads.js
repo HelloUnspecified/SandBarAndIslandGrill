@@ -3,49 +3,6 @@ export default [
     id: '1234',
     imageUrl: '',
     category: 'SALAD',
-    name: 'Salmon Caesar',
-    description:
-      'grilled salmon, lettuce, tomato, croutons, Asiago cheese and Caesar dressing',
-    price: 13.95
-  },
-  {
-    id: '1234',
-    imageUrl: '',
-    category: 'SALAD',
-    name: 'Veggie',
-    description:
-      'layered with Island slaw, cucumber, lettuce, tomato, grilled pineapple and red onion',
-    price: 8.95
-  },
-  {
-    id: '1234',
-    imageUrl: '',
-    category: 'SALAD',
-    name: 'Island Grilled Chicken',
-    description: 'lettuce, tomato, grilled pineapple and cilantro lime mayo',
-    price: 10.95
-  },
-  {
-    id: '1234',
-    imageUrl: '',
-    category: 'SALAD',
-    name: 'Club',
-    description:
-      'served with ham, turkey, bacon, lettuce, tomato, cheese & mayo',
-    price: 11.95
-  },
-  {
-    id: '1234',
-    imageUrl: '',
-    category: 'SALAD',
-    name: 'Buffalo Chicken',
-    description: 'with lettuce, tomato & crumbled bleu cheese',
-    price: 10.95
-  },
-  {
-    id: '1234',
-    imageUrl: '',
-    category: 'SALAD',
     name: 'Caesar, Our Version',
     description:
       'chopped salad topped with tomatoes, fresh grated asiago cheese, croutons & caesar dressing',

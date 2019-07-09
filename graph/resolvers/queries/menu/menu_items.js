@@ -1,7 +1,7 @@
 import appertizers from './data/appetizers';
 
 import appetizers from './data/appetizers';
-import dinnersSeafood from './data/dinners.seafood';
+import dinnersSeafood from './data/dinnersSeafood';
 import dinnersLandfood from './data/dinnersLandfood';
 import wraps from './data/wraps';
 import drinks from './data/drinks';
