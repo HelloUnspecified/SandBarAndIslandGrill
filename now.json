@@ -5,13 +5,15 @@
     "SENTRY_DSN": "TODO"
   },
   "builds": [
-    { "src": "www/package.json", "use": "@now/next" },
-    { "src": "api/*.js", "use": "@now/node" },
-    { "src": "graph/server.js", "use": "@now/node-server" }
+    {
+      "src": "graph/index.js",
+      "use": "@now/node@canary",
+      "includeFiles": ["**/*.graphql"]
+    },
+    { "src": "www/package.json", "use": "@now/next" }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "/api/$1" },
-    { "src": "/graph/(.*)", "dest": "/graph/$1" },
+    { "src": "/graph", "dest": "/graph/index.js" },
     { "src": "/(.*)", "dest": "/www/$1" }
   ]
 }
