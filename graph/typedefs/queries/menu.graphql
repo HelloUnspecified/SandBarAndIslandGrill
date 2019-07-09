@@ -4,7 +4,7 @@ type Query {
   "query the entire menu"
   menu: [MenuItem]
 
-  "qurey the drink menu"
+  "query the drink menu"
   drinks: [MenuItem]
 
   "query the appetiser menu"
