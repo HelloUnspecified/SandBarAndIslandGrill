@@ -12,9 +12,10 @@
   "author": "",
   "license": "GNU GPLv3",
   "dependencies": {
-    "apollo-boost": "^0.1.27",
+    "@apollo/react-hooks": "^3.0.1",
+    "apollo-boost": "^0.1.28",
     "google-map-react": "^1.1.4",
-    "graphql": "^14.5.3",
+    "graphql": "^14.5.4",
     "moment": "^2.24.0",
     "next": "^7.0.2",
     "next-with-apollo": "^3.4.0",
