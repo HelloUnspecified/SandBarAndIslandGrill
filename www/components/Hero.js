@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { ParallaxBanner } from 'react-scroll-parallax';
+import LinkButton from './LinkButton';
 import {above, below} from '../utitlies/breakpoint.js';
 
 const HeroImage = styled.div`
@@ -7,7 +8,6 @@ const HeroImage = styled.div`
   max-width: 100%;
   background-position: center;
   background-size: cover;
-  margin-bottom: 40px;
   background-color: ${({ theme }) => theme.colors.black};
 `;
 
@@ -68,8 +68,6 @@ const BannerHeader = styled.div`
 `;
 
 const Hero = props => {
-  console.log(props);
-
   return(
     <HeroImage fullHeight={props.fullHeight} >
       <ParallaxBanner
@@ -86,7 +84,13 @@ const Hero = props => {
       />
       <BannerHeader fullHeight={props.fullHeight}>
         <h1>{ props.heading }</h1>
-        <h2>{ props.subheading }</h2>
+        { props.subheading &&
+          <h2>{props.subheading}</h2>
+        }
+        <LinkButton
+          href={props.href}
+          label={props.label}
+        />
       </BannerHeader>
       <HeroFooterContainer>
         {props.children}

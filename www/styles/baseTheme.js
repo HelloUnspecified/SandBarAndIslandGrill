@@ -9,6 +9,7 @@ const baseTheme = {
     warning: '#ffc107',
     danger: '#dc3545',
     light: '#f8f9fa',
+    medium: '#d6d6d6',
     dark: '#343a40',
 
     orange: '#fd7e14',

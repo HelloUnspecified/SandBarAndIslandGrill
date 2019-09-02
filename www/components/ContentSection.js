@@ -2,93 +2,76 @@ import styled from 'styled-components';
 import {above, below} from '../utitlies/breakpoint.js';
 
 const Container = styled.div`
-  /* width: 100vw; */
-  padding: 40px 40px;
-  margin: auto;
-  max-width: 1100px;
+  padding: 5rem;
+  background-color: ${props => props.color ? props.theme.colors[props.color] : props.theme.colors.white };
+  position: relative;
 `;
 
 const DetailContainer = styled.div`
   margin: auto;
   display: flex;
+  justify-content: space-evenly;
+
   ${below.med`
     flex-direction: column;
     text-align: center;
     max-width: 700px;
+    align-items: center;
+
+    img {
+      margin: 1rem 0;
+    }
   `};
-  align-items: center;
 `;
 
-const ImageContainer = styled.div`
-  order: ${({ align }) => align === 'left' ? 0 : 2};
-  margin-left: ${({ align }) => align === 'left' ? 0 : '30px'};
-  margin-right: ${({ align }) => align === 'left' ? '30px' : 0};
-  position: relative;
-
-  &:before {
-    top: 5%;
-
-    ${({ align }) => align === "left" && `
-      right: 8%;
-    `}
-
-    ${({ align }) => align === "right" && `
-      left: 8%;
-    `}
-
-
-    border: 3px solid ${({ theme }) => theme.colors.orange};
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    content: "";
-  }
-`;
-
-const TextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const FeaturedImage = styled.img`
-  object-fit: cover;
-  width: auto;
-  height: 200px;
-  position: relative;
-
-  ${below.med`
-    width: 70%;
-    height: auto;
-  `};
+const ContainerInner = styled.div`
+  margin: auto;
+  max-width: 90rem;
 `;
 
 const Title = styled.h2`
-  font-size: 3rem;
+  font-size: 4rem;
   text-align: center;
   margin-top: 0;
   line-height: 1.2;
   font-family: 'Great Vibes', cursive;
+  margin-bottom: ${props => props.subtitle ? '0' : '3rem'};
+
+  .normal {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 2.8rem;
+  }
+
+  .highlight {
+    color: ${({ theme }) => theme.colors.orange}
+  }
 `;
 
-const Description = styled.p`
-  margin: 0;
+const Subtitle = styled.h3`
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  font-weight: 400;
+  position: relative;
+  top: -0.8rem;
 `;
 
 const ContentSection = props => {
+  // console.log(props);
   return(
-    <Container>
-      <Title>{props.title}</Title>
-      <DetailContainer>
-        <ImageContainer align={ props.align }>
-          <FeaturedImage src={props.image}/>
-        </ImageContainer>
-        <TextContainer>
-          { props.description &&
-            <Description>{props.description}</Description>
-          }
+    <Container color={props.color} >
+      <ContainerInner>
+        <Title subtitle={props.subtitle}>{props.title}</Title>
+        { props.subtitle &&
+          <Subtitle>{props.subtitle}</Subtitle>
+        }
+        <DetailContainer>
           { props.children }
-        </TextContainer>
-      </DetailContainer>
+        </DetailContainer>
+      </ContainerInner>
     </Container>
   )
 };

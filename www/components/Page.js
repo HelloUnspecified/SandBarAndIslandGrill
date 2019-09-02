@@ -22,8 +22,8 @@ const CorePage = styled.div`
 
 const InnerPage = styled.div`
   width: 100%;
-  margin: 0 auto;
-  padding: 0;
+  display: flex;
+  flex-direction: column;
 `;
 
 class Page extends Component {
