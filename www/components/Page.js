@@ -7,6 +7,7 @@ import baseTheme from '../styles/baseTheme';
 import Meta from './Meta';
 import Header from './Header';
 import Footer from './Footer';
+import withApollo from '../lib/withApollo';
 
 const StyledPage = styled.div`
   background: ${props => props.theme.colors.backgroundColor};
@@ -26,24 +27,20 @@ const InnerPage = styled.div`
   flex-direction: column;
 `;
 
-class Page extends Component {
-  render() {
-    return (
-      <ThemeProvider theme={baseTheme}>
-        <Fragment>
-          <GlobalStyle />
-          <StyledPage>
-            <Meta />
-            <CorePage>
-              <Header />
-              <InnerPage>{this.props.children}</InnerPage>
-              <Footer modifiers="site" />
-            </CorePage>
-          </StyledPage>
-        </Fragment>
-      </ThemeProvider>
-    );
-  }
-}
-
-export default Page;
+export default props => {
+  return (
+    <ThemeProvider theme={baseTheme}>
+      <Fragment>
+        <GlobalStyle />
+        <StyledPage>
+          <Meta />
+          <CorePage>
+            <Header />
+            <InnerPage>{props.children}</InnerPage>
+            <Footer modifiers="site" />
+          </CorePage>
+        </StyledPage>
+      </Fragment>
+    </ThemeProvider>
+  );
+};

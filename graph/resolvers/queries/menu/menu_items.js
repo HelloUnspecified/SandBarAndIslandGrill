@@ -1,14 +1,14 @@
-import appertizers from './data/appetizers';
+const appertizers = require('./data/appetizers');
 
-import appetizers from './data/appetizers';
-import dinnersSeafood from './data/dinnersSeafood';
-import dinnersLandfood from './data/dinnersLandfood';
-import wraps from './data/wraps';
-import drinks from './data/drinks';
-import kids from './data/kids';
-import salads from './data/salads';
+const appetizers = require('./data/appetizers');
+const dinnersSeafood = require('./data/dinnersSeafood');
+const dinnersLandfood = require('./data/dinnersLandfood');
+const wraps = require('./data/wraps');
+const drinks = require('./data/drinks');
+const kids = require('./data/kids');
+const salads = require('./data/salads');
 
-export default {
+module.exports = {
   appetizers,
   dinners: [...dinnersSeafood, ...dinnersLandfood],
   wraps,

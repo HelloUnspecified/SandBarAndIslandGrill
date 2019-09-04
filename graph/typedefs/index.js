@@ -1,5 +1,4 @@
-import { importSchema } from 'graphql-import';
-
+const { importSchema } = require('graphql-import');
 const typeDefs = () => importSchema(`${__dirname}/schema.graphql`);
 
-export default typeDefs();
+module.exports = typeDefs();

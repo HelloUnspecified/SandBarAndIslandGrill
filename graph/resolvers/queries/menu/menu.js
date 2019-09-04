@@ -1,6 +1,6 @@
-import menu from './menu_items';
+const menu = require('./menu_items');
 
-const resolvers = {
+module.exports = {
   menu: (parent, args, { dataSources }) =>
     Object.keys(menu)
       .map(m => menu[m])
@@ -12,9 +12,3 @@ const resolvers = {
   kids: (parent, args, { dataSources }) => menu.kids,
   wraps: (parent, args, { dataSources }) => menu.wraps
 };
-
-export const fieldResolvers = {
-  // Menu: {}
-};
-
-export default resolvers;

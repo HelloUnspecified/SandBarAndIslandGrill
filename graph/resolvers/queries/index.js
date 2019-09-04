@@ -1,5 +1,3 @@
-import menu from './menu/menu';
+const menu = require('./menu/menu');
 
-export default {
-  ...menu
-};
+module.exports = { ...menu };

@@ -1,5 +1,3 @@
-import { fieldResolvers as menu } from './queries/menu/menu';
+const { fieldResolvers } = require('./queries/menu/menu');
 
-export default {
-  ...menu
-};
+exports.menu = fieldResolvers;
