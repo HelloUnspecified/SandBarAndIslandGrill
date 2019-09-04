@@ -1,3 +1,4 @@
+import microCors from 'micro-cors';
 import { ApolloServer } from 'apollo-server-micro';
 
 import typeDefs from './typedefs';
@@ -8,4 +9,6 @@ const server = new ApolloServer({
   resolvers
 });
 
-export default server.createHandler({ path: '/graph' });
+const cors = microCors({ allowMethods: ['GET', 'POST'] });
+
+export default cors(server.createHandler({ path: '/graph' }));
