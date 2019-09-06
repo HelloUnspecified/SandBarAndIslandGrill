@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import svgs from '../utitlies/svgs.js';
 
@@ -7,12 +8,12 @@ const Svg = styled.svg`
 `;
 
 const Icon = props => {
-  return(
+  return (
     <Svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <title>{svgs[props.icon].title}</title>
-      <path d={svgs[props.icon].path}/>
+      <path d={svgs[props.icon].path} />
     </Svg>
-  )
+  );
 };
 
 export default Icon;

@@ -1,13 +1,12 @@
 import { withData } from 'next-apollo';
-// import { HttpLink } from 'apollo-boost';
-import { createHttpLink } from 'apollo-link-http';
+import { HttpLink } from 'apollo-boost';
 import fetch from 'isomorphic-unfetch';
 
 const config = {
-  link: createHttpLink({
+  link: new HttpLink({
     uri: 'http://localhost:3000/graphql',
-    fetch
-  })
+    fetch,
+  }),
 };
 
 export default withData(config);

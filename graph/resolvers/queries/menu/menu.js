@@ -10,5 +10,5 @@ module.exports = {
   dinners: (parent, args, { dataSources }) => menu.dinners,
   salads: (parent, args, { dataSources }) => menu.salads,
   kids: (parent, args, { dataSources }) => menu.kids,
-  wraps: (parent, args, { dataSources }) => menu.wraps
+  wraps: (parent, args, { dataSources }) => menu.wraps,
 };

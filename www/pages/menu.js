@@ -1,6 +1,6 @@
+import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import { ParallaxProvider } from 'react-scroll-parallax';
-import { Fragment } from 'react';
 
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
@@ -24,14 +24,14 @@ export default withApollo(props => {
     console.log(data);
     return (
       <ParallaxProvider>
-        <Fragment>
+        <>
           <Hero
             imagePath="/static/images/tacos-and-rings.jpg"
             heading="Sandbar and Island Grill"
             subheading="Menu"
           />
           <p>Menu</p>
-        </Fragment>
+        </>
       </ParallaxProvider>
     );
   }

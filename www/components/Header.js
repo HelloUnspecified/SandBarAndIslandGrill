@@ -25,7 +25,8 @@ const Header = ({ className }) => {
 
     const handleScroll = () => {
       setScrollY(window.pageYOffset);
-    }, {scrollingElement} = document;
+    };
+    const { scrollingElement } = document;
 
     handleScroll();
     document.addEventListener('scroll', handleScroll);
@@ -34,15 +35,15 @@ const Header = ({ className }) => {
   });
 
   const scrolled = () => {
-    return parseInt(scrollY) > 0 ? "scrolled" : "";
+    return parseInt(scrollY) > 0 ? 'scrolled' : '';
   };
 
   return (
-    <header className={[className, scrolled()].join(" ")}>
+    <header className={[className, scrolled()].join(' ')}>
       <Nav />
     </header>
   );
-}
+};
 
 export default styled(Header)`
   display: flex;

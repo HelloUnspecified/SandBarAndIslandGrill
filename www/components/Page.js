@@ -30,7 +30,7 @@ const InnerPage = styled.div`
 export default props => {
   return (
     <ThemeProvider theme={baseTheme}>
-      <Fragment>
+      <>
         <GlobalStyle />
         <StyledPage>
           <Meta />
@@ -40,7 +40,7 @@ export default props => {
             <Footer modifiers="site" />
           </CorePage>
         </StyledPage>
-      </Fragment>
+      </>
     </ThemeProvider>
   );
 };

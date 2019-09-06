@@ -1,6 +1,7 @@
-import { Fragment } from 'react';
+import React, { Fragment, Component } from 'react';
 import styled from 'styled-components';
 import { ParallaxProvider } from 'react-scroll-parallax';
+import { FacebookProvider, Page } from 'react-facebook';
 import ContentSection from '../components/ContentSection';
 import FeaturedDishes from '../components/FeaturedDishes';
 import Gallery from '../components/Gallery';
@@ -10,10 +11,8 @@ import Hero from '../components/Hero';
 import IconText from '../components/IconText';
 import Map from '../components/Map';
 import SocialLinks from '../components/SocialLinks';
-import React, { Component} from 'react';
-import { FacebookProvider, Page } from 'react-facebook';
-import {above, below} from '../utitlies/breakpoint.js';
 
+import { above, below } from '../utitlies/breakpoint.js';
 
 const Title = styled.h2`
   font-size: 2.8rem;
@@ -33,9 +32,9 @@ const Fancy = styled.span`
 `;
 
 const ImageContainer = styled.div`
-  order: ${({ align }) => align === 'left' ? 0 : 2};
-  margin-left: ${({ align }) => align === 'left' ? 0 : '30px'};
-  margin-right: ${({ align }) => align === 'left' ? '30px' : 0};
+  order: ${({ align }) => (align === 'left' ? 0 : 2)};
+  margin-left: ${({ align }) => (align === 'left' ? 0 : '30px')};
+  margin-right: ${({ align }) => (align === 'left' ? '30px' : 0)};
   position: relative;
 `;
 
@@ -58,7 +57,7 @@ const ContentBlock = styled.div`
 const ContentDetail = styled.div`
   display: flex;
 
-   ${below.med`
+  ${below.med`
     text-align: center;
     flex-direction: column;
   `};
@@ -70,34 +69,41 @@ const AccentImage = styled.img`
   top: 18%;
 `;
 
-const IMAGES =
-  [{
-    src: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_b.jpg",
-    thumbnail: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_n.jpg",
+const IMAGES = [
+  {
+    src: 'https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_b.jpg',
+    thumbnail:
+      'https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_n.jpg',
     thumbnailWidth: 320,
     thumbnailHeight: 174,
     isSelected: true,
-    caption: "After Rain (Jeshu John - designerspics.com)"
+    caption: 'After Rain (Jeshu John - designerspics.com)',
   },
   {
-    src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
-    thumbnail: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_n.jpg",
+    src: 'https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg',
+    thumbnail:
+      'https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_n.jpg',
     thumbnailWidth: 320,
     thumbnailHeight: 212,
-    tags: [{ value: "Ocean", title: "Ocean" }, { value: "People", title: "People" }],
-    caption: "Boats (Jeshu John - designerspics.com)"
+    tags: [
+      { value: 'Ocean', title: 'Ocean' },
+      { value: 'People', title: 'People' },
+    ],
+    caption: 'Boats (Jeshu John - designerspics.com)',
   },
 
   {
-    src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
-    thumbnail: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_n.jpg",
+    src: 'https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg',
+    thumbnail:
+      'https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_n.jpg',
     thumbnailWidth: 320,
-    thumbnailHeight: 212
-  }]
+    thumbnailHeight: 212,
+  },
+];
 
 const home = props => (
   <ParallaxProvider>
-    <Fragment>
+    <>
       <Hero
         imagePath="/static/images/sandbar-inside.jpg"
         fullHeight="true"
@@ -107,25 +113,28 @@ const home = props => (
       >
         <SocialLinks />
         <IconText icon="location">
-          <p>
-            3101 E. Lakeshore Dr., Twin Lakes, WI 53181
-          </p>
+          <p>3101 E. Lakeshore Dr., Twin Lakes, WI 53181</p>
         </IconText>
       </Hero>
 
       <ContentSection
-        title={[<span class='normal'>A </span>, <span class='highlight'>Tropical Oasis</span>, <span class='normal'> In The Least Likely Of Places</span>]}
+        title={[
+          <span className="normal">A </span>,
+          <span className="highlight">Tropical Oasis</span>,
+          <span className="normal"> In The Least Likely Of Places</span>,
+        ]}
       >
         <AccentImage src="../static/images/tiki-bar.png" />
         <ContentDetail>
           <p>
-            The Sand Bar & Island Grill is a waterfront, "open-air" establishment located in
-            the Lake Elizabeth marina literally a few feet away from the shore. It was founded
-            in 2009 by Carlo DiCarlo, a Twin Lakes resident who has spent a great deal of his
-            time on Florida's Suncoast in the Tampa Bay/Clearwater area.
+            The Sand Bar & Island Grill is a waterfront, "open-air"
+            establishment located in the Lake Elizabeth marina literally a few
+            feet away from the shore. It was founded in 2009 by Carlo DiCarlo, a
+            Twin Lakes resident who has spent a great deal of his time on
+            Florida's Suncoast in the Tampa Bay/Clearwater area.
           </p>
           <ImageContainer>
-            <FeaturedImage src='../static/images/conversation.jpg' />
+            <FeaturedImage src="../static/images/conversation.jpg" />
           </ImageContainer>
         </ContentDetail>
       </ContentSection>
@@ -140,7 +149,7 @@ const home = props => (
       </FacebookProvider> */}
 
       <Map />
-    </Fragment>
+    </>
   </ParallaxProvider>
 );
 
