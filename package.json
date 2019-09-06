@@ -1,45 +1,41 @@
 {
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "start": "",
-    "start:prod": "micro",
-    "start:watch": "micro-dev",
-    "lint": "eslint '**/*.js'"
-  },
   "engines": {
     "node": "^10"
   },
   "dependencies": {
-    "apollo-server-micro": "^2.9.3",
-    "graphql": "^14.5.4",
-    "graphql-import": "^0.7.1"
+    "sandbargraph": "file:graph",
+    "sandbarwebsite": "file:www"
   },
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "babel-plugin-styled-components": "^1.10.6",
     "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.1",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^6.2.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-jest": "^22.17.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.0.1",
+    "jest": "^24.9.0",
     "micro": "^9.3.4",
     "micro-dev": "^3.0.0",
     "prettier": "^1.18.2"
   },
-  "name": "sandbargraph",
+  "name": "root",
   "license": "gpl-3.0",
-  "description": "sand bar and island grill graph endpoint",
-  "keywords": [
-    "node, web, nextjs, now, react"
-  ],
+  "description": "root config for dev",
+  "keywords": [],
   "homepage": "https://sandbarandislandgrill.com/",
   "repository": {
     "type": "git",
     "url": "https://github.com/hellounspecified/sandbarandislandgrill.com.git"
-  },
-  "contributors": [
-    {
-      "name": "Clark Sell",
-      "email": "hello@unspecified.io"
-    }
-  ]
+  }
 }

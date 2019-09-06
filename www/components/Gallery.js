@@ -1,5 +1,6 @@
+import React from 'react';
 import styled from 'styled-components';
-import ContentSection from '../components/ContentSection'
+import ContentSection from './ContentSection';
 import { above, below } from '../utitlies/breakpoint.js';
 
 const ImageContainer = styled.div`
@@ -27,9 +28,7 @@ const RectangleImage = styled.img`
 
 const Gallery = ({ className }) => {
   return (
-    <ContentSection
-      title="Gallery"
-    >
+    <ContentSection title="Gallery">
       <ImageContainer>
         <ImageColumn>
           <RectangleImage src="/static/images/tacos-and-rings.jpg" />
@@ -41,11 +40,10 @@ const Gallery = ({ className }) => {
         <ImageColumn>
           <RectangleImage src="/static/images/tacos-and-rings.jpg" />
           <RectangleImage src="/static/images/Gallery-Oysters2-1.jpg" />
-          </ImageColumn>
+        </ImageColumn>
       </ImageContainer>
     </ContentSection>
-  )
+  );
 };
 
-export default styled(Gallery)`
-`;
+export default styled(Gallery)``;

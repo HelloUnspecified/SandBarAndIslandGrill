@@ -1,4 +1,4 @@
-module.exports =  [
+module.exports = [
   {
     id: '1234',
     imageUrl: '',
@@ -6,7 +6,7 @@ module.exports =  [
     name: 'Salmon Caesar',
     description:
       'grilled salmon, lettuce, tomato, croutons, Asiago cheese and Caesar dressing',
-    price: 13.95
+    price: 13.95,
   },
   {
     id: '1234',
@@ -15,7 +15,7 @@ module.exports =  [
     name: 'Veggie',
     description:
       'layered with Island slaw, cucumber, lettuce, tomato, grilled pineapple and red onion',
-    price: 8.95
+    price: 8.95,
   },
   {
     id: '1234',
@@ -23,7 +23,7 @@ module.exports =  [
     category: 'WRAP',
     name: 'Island Grilled Chicken',
     description: 'lettuce, tomato, grilled pineapple and cilantro lime mayo',
-    price: 10.95
+    price: 10.95,
   },
   {
     id: '1234',
@@ -32,7 +32,7 @@ module.exports =  [
     name: 'Club',
     description:
       'served with ham, turkey, bacon, lettuce, tomato, cheese & mayo',
-    price: 11.95
+    price: 11.95,
   },
   {
     id: '1234',
@@ -40,7 +40,7 @@ module.exports =  [
     category: 'WRAP',
     name: 'Buffalo Chicken',
     description: 'with lettuce, tomato & crumbled bleu cheese',
-    price: 10.95
+    price: 10.95,
   },
   {
     id: '1234',
@@ -48,7 +48,7 @@ module.exports =  [
     category: 'WRAP',
     name: 'Filet Mignon',
     description: 'with grilled onions, lettuce, tomato & dijonaise',
-    price: 15.95
+    price: 15.95,
   },
   {
     id: '1234',
@@ -56,7 +56,7 @@ module.exports =  [
     category: 'WRAP',
     name: 'Blt',
     description: 'served with bacon, lettuce, tomato & mayo',
-    price: 10.95
+    price: 10.95,
   },
   {
     id: '1234',
@@ -64,6 +64,6 @@ module.exports =  [
     category: 'WRAP',
     name: 'Grilled Chicken Ranch',
     description: 'with bacon, lettuce, tomato & cheese with ranch dressing',
-    price: 10.95
-  }
+    price: 10.95,
+  },
 ];

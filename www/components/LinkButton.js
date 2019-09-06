@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 
 const OutlineLink = styled.a`
@@ -18,7 +19,7 @@ const LinkButton = props => {
     <OutlineLink href={props.href}>
       <p>{props.label}</p>
     </OutlineLink>
-  )
+  );
 };
 
 export default LinkButton;

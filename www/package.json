@@ -1,18 +1,15 @@
 {
-  "name": "sandbarwebsite",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "^10"
+  },
   "scripts": {
     "dev": "next ./ -p 8000",
     "build": "next build ./www",
     "start": "next start ./www",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "GNU GPLv3",
-  "engines": {
-    "node": "^10"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint '**/*.js'"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.0.1",
@@ -36,9 +33,31 @@
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
+    "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
     "babel-plugin-module-resolver": "^3.2.0",
     "babel-plugin-styled-components": "^1.10.6",
-    "jest": "^24.9.0"
+    "eslint": "^6.3.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.17.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.0.1",
+    "jest": "^24.9.0",
+    "prettier-eslint": "^9.0.0"
+  },
+  "name": "sandbarwebsite",
+  "author": "unspecified",
+  "description": "sand bar and island grill website",
+  "license": "gpl-3.0",
+  "keywords": [
+    "node, web, nextjs, now, react"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hellounspecified/sandbarandislandgrill.com.git"
   }
 }

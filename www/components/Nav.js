@@ -1,8 +1,8 @@
 import styled from 'styled-components';
+import React, { useState } from 'react';
 import HamburgerNav from './HamburgerNav';
 import NavItem from './NavItem';
-import React, { useState } from 'react';
-import {above, below} from '../utitlies/breakpoint.js';
+import { above, below } from '../utitlies/breakpoint.js';
 
 const NavList = styled.div`
   display: flex;
@@ -13,13 +13,17 @@ const NavList = styled.div`
 
   ${below.med`
     flex-direction: column
-    ${({ menuOpen }) => !menuOpen && `
+    ${({ menuOpen }) =>
+      !menuOpen &&
+      `
       display: none;
     `}
-    ${({ menuOpen }) => menuOpen && `
+    ${({ menuOpen }) =>
+      menuOpen &&
+      `
       display: inline-block;
     `}
-  `}
+  `};
 `;
 
 const NavListItem = styled.div`
@@ -38,24 +42,15 @@ const Nav = ({ className }) => {
         image="/static/images/sand-bar-logo.png"
         display="mobile"
       />
-      <NavList menuOpen={ menuOpen }>
+      <NavList menuOpen={menuOpen}>
         <NavListItem>
-          <NavItem
-            title="about us"
-            href="/about"
-          />
+          <NavItem title="about us" href="/about" />
         </NavListItem>
         <NavListItem>
-          <NavItem
-            title="menu"
-            href="/menu"
-          />
+          <NavItem title="menu" href="/menu" />
         </NavListItem>
         <NavListItem>
-          <NavItem
-            title="reservation"
-            href="/"
-          />
+          <NavItem title="reservation" href="/" />
         </NavListItem>
       </NavList>
       <NavItem
@@ -64,29 +59,23 @@ const Nav = ({ className }) => {
         image="/static/images/sand-bar-logo.png"
         display="desktop"
       />
-      <NavList menuOpen={ menuOpen }>
+      <NavList menuOpen={menuOpen}>
         <NavListItem>
-          <NavItem
-            title="news & events"
-            href="/contact"
-          />
+          <NavItem title="news & events" href="/contact" />
         </NavListItem>
         <NavListItem>
-          <NavItem
-            title="gallery"
-            href="/gallery"
-          />
+          <NavItem title="gallery" href="/gallery" />
         </NavListItem>
         <NavListItem>
-          <NavItem
-            title="contact us"
-            href="/contact"
-          />
+          <NavItem title="contact us" href="/contact" />
         </NavListItem>
       </NavList>
-      <HamburgerNav onClick={() => setMenuOpen(!menuOpen) } menuOpen={ menuOpen } />
+      <HamburgerNav
+        onClick={() => setMenuOpen(!menuOpen)}
+        menuOpen={menuOpen}
+      />
     </nav>
-  )
+  );
 };
 
 export default styled(Nav)`
@@ -97,10 +86,8 @@ export default styled(Nav)`
   ${above.med`
     justify-content: center;
     align-items: center;
-  `}
-
-  ${below.med`
+  `} ${below.med`
     justify-content: space-between;
   `}
-)
+);
 `;

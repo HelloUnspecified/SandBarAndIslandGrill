@@ -1,9 +1,10 @@
 import styled from 'styled-components';
-import {above, below} from '../utitlies/breakpoint.js';
+import { above, below } from '../utitlies/breakpoint.js';
 
 const Container = styled.div`
   padding: 5rem;
-  background-color: ${props => props.color ? props.theme.colors[props.color] : props.theme.colors.white };
+  background-color: ${props =>
+    props.color ? props.theme.colors[props.color] : props.theme.colors.white};
   position: relative;
 `;
 
@@ -35,7 +36,7 @@ const Title = styled.h2`
   margin-top: 0;
   line-height: 1.2;
   font-family: 'Great Vibes', cursive;
-  margin-bottom: ${props => props.subtitle ? '0' : '3rem'};
+  margin-bottom: ${props => (props.subtitle ? '0' : '3rem')};
 
   .normal {
     font-family: 'Roboto', sans-serif;
@@ -44,7 +45,7 @@ const Title = styled.h2`
   }
 
   .highlight {
-    color: ${({ theme }) => theme.colors.orange}
+    color: ${({ theme }) => theme.colors.orange};
   }
 `;
 
@@ -61,19 +62,15 @@ const Subtitle = styled.h3`
 
 const ContentSection = props => {
   // console.log(props);
-  return(
-    <Container color={props.color} >
+  return (
+    <Container color={props.color}>
       <ContainerInner>
         <Title subtitle={props.subtitle}>{props.title}</Title>
-        { props.subtitle &&
-          <Subtitle>{props.subtitle}</Subtitle>
-        }
-        <DetailContainer>
-          { props.children }
-        </DetailContainer>
+        {props.subtitle && <Subtitle>{props.subtitle}</Subtitle>}
+        <DetailContainer>{props.children}</DetailContainer>
       </ContainerInner>
     </Container>
-  )
+  );
 };
 
 export default ContentSection;

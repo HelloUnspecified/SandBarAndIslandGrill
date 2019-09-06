@@ -1,10 +1,11 @@
+import React from 'react';
 import styled from 'styled-components';
 import { ParallaxBanner } from 'react-scroll-parallax';
 import LinkButton from './LinkButton';
-import {above, below} from '../utitlies/breakpoint.js';
+import { below } from '../utitlies/breakpoint.js';
 
 const HeroImage = styled.div`
-  height: ${({fullHeight}) => fullHeight ? '100vh' : '60vh'};
+  height: ${({ fullHeight }) => (fullHeight ? '100vh' : '60vh')};
   max-width: 100%;
   background-position: center;
   background-size: cover;
@@ -43,7 +44,7 @@ const HeroFooterContainer = styled.div`
 
 const BannerHeader = styled.div`
   position: absolute;
-  top: ${({fullHeight}) => fullHeight ? '35%' : '25%'};
+  top: ${({ fullHeight }) => (fullHeight ? '35%' : '25%')};
   text-align: center;
   width: 100%;
   display: flex;
@@ -68,8 +69,8 @@ const BannerHeader = styled.div`
 `;
 
 const Hero = props => {
-  return(
-    <HeroImage fullHeight={props.fullHeight} >
+  return (
+    <HeroImage fullHeight={props.fullHeight}>
       <ParallaxBanner
         layers={[
           {
@@ -83,20 +84,13 @@ const Hero = props => {
         }}
       />
       <BannerHeader fullHeight={props.fullHeight}>
-        <h1>{ props.heading }</h1>
-        { props.subheading &&
-          <h2>{props.subheading}</h2>
-        }
-        <LinkButton
-          href={props.href}
-          label={props.label}
-        />
+        <h1>{props.heading}</h1>
+        {props.subheading && <h2>{props.subheading}</h2>}
+        <LinkButton href={props.href} label={props.label} />
       </BannerHeader>
-      <HeroFooterContainer>
-        {props.children}
-      </HeroFooterContainer>
+      <HeroFooterContainer>{props.children}</HeroFooterContainer>
     </HeroImage>
-  )
+  );
 };
 
 export default Hero;

@@ -1,14 +1,15 @@
+import React from 'react';
 import styled from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 import IconText from './IconText';
 import SocialLinks from './SocialLinks';
-import {above, below} from '../utitlies/breakpoint.js';
+import { above, below } from '../utitlies/breakpoint.js';
 
 const FOOTER_MODIFIERS = {
   site: ({ theme }) => `
     background-color: ${theme.colors.dark};
     color: ${theme.colors.fonts.light};
-  `
+  `,
 };
 
 const Heading = styled.h1`
@@ -39,7 +40,7 @@ const FooterColumn = styled.div`
     &:not(:first-child) {
       padding-top: 20px;
     }
-  `}
+  `};
 `;
 
 const Trademark = styled.p`
@@ -54,11 +55,11 @@ const Footer = ({ className }) => (
       <FooterColumn>
         <Heading>About Us</Heading>
         <Text>
-          The Sand Bar & Island Grill is a waterfront, "open-air"
-          establishment located in the Lake Elizabeth marina literally a few
-          feet away from the shore. It was founded in 2009 by Carlo DiCarlo, a
-          Twin Lakes resident who has spent a great deal of his time on
-          Florida's Suncoast in the Tampa Bay/Clearwater area.
+          The Sand Bar & Island Grill is a waterfront, "open-air" establishment
+          located in the Lake Elizabeth marina literally a few feet away from
+          the shore. It was founded in 2009 by Carlo DiCarlo, a Twin Lakes
+          resident who has spent a great deal of his time on Florida's Suncoast
+          in the Tampa Bay/Clearwater area.
         </Text>
       </FooterColumn>
 
@@ -67,7 +68,8 @@ const Footer = ({ className }) => (
         <IconText icon="location">
           <Text>
             3101 E. Lakeshore Dr.
-            <br/>Twin Lakes, WI 53181
+            <br />
+            Twin Lakes, WI 53181
           </Text>
         </IconText>
         <IconText icon="phone">
@@ -90,7 +92,9 @@ const Footer = ({ className }) => (
         <Title>Sunday</Title>
       </FooterColumn>
     </section>
-    <Trademark>© 2019 Sand Bar And Island Grill ™, Made by Unspecified</Trademark>
+    <Trademark>
+      © 2019 Sand Bar And Island Grill ™, Made by Unspecified
+    </Trademark>
   </footer>
 );
 
@@ -106,9 +110,7 @@ export default styled(Footer)`
 
     ${below.small`
       flex-direction: column;
-    `}
-
-    ${above.small`
+    `} ${above.small`
       flex-direction: row;
     `}
 

@@ -18,15 +18,15 @@ const baseTheme = {
 
     fonts: {
       light: '#777',
-      dark: '#393939'
+      dark: '#393939',
     },
 
     social: {
       twitter: '#fd7e14',
       facebook: '#fd7e14',
-      instagram: '#fd7e14'
-    }
-  }
+      instagram: '#fd7e14',
+    },
+  },
 };
 
 export default baseTheme;

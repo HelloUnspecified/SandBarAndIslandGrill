@@ -1,0 +1,28 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [],
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "env": {
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "rules": {
+    "prettier/prettier": ["error"],
+    "no-unused-vars": [
+      1,
+      { "argsIgnorePattern": "res|next|resolve|reject|^err" }
+    ],
+    "arrow-body-style": [2, "as-needed"]
+  }
+}

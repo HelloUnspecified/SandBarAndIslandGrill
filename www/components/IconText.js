@@ -7,12 +7,12 @@ const IconBlock = styled.div`
 `;
 
 const IconText = props => {
-  return(
+  return (
     <IconBlock>
       <Icon icon={props.icon} />
       {props.children}
     </IconBlock>
-  )
+  );
 };
 
 export default IconText;

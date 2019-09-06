@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import Icon from './Icon';
 
@@ -13,7 +14,7 @@ const SocialLinksContainer = styled.div`
 `;
 
 const SocialLinks = props => {
-  return(
+  return (
     <SocialLinksContainer>
       <a href="https://www.facebook.com/sandbarandislandgrill/">
         <Icon icon="facebook" />
@@ -28,8 +29,7 @@ const SocialLinks = props => {
         <Icon icon="yelp" />
       </a>
     </SocialLinksContainer>
-  )
-}
+  );
+};
 
-export default styled(SocialLinks)`
-`;
+export default styled(SocialLinks)``;

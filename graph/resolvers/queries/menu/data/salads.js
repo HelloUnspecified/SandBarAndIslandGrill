@@ -1,4 +1,4 @@
-module.exports =  [
+module.exports = [
   {
     id: '1234',
     imageUrl: '',
@@ -6,7 +6,7 @@ module.exports =  [
     name: 'Caesar, Our Version',
     description:
       'chopped salad topped with tomatoes, fresh grated asiago cheese, croutons & caesar dressing',
-    price: 8.95
+    price: 8.95,
   },
   {
     id: '1234',
@@ -15,7 +15,7 @@ module.exports =  [
     name: 'Sand Bar',
     description:
       'with ham, turkey, onion, cheddar & Swiss cheese, cucumbers, tomatoes & choice of dressing',
-    price: 11.95
+    price: 11.95,
   },
   {
     id: '1234',
@@ -24,7 +24,7 @@ module.exports =  [
     name: 'Bleu Cheese Chopped',
     description:
       'with crumbled bleu cheese, tomatoes, bacon & bleu cheese dressing',
-    price: 9.95
+    price: 9.95,
   },
   {
     id: '1234',
@@ -33,6 +33,6 @@ module.exports =  [
     name: 'Cobb Salad',
     description:
       'lettuce, tomato, bleu cheese crumbles, hard boiled egg, red onion, bacon and croutons with choice of dressing',
-    price: 11.95
-  }
+    price: 11.95,
+  },
 ];

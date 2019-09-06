@@ -14,5 +14,5 @@ module.exports = {
   wraps,
   drinks,
   kids,
-  salads
+  salads,
 };

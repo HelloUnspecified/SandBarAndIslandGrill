@@ -1,6 +1,8 @@
 {
   "editor.tabSize": 2,
-
+  "prettier.tabWidth": 2,
+  "eslint.autoFixOnSave": true,
+  "editor.formatOnSave": true,
   "workbench.colorCustomizations": {
     "titleBar.activeForeground": "#000",
     "titleBar.inactiveForeground": "#000000CC",
