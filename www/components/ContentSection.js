@@ -61,7 +61,6 @@ const Subtitle = styled.h3`
 `;
 
 const ContentSection = props => {
-  // console.log(props);
   return (
     <Container color={props.color}>
       <ContainerInner>

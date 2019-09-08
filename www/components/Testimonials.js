@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import ContentSection from './ContentSection';
+import Icon from './Icon';
 import { above, below } from '../utitlies/breakpoint.js';
 
 const REVIEWS = [
@@ -43,6 +44,28 @@ const RightQuotation = styled.img`
 
 const Review = styled.div`
   display: flex;
+
+  svg {
+    width: 10rem;
+    height: auto;
+    fill: ${({ theme }) => theme.colors.orange};
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.medium:hover {
+      cursor: auto;
+    }
+
+    path {
+      max-height: 8rem;
+    }
+  }
+`;
+
+const ReviewDetail = styled.div`
+  display: flex;
   flex-direction: column;
   text-align: center;
   position: relative;
@@ -64,31 +87,89 @@ const Source = styled.p`
   font-size: 1.3rem;
 `;
 
+const NavDots = styled.div`
+  text-align: center;
+  position: relative;
+  top: -3.5rem;
+`;
+
+const Dot = styled.span`
+  height: 1rem;
+  width: 1rem;
+  background-color: ${({ theme }) => theme.colors.medium};
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0.5rem;
+
+  &.orange {
+    background-color: ${({ theme }) => theme.colors.orange};
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
 const Highlight = styled.span`
   color: ${({ theme }) => theme.colors.orange};
   font-weight: 800;
 `;
 
 const Testimonials = ({ className }) => {
-  const review = REVIEWS[0];
+  const [reviewIndex, setReviewIndex] = useState(0);
+  const review = REVIEWS[reviewIndex];
 
   return (
-    <ContentSection
-      title="Customers and Friends"
-      subtitle="Testimonials"
-      color="light"
-    >
-      <Review>
-        <LeftQuotation src="../static/images/quotation-mark.png" />
-        <RightQuotation src="../static/images/quotation-mark.png" />
-        <Quote dangerouslySetInnerHTML={{ __html: review.quote }} />
-        <Name>{review.name}</Name>
-        <Source>
-          review from
-          <Highlight>{review.source}</Highlight>
-        </Source>
-      </Review>
-    </ContentSection>
+    <div className="testimonials">
+      <ContentSection title="Customers and Friends" subtitle="Testimonials">
+        <Review>
+          <Icon
+            icon="arrow"
+            className={`left ${reviewIndex === 0 ? 'medium' : ''}`}
+            onClick={
+              reviewIndex > 0
+                ? () => {
+                  setReviewIndex(reviewIndex - 1);
+                }
+                : false
+            }
+          />
+          <ReviewDetail>
+            <LeftQuotation src="../static/images/quotation-mark.png" />
+            <RightQuotation src="../static/images/quotation-mark.png" />
+            <Quote dangerouslySetInnerHTML={{ __html: review.quote }} />
+            <Name>{review.name}</Name>
+            <Source>
+              review from
+              <Highlight>{review.source}</Highlight>
+            </Source>
+          </ReviewDetail>
+          <Icon
+            icon="arrow"
+            className={`right ${
+              reviewIndex === REVIEWS.length - 1 ? 'medium' : ''
+              }`}
+            onClick={
+              reviewIndex < REVIEWS.length - 1
+                ? () => {
+                  setReviewIndex(reviewIndex + 1);
+                }
+                : false
+            }
+          />
+        </Review>
+      </ContentSection>
+      <NavDots>
+        {REVIEWS.map((item, index) => {
+          return (
+            <Dot
+              onClick={() => setReviewIndex(index)}
+              className={index === reviewIndex ? 'orange' : ''}
+            />
+          );
+        })}
+      </NavDots>
+    </div>
   );
 };
 

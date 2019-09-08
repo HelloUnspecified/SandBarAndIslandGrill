@@ -5,11 +5,33 @@ import svgs from '../utitlies/svgs.js';
 const Svg = styled.svg`
   width: auto;
   height: 100%;
+
+  &.down {
+    transform: rotate(90deg);
+  }
+
+  &.up {
+    transform: rotate(-90deg);
+  }
+
+  &.left {
+    transform: rotate(-180deg);
+  }
+
+  &.medium {
+    fill: ${({ theme }) => theme.colors.medium};
+  }
 `;
 
 const Icon = props => {
   return (
-    <Svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <Svg
+      role="img"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      className={props.className}
+      onClick={props.onClick}
+    >
       <title>{svgs[props.icon].title}</title>
       <path d={svgs[props.icon].path} />
     </Svg>
