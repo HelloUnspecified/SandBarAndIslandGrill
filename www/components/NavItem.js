@@ -5,7 +5,7 @@ import { above, below } from '../utitlies/breakpoint.js';
 
 const StyledLink = styled.a`
   text-transform: uppercase;
-  font-size: 11px;
+  font-size: 1.4rem;
   text-align: center;
   color: ${({ theme }) => theme.colors.light};
 

@@ -10,31 +10,34 @@ const ImageContainer = styled.div`
 const ImageColumn = styled.div`
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
+
+  &.large {
+    flex-grow: 2;
+  }
 `;
 
 const SquareImage = styled.img`
-  height: 240px;
-  max-width: 250px;
+  max-height: 28rem;
   object-fit: cover;
   padding: 0.6rem;
 `;
 
 const RectangleImage = styled.img`
-  height: 120px;
-  max-width: 250px;
+  max-height: 14rem;
   object-fit: cover;
   padding: 0.6rem;
 `;
 
 const Gallery = ({ className }) => {
   return (
-    <ContentSection title="Gallery">
+    <ContentSection title="Gallery" color="light">
       <ImageContainer>
         <ImageColumn>
           <RectangleImage src="/static/images/tacos-and-rings.jpg" />
           <RectangleImage src="/static/images/Gallery-Oysters2-1.jpg" />
         </ImageColumn>
-        <ImageColumn>
+        <ImageColumn className="large">
           <SquareImage src="/static/images/Gallery-Toast-Sandwich.jpg" />
         </ImageColumn>
         <ImageColumn>

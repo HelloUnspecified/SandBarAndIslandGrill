@@ -80,8 +80,6 @@ class Map extends Component {
         style={{
           height: '300px',
           width: '100%',
-          top: '10px',
-          position: 'relative',
         }}
       >
         <GoogleMapReact

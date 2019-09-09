@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ParallaxBanner } from 'react-scroll-parallax';
+import Icon from './Icon';
 import LinkButton from './LinkButton';
 import { below } from '../utitlies/breakpoint.js';
 
@@ -19,7 +20,7 @@ const HeroFooterContainer = styled.div`
   bottom: 10px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   color: ${({ theme }) => theme.colors.light};
 
   div {
@@ -66,6 +67,14 @@ const BannerHeader = styled.div`
     color: ${({ theme }) => theme.colors.light};
     padding-top: 5px;
   }
+
+  svg {
+    fill: ${({ theme }) => theme.colors.light};
+    width: 3rem;
+    margin: auto;
+    position: relative;
+    top: -3rem;
+  }
 `;
 
 const Hero = props => {
@@ -87,6 +96,7 @@ const Hero = props => {
         <h1>{props.heading}</h1>
         {props.subheading && <h2>{props.subheading}</h2>}
         <LinkButton href={props.href} label={props.label} />
+        <Icon icon="arrow" className="down" />
       </BannerHeader>
       <HeroFooterContainer>{props.children}</HeroFooterContainer>
     </HeroImage>
