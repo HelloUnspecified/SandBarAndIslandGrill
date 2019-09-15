@@ -7,11 +7,13 @@ const IconBlock = styled.div`
   justify-content: ${({ align }) => align || 'left'};
 `;
 
-const IconText = props => {
+const IconText = ({ align, icon, children, className }) => {
+  // console.log(props);
+
   return (
-    <IconBlock align={props.align}>
-      <Icon icon={props.icon} />
-      {props.children}
+    <IconBlock align={align} className={className}>
+      <Icon icon={icon} />
+      {children}
     </IconBlock>
   );
 };

@@ -5,6 +5,11 @@ import { above, below } from '../utitlies/breakpoint.js';
 
 const ImageContainer = styled.div`
   display: flex;
+
+  ${below.med`
+    flex-direction: column;
+    max-width: 30rem;
+  `};
 `;
 
 const ImageColumn = styled.div`
@@ -18,15 +23,22 @@ const ImageColumn = styled.div`
 `;
 
 const SquareImage = styled.img`
-  max-height: 28rem;
+  max-height: 14rem;
   object-fit: cover;
-  padding: 0.6rem;
+
+  ${above.med`
+    max-height: 28rem;
+    padding: 0.6rem;
+  `};
 `;
 
 const RectangleImage = styled.img`
   max-height: 14rem;
   object-fit: cover;
-  padding: 0.6rem;
+
+  ${above.med`
+    padding: 0.6rem;
+  `};
 `;
 
 const Gallery = ({ className }) => {

@@ -23,8 +23,17 @@ const HeroFooterContainer = styled.div`
   justify-content: center;
   color: ${({ theme }) => theme.colors.light};
 
+  ${below.med`
+    flex-direction: column;
+    margin-bottom: 2rem;
+  `};
+
   div {
     width: 50%;
+
+    ${below.med`
+      width: 100%;
+    `};
   }
 
   svg {
@@ -52,7 +61,7 @@ const BannerHeader = styled.div`
   flex-direction: column;
 
   ${below.med`
-    top: 10%;
+    top: ${({ fullHeight }) => (fullHeight ? '37%' : '9%')};
   `};
 
   h1 {

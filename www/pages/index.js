@@ -37,6 +37,10 @@ const ImageContainer = styled.div`
   margin-left: ${({ align }) => (align === 'left' ? 0 : '30px')};
   margin-right: ${({ align }) => (align === 'left' ? '30px' : 0)};
   position: relative;
+
+  ${below.med`
+    margin: 0;
+  `};
 `;
 
 const FeaturedImage = styled.img`
@@ -48,6 +52,10 @@ const FeaturedImage = styled.img`
   -webkit-box-shadow: 10px 10px 0px -2px ${({ theme }) => theme.colors.orange};
   -moz-box-shadow: 10px 10px 0px -2px ${({ theme }) => theme.colors.orange};
   box-shadow: 10px 10px 0px -2px ${({ theme }) => theme.colors.orange};
+
+  ${below.small`
+    max-width: 30rem;
+  `};
 `;
 
 const PhoneNumber = styled.div`
@@ -55,6 +63,32 @@ const PhoneNumber = styled.div`
 
   a {
     color: ${({ theme }) => theme.colors.light};
+    &:hover {
+      color: ${({ theme }) => theme.colors.orange};
+    }
+  }
+
+  order: 2;
+  ${below.med`
+    order: 1;
+  `};
+`;
+
+const StackedSocialLinks = styled(SocialLinks)`
+  order: 1;
+  ${below.med`
+    order: 2;
+    max-height: 3rem;
+  `};
+`;
+
+const StackedLocation = styled(IconText)`
+  order: 3;
+  a {
+    color: ${({ theme }) => theme.colors.light};
+    &:hover {
+      color: ${({ theme }) => theme.colors.orange};
+    }
   }
 `;
 
@@ -69,6 +103,7 @@ const ContentDetail = styled.div`
   ${below.med`
     text-align: center;
     flex-direction: column;
+    width: 100%;
   `};
 `;
 
@@ -77,38 +112,6 @@ const AccentImage = styled.img`
   left: -10rem;
   top: 18%;
 `;
-
-const IMAGES = [
-  {
-    src: 'https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_b.jpg',
-    thumbnail:
-      'https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_n.jpg',
-    thumbnailWidth: 320,
-    thumbnailHeight: 174,
-    isSelected: true,
-    caption: 'After Rain (Jeshu John - designerspics.com)',
-  },
-  {
-    src: 'https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg',
-    thumbnail:
-      'https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_n.jpg',
-    thumbnailWidth: 320,
-    thumbnailHeight: 212,
-    tags: [
-      { value: 'Ocean', title: 'Ocean' },
-      { value: 'People', title: 'People' },
-    ],
-    caption: 'Boats (Jeshu John - designerspics.com)',
-  },
-
-  {
-    src: 'https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg',
-    thumbnail:
-      'https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_n.jpg',
-    thumbnailWidth: 320,
-    thumbnailHeight: 212,
-  },
-];
 
 const home = props => (
   <ParallaxProvider>
@@ -120,13 +123,15 @@ const home = props => (
         href="/menu"
         label="Menu"
       >
-        <SocialLinks />
+        <StackedSocialLinks />
         <PhoneNumber>
           <a href="tel:1-262-877-9500">(262) 877-9500</a>
         </PhoneNumber>
-        <IconText icon="location" align="center">
-          <p>3101 E. Lakeshore Dr., Twin Lakes, WI 53181</p>
-        </IconText>
+        <StackedLocation icon="location" align="center">
+          <a href="https://goo.gl/maps/9fvZcNvVcsiJ82Hj6" target="_blank">
+            3101 E. Lakeshore Dr., Twin Lakes, WI 53181
+          </a>
+        </StackedLocation>
       </Hero>
 
       <ContentSection
@@ -156,11 +161,6 @@ const home = props => (
       <NewsletterSignup />
       <Testimonials />
       <Gallery />
-
-      {/* <FacebookProvider appId="249643311490">
-        <Page href="https://www.facebook.com/SandBarAndIslandGrill" tabs="timeline" />
-      </FacebookProvider> */}
-
       <Map />
     </>
   </ParallaxProvider>
