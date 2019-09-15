@@ -79,7 +79,7 @@ class Map extends Component {
       <div
         style={{
           height: '300px',
-          width: '100%',
+          width: '100vw',
         }}
       >
         <GoogleMapReact
