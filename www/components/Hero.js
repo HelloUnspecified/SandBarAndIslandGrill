@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ParallaxBanner } from 'react-scroll-parallax';
+import Icon from './Icon';
 import LinkButton from './LinkButton';
 import { below } from '../utitlies/breakpoint.js';
 
 const HeroImage = styled.div`
-  height: ${({ fullHeight }) => (fullHeight ? '100vh' : '60vh')};
+  height: ${({ fullHeight }) => (fullHeight ? '100vh' : '35vh')};
   max-width: 100%;
   background-position: center;
   background-size: cover;
@@ -19,7 +20,7 @@ const HeroFooterContainer = styled.div`
   bottom: 10px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   color: ${({ theme }) => theme.colors.light};
 
   div {
@@ -44,11 +45,15 @@ const HeroFooterContainer = styled.div`
 
 const BannerHeader = styled.div`
   position: absolute;
-  top: ${({ fullHeight }) => (fullHeight ? '35%' : '25%')};
+  top: ${({ fullHeight }) => (fullHeight ? '35%' : '12%')};
   text-align: center;
   width: 100%;
   display: flex;
   flex-direction: column;
+
+  ${below.med`
+    top: 10%;
+  `};
 
   h1 {
     font-size: 7rem;
@@ -57,6 +62,11 @@ const BannerHeader = styled.div`
     font-family: 'Great Vibes', cursive;
     font-weight: 500;
     color: ${({ theme }) => theme.colors.light};
+
+    ${below.med`
+      font-size: 5rem;
+      margin: 0 2rem;
+    `};
   }
   h2 {
     font-size: 2.5rem;
@@ -65,6 +75,14 @@ const BannerHeader = styled.div`
     line-height: 1.2;
     color: ${({ theme }) => theme.colors.light};
     padding-top: 5px;
+  }
+
+  svg {
+    fill: ${({ theme }) => theme.colors.light};
+    width: 3rem;
+    margin: auto;
+    position: relative;
+    top: -3rem;
   }
 `;
 
@@ -86,7 +104,8 @@ const Hero = props => {
       <BannerHeader fullHeight={props.fullHeight}>
         <h1>{props.heading}</h1>
         {props.subheading && <h2>{props.subheading}</h2>}
-        <LinkButton href={props.href} label={props.label} />
+        {props.href && <LinkButton href={props.href} label={props.label} />}
+        {props.fullHeight && <Icon icon="arrow" className="down" />}
       </BannerHeader>
       <HeroFooterContainer>{props.children}</HeroFooterContainer>
     </HeroImage>

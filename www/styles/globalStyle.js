@@ -28,6 +28,9 @@ const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
   }
+
+  ::-moz-selection { background: ${({ theme }) => theme.colors.primary}; }
+  ::selection { background: ${({ theme }) => theme.colors.primary}; }
 `;
 
 export default GlobalStyle;

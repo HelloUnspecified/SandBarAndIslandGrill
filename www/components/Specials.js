@@ -20,19 +20,30 @@ const SpecialItem = styled.div`
 const SpecialTitle = styled.p`
   text-transform: uppercase;
   font-weight: 800;
-  margin: 0;
-  line-height: 1;
+  margin: 0 0 0.2rem 0;
+  line-height: 1.7;
+  background-color: ${({ theme }) => theme.colors.light};
+  color: ${({ theme }) => theme.colors.orange};
 `;
 
 const SpecialSubtitle = styled.p`
   text-transform: uppercase;
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.8;
+  font-weight: 600;
 `;
 
 const SpecialDescription = styled.p`
-  line-height: 1.5;
+  line-height: 1.8;
   margin: 1rem 0 0 0;
+`;
+
+const HighlightImage = styled.img`
+  height: 20rem;
+  width: auto;
+  position: absolute;
+  right: -5rem;
+  top: 6rem;
 `;
 
 const Specials = ({ className }) => (
@@ -64,6 +75,8 @@ const Specials = ({ className }) => (
         Tacos? What will it be today?
       </SpecialDescription>
     </SpecialItem>
+
+    <HighlightImage src="../static/images/tiki-drink.png" />
   </ContentSection>
 );
 

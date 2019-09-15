@@ -14,19 +14,26 @@ const FOOTER_MODIFIERS = {
 
 const Heading = styled.h1`
   text-transform: uppercase;
-  font-size: 12px;
-  line-height: 18px;
+  font-size: 1.5rem;
+  line-height: 1.8;
   color: ${({ theme }) => theme.colors.orange};
 `;
 
 const Text = styled.p`
   margin: 0;
+  line-height: 1.5;
+
+  a {
+    color: ${({ theme }) => theme.colors.fonts.light};
+  }
 `;
 
 const Title = styled.p`
   margin: 0;
   font-weight: 800;
   text-transform: uppercase;
+  float: left;
+  padding-right: 1.2rem;
 `;
 
 const FooterColumn = styled.div`
@@ -35,12 +42,30 @@ const FooterColumn = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
 
   ${below.small`
     &:not(:first-child) {
       padding-top: 20px;
     }
   `};
+`;
+
+const FooterRow = styled.div`
+  padding-bottom: 1rem;
+`;
+
+const HoursRow = styled.div`
+  padding-bottom: 1rem;
+  line-height: 1;
+  display: flex;
+  width: 100%;
+  max-width: 20rem;
+  justify-content: space-between;
+`;
+
+const Hours = styled.p`
+  margin: 0;
 `;
 
 const Trademark = styled.p`
@@ -52,7 +77,7 @@ const Trademark = styled.p`
 const Footer = ({ className }) => (
   <footer className={className}>
     <section>
-      <FooterColumn>
+      {/* <FooterColumn>
         <Heading>About Us</Heading>
         <Text>
           The Sand Bar & Island Grill is a waterfront, "open-air" establishment
@@ -61,35 +86,68 @@ const Footer = ({ className }) => (
           resident who has spent a great deal of his time on Florida's Suncoast
           in the Tampa Bay/Clearwater area.
         </Text>
+      </FooterColumn> */}
+
+      <FooterColumn>
+        <Heading>Hours</Heading>
+        <HoursRow>
+          <Title>Monday</Title>
+          <Hours>11am - 9pm</Hours>
+        </HoursRow>
+        <HoursRow>
+          <Title>Tuesday</Title>
+          11am - 9pm
+        </HoursRow>
+        <HoursRow>
+          <Title>Wednesday</Title>
+          11am - 9pm
+        </HoursRow>
+        <HoursRow>
+          <Title>Thursday</Title>
+          11am - 9pm
+        </HoursRow>
+        <HoursRow>
+          <Title>Friday</Title>
+          11am - 9pm
+        </HoursRow>
+        <HoursRow>
+          <Title>Saturday</Title>
+          11am - 9pm
+        </HoursRow>
+        <HoursRow>
+          <Title>Sunday</Title>
+          11am - 9pm
+        </HoursRow>
       </FooterColumn>
 
       <FooterColumn>
         <Heading>Contact Us</Heading>
-        <IconText icon="location">
-          <Text>
-            3101 E. Lakeshore Dr.
-            <br />
-            Twin Lakes, WI 53181
-          </Text>
-        </IconText>
-        <IconText icon="phone">
-          <Text>(262) 877-9500</Text>
-        </IconText>
-        <IconText icon="email">
-          <Text>hello@sandbarandislandgrill.com</Text>
-        </IconText>
+        <FooterRow>
+          <IconText icon="location">
+            <Text>
+              3101 E. Lakeshore Dr.
+              <br />
+              Twin Lakes, WI 53181
+            </Text>
+          </IconText>
+        </FooterRow>
+        <FooterRow>
+          <IconText icon="phone">
+            <Text>
+              <a href="tel:1-262-877-9500">(262) 877-9500</a>
+            </Text>
+          </IconText>
+        </FooterRow>
+        <FooterRow>
+          <IconText icon="email">
+            <Text>
+              <a href="mailto:eat@sandbarandislandgrill.com">
+                eat@sandbarandislandgrill.com
+              </a>
+            </Text>
+          </IconText>
+        </FooterRow>
         <SocialLinks />
-      </FooterColumn>
-
-      <FooterColumn>
-        <Heading>Hours</Heading>
-        <Title>Monday</Title>
-        <Title>Tuesday</Title>
-        <Title>Wednesday</Title>
-        <Title>Thursday</Title>
-        <Title>Friday</Title>
-        <Title>Saturday</Title>
-        <Title>Sunday</Title>
       </FooterColumn>
     </section>
     <Trademark>
@@ -100,10 +158,12 @@ const Footer = ({ className }) => (
 
 // use that media query...
 export default styled(Footer)`
-  font-size: 13px;
+  font-size: 1.3rem;
+  position: relative;
+  top: -1rem;
 
   section {
-    margin: 20px;
+    margin: 2rem;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -115,7 +175,7 @@ export default styled(Footer)`
     `}
 
     svg {
-      height: 20px;
+      height: 2rem;
 
       padding-right: 1rem;
     }

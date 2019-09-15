@@ -4,11 +4,12 @@ import Icon from './Icon';
 const IconBlock = styled.div`
   display: flex;
   align-items: center;
+  justify-content: ${({ align }) => align || 'left'};
 `;
 
 const IconText = props => {
   return (
-    <IconBlock>
+    <IconBlock align={props.align}>
       <Icon icon={props.icon} />
       {props.children}
     </IconBlock>

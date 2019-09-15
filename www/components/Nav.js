@@ -8,8 +8,7 @@ const NavList = styled.div`
   display: flex;
   width: 100%;
   flex-wrap: no-wrap;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
 
   ${below.med`
     flex-direction: column
@@ -27,8 +26,8 @@ const NavList = styled.div`
 `;
 
 const NavListItem = styled.div`
-  flex-grow: 1;
-  text-align: center;
+  text-align: right;
+  padding-right: 2.5rem;
 `;
 
 const Nav = ({ className }) => {
@@ -36,38 +35,19 @@ const Nav = ({ className }) => {
 
   return (
     <nav className={className}>
-      <NavItem
-        title="home"
-        href="/"
-        image="/static/images/sand-bar-logo.png"
-        display="mobile"
-      />
+      <NavItem title="home" href="/" image="/static/images/sand-bar-logo.png" />
       <NavList menuOpen={menuOpen}>
         <NavListItem>
-          <NavItem title="about us" href="/about" />
+          <NavItem title="about" href="/about" />
         </NavListItem>
         <NavListItem>
           <NavItem title="menu" href="/menu" />
         </NavListItem>
         <NavListItem>
-          <NavItem title="reservation" href="/" />
-        </NavListItem>
-      </NavList>
-      <NavItem
-        title="home"
-        href="/"
-        image="/static/images/sand-bar-logo.png"
-        display="desktop"
-      />
-      <NavList menuOpen={menuOpen}>
-        <NavListItem>
-          <NavItem title="news & events" href="/contact" />
-        </NavListItem>
-        <NavListItem>
           <NavItem title="gallery" href="/gallery" />
         </NavListItem>
         <NavListItem>
-          <NavItem title="contact us" href="/contact" />
+          <NavItem title="contact" href="/contact" />
         </NavListItem>
       </NavList>
       <HamburgerNav
