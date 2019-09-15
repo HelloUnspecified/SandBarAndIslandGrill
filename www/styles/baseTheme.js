@@ -2,8 +2,8 @@ const baseTheme = {
   colors: {
     backgroundColor: '#ffffff',
 
-    primary: '#f5a637',
-    secondary: '#6c757d',
+    primary: '#fd7e14',
+    secondary: '#028472',
     success: '#28a745',
     info: '#17a2b8',
     warning: '#ffc107',
