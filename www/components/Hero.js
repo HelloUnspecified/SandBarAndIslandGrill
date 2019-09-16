@@ -11,6 +11,10 @@ const HeroImage = styled.div`
   background-position: center;
   background-size: cover;
   background-color: ${({ theme }) => theme.colors.black};
+
+  ${below.med`
+    height: ${({ fullHeight }) => (fullHeight ? 'calc(100vh - 7rem)' : '35vh')};
+  `};
 `;
 
 const HeroFooterContainer = styled.div`
@@ -25,7 +29,7 @@ const HeroFooterContainer = styled.div`
 
   ${below.med`
     flex-direction: column;
-    margin-bottom: 2rem;
+    margin-bottom: 9rem;
   `};
 
   div {
@@ -42,7 +46,7 @@ const HeroFooterContainer = styled.div`
     fill: ${({ theme }) => theme.colors.light};
 
     ${below.med`
-      height: 20px;
+      height: 2.2rem;
     `};
   }
 
@@ -91,7 +95,8 @@ const BannerHeader = styled.div`
     width: 3rem;
     margin: auto;
     position: relative;
-    top: -3rem;
+    top: 1rem;
+    height: auto;
   }
 `;
 
@@ -114,7 +119,9 @@ const Hero = props => {
         <h1>{props.heading}</h1>
         {props.subheading && <h2>{props.subheading}</h2>}
         {props.href && <LinkButton href={props.href} label={props.label} />}
-        {props.fullHeight && <Icon icon="arrow" className="down" />}
+        {props.fullHeight && (
+          <Icon icon="arrow" className="down" height="29" width="29" />
+        )}
       </BannerHeader>
       <HeroFooterContainer>{props.children}</HeroFooterContainer>
     </HeroImage>

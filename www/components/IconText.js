@@ -12,7 +12,7 @@ const IconText = ({ align, icon, children, className }) => {
 
   return (
     <IconBlock align={align} className={className}>
-      <Icon icon={icon} />
+      <Icon icon={icon} height="24" width="24" />
       {children}
     </IconBlock>
   );

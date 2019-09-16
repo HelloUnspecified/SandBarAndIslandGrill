@@ -71,6 +71,7 @@ const PhoneNumber = styled.div`
   order: 2;
   ${below.med`
     order: 1;
+    display: none;
   `};
 `;
 

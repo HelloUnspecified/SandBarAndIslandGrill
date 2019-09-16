@@ -61,6 +61,9 @@ export default styled(Header)`
 
     a {
       color: ${({ theme }) => theme.colors.dark};
+      svg {
+        fill: ${({ theme }) => theme.colors.dark};
+      }
 
       &:hover {
         color: ${({ theme }) => theme.colors.orange};
