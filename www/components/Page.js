@@ -34,6 +34,8 @@ export default props => {
     fetch,
   });
 
+  console.log('prop url', `${props.apiHost}graphql`);
+
   return (
     <ThemeProvider theme={baseTheme}>
       <>
