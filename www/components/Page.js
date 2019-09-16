@@ -1,13 +1,14 @@
-import React, { Component, Fragment } from 'react';
+import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from '@apollo/react-hooks';
 import GlobalStyle from '../styles/globalStyle';
 import baseTheme from '../styles/baseTheme';
 
 import Meta from './Meta';
 import Header from './Header';
 import Footer from './Footer';
-import withApollo from '../lib/withApollo';
 
 const StyledPage = styled.div`
   background: ${props => props.theme.colors.backgroundColor};
@@ -28,17 +29,21 @@ const InnerPage = styled.div`
 `;
 
 export default props => {
+  const client = new ApolloClient();
+
   return (
     <ThemeProvider theme={baseTheme}>
       <>
         <GlobalStyle />
         <StyledPage>
           <Meta />
-          <CorePage>
-            <Header />
-            <InnerPage>{props.children}</InnerPage>
-            <Footer modifiers="site" />
-          </CorePage>
+          <ApolloProvider client={client}>
+            <CorePage>
+              <Header />
+              <InnerPage>{props.children}</InnerPage>
+              <Footer modifiers="site" />
+            </CorePage>
+          </ApolloProvider>
         </StyledPage>
       </>
     </ThemeProvider>
