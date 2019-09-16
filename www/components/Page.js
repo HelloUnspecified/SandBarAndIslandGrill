@@ -30,6 +30,7 @@ const InnerPage = styled.div`
 
 export default props => {
   const client = new ApolloClient({
+    uri: `${props.apiHost}graphql`,
     fetch,
   });
 

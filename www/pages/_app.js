@@ -3,6 +3,19 @@ import App from 'next/app';
 
 import Page from '../components/Page';
 
+function apiUrl(path, { req }) {
+  if (req && typeof window === 'undefined') {
+    // this is running server-side, so we need an absolute URL
+    const { host } = req.headers;
+    if (host && host.startsWith('localhost')) {
+      return `http://localhost:3000${path}`;
+    }
+    return `https://${host}${path}`;
+  }
+  // this is running client-side, so a relative path is fine
+  return path;
+}
+
 export default class MyApp extends App {
   static async getInitialProps({ Component, router, ctx }) {
     let pageProps = {};
@@ -11,6 +24,7 @@ export default class MyApp extends App {
       pageProps = await Component.getInitialProps(ctx);
     }
 
+    pageProps.apiHost = apiUrl('/', ctx);
     return { pageProps };
   }
 
@@ -18,7 +32,7 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props;
 
     return (
-      <Page>
+      <Page apiHost={pageProps.apiHost}>
         <Component {...pageProps} />
       </Page>
     );
