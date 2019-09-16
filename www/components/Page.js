@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-
+import fetch from 'isomorphic-unfetch';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
 import GlobalStyle from '../styles/globalStyle';
@@ -29,7 +29,9 @@ const InnerPage = styled.div`
 `;
 
 export default props => {
-  const client = new ApolloClient();
+  const client = new ApolloClient({
+    fetch,
+  });
 
   return (
     <ThemeProvider theme={baseTheme}>
