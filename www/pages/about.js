@@ -13,6 +13,10 @@ const InfoBlock = styled.div`
 
 const Description = styled.p`
   margin: 0;
+
+  li {
+    text-align: left;
+  }
 `;
 
 const about = props => (
@@ -20,8 +24,9 @@ const about = props => (
     <>
       <Hero
         imagePath="/static/images/home-entrance.jpg"
-        heading="Sandbar and Island Grill"
-        subheading="Our Story"
+        heading="Sand Bar and Island Grill"
+        href="tel:1-262-877-9500"
+        label="Call for Reservations"
       />
 
       <ContentSection

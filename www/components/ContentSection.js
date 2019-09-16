@@ -6,6 +6,8 @@ const Container = styled.div`
   background-color: ${props =>
     props.color ? props.theme.colors[props.color] : props.theme.colors.white};
   position: relative;
+  display: block;
+  overflow: hidden;
 `;
 
 const DetailContainer = styled.div`
@@ -28,6 +30,10 @@ const DetailContainer = styled.div`
 const ContainerInner = styled.div`
   margin: auto;
   max-width: 90rem;
+
+  ${below.xsmall`
+    max-width: 30rem;
+  `}
 `;
 
 const Title = styled.h2`
@@ -47,6 +53,10 @@ const Title = styled.h2`
   .highlight {
     color: ${({ theme }) => theme.colors.orange};
   }
+
+  ${below.med`
+    margin-bottom: 1rem;
+  `};
 `;
 
 const Subtitle = styled.h3`

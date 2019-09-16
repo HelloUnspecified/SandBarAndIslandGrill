@@ -129,8 +129,8 @@ const Testimonials = ({ className }) => {
             onClick={
               reviewIndex > 0
                 ? () => {
-                  setReviewIndex(reviewIndex - 1);
-                }
+                    setReviewIndex(reviewIndex - 1);
+                  }
                 : false
             }
           />
@@ -148,12 +148,12 @@ const Testimonials = ({ className }) => {
             icon="arrow"
             className={`right ${
               reviewIndex === REVIEWS.length - 1 ? 'medium' : ''
-              }`}
+            }`}
             onClick={
               reviewIndex < REVIEWS.length - 1
                 ? () => {
-                  setReviewIndex(reviewIndex + 1);
-                }
+                    setReviewIndex(reviewIndex + 1);
+                  }
                 : false
             }
           />
