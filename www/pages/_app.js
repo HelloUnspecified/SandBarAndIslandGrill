@@ -24,7 +24,10 @@ export default class MyApp extends App {
       pageProps = await Component.getInitialProps(ctx);
     }
 
-    pageProps.apiHost = apiUrl('/', ctx);
+    const apiHost = apiUrl('/', ctx);
+    console.log('apiHost', apiHost);
+
+    pageProps.apiHost = apiHost;
     return { pageProps };
   }
 
