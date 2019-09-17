@@ -15,8 +15,12 @@ function apiUrl(path, { req }) {
     if (host && host.startsWith('localhost')) {
       return `http://localhost:3000${path}`;
     }
-    return `https://${host}${path}`;
+    const nonDevPath = `https://${host}${path}`;
+    console.log('nonDevPath', nonDevPath);
+    return nonDevPath;
   }
+
+  console.log('running client side');
   // this is running client-side, so a relative path is fine
   return path;
 }
@@ -67,9 +71,6 @@ export default (
       link: new HttpLink({
         uri: 'http://localhost:3000/graphql', // Server URL (must be absolute)
         fetch,
-        opts: {
-          credentials: 'same-origin', // Additional fetch() options like `credentials` or `headers`
-        },
       }),
     },
   } = {},
@@ -106,13 +107,12 @@ export default (
       WithApollo.getInitialProps = async ctx => {
         const { AppTree } = ctx;
 
-        apolloConfig = {
+        console.log('recreating apollo client');
+
+        const newApolloConfig = {
           link: new HttpLink({
             uri: `${apiUrl('/', ctx)}graphql`, // Server URL (must be absolute)
             fetch,
-            opts: {
-              credentials: 'same-origin', // Additional fetch() options like `credentials` or `headers`
-            },
           }),
         };
 
@@ -122,7 +122,7 @@ export default (
         }
 
         // Run all GraphQL queries in the component tree and extract the resulting data
-        const apolloClient = initApolloClient(apolloConfig, null);
+        const apolloClient = initApolloClient(newApolloConfig, null);
 
         try {
           // Run all GraphQL queries
