@@ -1,8 +1,5 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import fetch from 'isomorphic-unfetch';
-import ApolloClient from 'apollo-boost';
-import { ApolloProvider } from '@apollo/react-hooks';
 import GlobalStyle from '../styles/globalStyle';
 import baseTheme from '../styles/baseTheme';
 
@@ -29,26 +26,17 @@ const InnerPage = styled.div`
 `;
 
 export default props => {
-  const client = new ApolloClient({
-    uri: `${props.apiHost}graphql`,
-    fetch,
-  });
-
-  console.log('prop url', `${props.apiHost}graphql`);
-
   return (
     <ThemeProvider theme={baseTheme}>
       <>
         <GlobalStyle />
         <StyledPage>
           <Meta />
-          <ApolloProvider client={client}>
-            <CorePage>
-              <Header />
-              <InnerPage>{props.children}</InnerPage>
-              <Footer modifiers="site" />
-            </CorePage>
-          </ApolloProvider>
+          <CorePage>
+            <Header />
+            <InnerPage>{props.children}</InnerPage>
+            <Footer modifiers="site" />
+          </CorePage>
         </StyledPage>
       </>
     </ThemeProvider>

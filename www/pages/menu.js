@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ParallaxProvider } from 'react-scroll-parallax';
-
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
+
 import ContentSection from '../components/ContentSection';
 import Hero from '../components/Hero';
 import MenuGroup from '../components/MenuGroup';
-
 import { below } from '../utitlies/breakpoint.js';
 
 const GET_MENU = gql`
