@@ -13,7 +13,8 @@
   "dependencies": {
     "apollo-server-micro": "^2.9.3",
     "graphql": "^14.5.4",
-    "graphql-import": "^0.7.1"
+    "graphql-import": "^0.7.1",
+    "micro-cors": "^0.1.1"
   },
   "devDependencies": {
     "eslint": "^6.1.0",
