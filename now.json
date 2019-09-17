@@ -6,7 +6,7 @@
   },
   "builds": [
     {
-      "src": "graph/index.js",
+      "src": "graph/package.json",
       "use": "@now/node",
       "config": {
         "includeFiles": ["**/*.graphql"]
