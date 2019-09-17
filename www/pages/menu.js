@@ -36,6 +36,8 @@ const Menu = styled.div`
 export default withApollo(props => {
   const { loading, error, data } = useQuery(GET_MENU);
 
+  console.error('errror', error);
+
   const groupedDinners = () => {
     return data.menu.reduce((r, a) => {
       r[a.category] = [...(r[a.category] || []), a];
@@ -44,6 +46,7 @@ export default withApollo(props => {
   };
 
   if (data) {
+    console.log('data returned', data);
     return (
       <ParallaxProvider>
         <>
