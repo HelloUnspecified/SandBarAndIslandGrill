@@ -8,6 +8,7 @@ import ContentSection from '../components/ContentSection';
 import Hero from '../components/Hero';
 import MenuGroup from '../components/MenuGroup';
 import { below } from '../utitlies/breakpoint.js';
+import withApollo from '../lib/withApollo';
 
 const GET_MENU = gql`
   query getMenu {
@@ -32,7 +33,7 @@ const Menu = styled.div`
   `};
 `;
 
-export default props => {
+export default withApollo(props => {
   const { loading, error, data } = useQuery(GET_MENU);
 
   const groupedDinners = () => {
@@ -86,4 +87,4 @@ export default props => {
     );
   }
   return <p>Loading...</p>;
-};
+});

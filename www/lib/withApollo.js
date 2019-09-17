@@ -1,62 +1,160 @@
-// import React from 'react';
-// import { withData } from 'next-apollo';
-// import { HttpLink } from 'apollo-boost';
-// import fetch from 'isomorphic-unfetch';
-
-// const config = host => ({
-//   link: new HttpLink({
-//     uri: `${host}/graphql`,
-//     fetch,
-//   }),
-// });
-
-// export default Page => {
-//   return class extends React.Component {
-//     static getInitialProps(ctx) {
-//       if (Page.getInitialProps) return Page.getInitialProps(ctx);
-//     }
-
-//     render() {
-//       const { apiHost } = this.props;
-//       console.log('page', Page);
-//       const x = withData(config(apiHost))(Page);
-//       console.log(x);
-//       return x;
-//     }
-//   };
-// };
-
-import { createHttpLink } from 'apollo-link-http';
-import ApolloClient from 'apollo-client';
-
-import withApollo from 'next-apollo-hook';
-// import ApolloClient, { InMemoryCache } from 'apollo-boost';
-import { InMemoryCache } from 'apollo-cache-inmemory';
+import React, { useMemo } from 'react';
+import Head from 'next/head';
+import { ApolloProvider } from '@apollo/react-hooks';
+import { ApolloClient, InMemoryCache, HttpLink } from 'apollo-boost';
 import fetch from 'isomorphic-unfetch';
 
-const getApiUrl = (path, headers) => {
-  console.log('headers in func', headers.host);
-  // const { host } = headers;
-  // if (host && host.startsWith('localhost')) {
-  //   // return `http://${host}${path}`;
-  //   return `http://localhost:3000${path}`;
-  // }
-  // return `https://${host}${path}`;
-};
+let apolloClient = null;
 
-export default withApollo(({ ctx, headers, initialState }) => {
-  if (headers) console.log('no Headers', headers.host);
+const createDefaultCache = () => new InMemoryCache();
 
-  const { host } = headers;
-  let uriHost = `https://${host}`;
+function apiUrl(path, { req }) {
+  if (req && typeof window === 'undefined') {
+    // this is running server-side, so we need an absolute URL
+    const { host } = req.headers;
+    if (host && host.startsWith('localhost')) {
+      return `http://localhost:3000${path}`;
+    }
+    return `https://${host}${path}`;
+  }
+  // this is running client-side, so a relative path is fine
+  return path;
+}
 
-  if (host && host.startsWith('localhost')) {
-    uriHost = `http://localhost:3000`;
+/**
+ * Always creates a new apollo client on the server
+ * Creates or reuses apollo client in the browser.
+ * @param  {Object} initialState
+ */
+function initApolloClient(apolloConfig, initialState = {}) {
+  // Make sure to create a new client for every server-side request so that data
+  // isn't shared between connections (which would be bad)
+  if (typeof window === 'undefined') {
+    return createApolloClient(apolloConfig, initialState);
   }
 
-  return new ApolloClient({
-    // uri: `${uriBase}graphql`,
-    link: createHttpLink({ uri: `${uriHost}/graphql`, fetch }),
-    cache: new InMemoryCache().restore(initialState || {}),
-  });
-});
+  // Reuse client on the client-side
+  if (!apolloClient) {
+    apolloClient = createApolloClient(apolloConfig, initialState);
+  }
+
+  return apolloClient;
+}
+
+/**
+ * Creates and configures the ApolloClient
+ * @param  {Object} [initialState={}]
+ */
+function createApolloClient(apolloConfig, initialState = {}) {
+  const createCache = apolloConfig.createCache || createDefaultCache;
+
+  const config = {
+    connectToDevTools: process.browser,
+    ssrMode: !process.browser, // Disables forceFetch on the server (so queries are only run once)
+    cache: createCache().restore(initialState || {}),
+    ...apolloConfig,
+  };
+
+  delete config.createCache;
+
+  return new ApolloClient(config);
+}
+
+export default (
+  PageComponent,
+  {
+    apolloConfig = {
+      link: new HttpLink({
+        uri: 'http://localhost:3000/graphql', // Server URL (must be absolute)
+        fetch,
+        opts: {
+          credentials: 'same-origin', // Additional fetch() options like `credentials` or `headers`
+        },
+      }),
+    },
+  } = {},
+  { ssr = true } = {},
+) => {
+  const WithApollo = ({ apolloClient, apolloState, ...pageProps }) => {
+    const client = useMemo(
+      () => apolloClient || initApolloClient(apolloConfig, apolloState),
+      [],
+    );
+
+    return (
+      <ApolloProvider client={client}>
+        <PageComponent {...pageProps} />
+      </ApolloProvider>
+    );
+  };
+
+  // Set the correct displayName in development
+  if (process.env.NODE_ENV !== 'production') {
+    const displayName =
+      PageComponent.displayName || PageComponent.name || 'Component';
+
+    if (displayName === 'App') {
+      console.warn('This withApollo HOC only works with PageComponents.');
+    }
+
+    WithApollo.displayName = `withApollo(${displayName})`;
+  }
+
+  // Allow Next.js to remove getInitialProps from the browser build
+  if (typeof window === 'undefined') {
+    if (ssr) {
+      WithApollo.getInitialProps = async ctx => {
+        const { AppTree } = ctx;
+
+        apolloConfig = {
+          link: new HttpLink({
+            uri: `${apiUrl('/', ctx)}graphql`, // Server URL (must be absolute)
+            fetch,
+            opts: {
+              credentials: 'same-origin', // Additional fetch() options like `credentials` or `headers`
+            },
+          }),
+        };
+
+        let pageProps = {};
+        if (PageComponent.getInitialProps) {
+          pageProps = await PageComponent.getInitialProps(ctx);
+        }
+
+        // Run all GraphQL queries in the component tree and extract the resulting data
+        const apolloClient = initApolloClient(apolloConfig, null);
+
+        try {
+          // Run all GraphQL queries
+          await require('@apollo/react-ssr').getDataFromTree(
+            <AppTree
+              pageProps={{
+                ...pageProps,
+                apolloClient,
+              }}
+            />,
+          );
+        } catch (error) {
+          // Prevent Apollo Client GraphQL errors from crashing SSR.
+          // Handle them in components via the data.error prop:
+          // https://www.apollographql.com/docs/react/api/react-apollo.html#graphql-query-data-error
+          console.error('Error while running `getDataFromTree`', error);
+        }
+
+        // getDataFromTree does not call componentWillUnmount
+        // head side effect therefore need to be cleared manually
+        Head.rewind();
+
+        // Extract query data from the Apollo store
+        const apolloState = apolloClient.cache.extract();
+
+        return {
+          ...pageProps,
+          apolloState,
+        };
+      };
+    }
+  }
+
+  return WithApollo;
+};
