@@ -7,6 +7,7 @@ const resolvers = require('./resolvers');
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  playground: true,
 });
 
 // const cors = microCors({ allowMethods: ['GET', 'POST'] });
