@@ -7,6 +7,7 @@ module.exports = {
       .map(m => menu[m])
       .reduce((acc, cur) => acc.concat(cur), []);
 
+    console.log('resolver results...', result);
     return result;
   },
   drinks: (parent, args, { dataSources }) => menu.drinks,
