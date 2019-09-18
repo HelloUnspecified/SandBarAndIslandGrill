@@ -69,7 +69,7 @@ export default (
   {
     apolloConfig = {
       link: new HttpLink({
-        uri: 'http://localhost:3000/graphql', // Server URL (must be absolute)
+        uri: 'http://localhost:3000/api', // Server URL (must be absolute)
         fetch,
       }),
     },
@@ -111,10 +111,12 @@ export default (
 
         const newApolloConfig = {
           link: new HttpLink({
-            uri: `${apiUrl('/', ctx)}graphql`, // Server URL (must be absolute)
+            uri: `${apiUrl('/', ctx)}api`, // Server URL (must be absolute)
             fetch,
           }),
         };
+
+        console.log({ newApolloConfig });
 
         let pageProps = {};
         if (PageComponent.getInitialProps) {
