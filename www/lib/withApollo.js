@@ -66,6 +66,7 @@ function createApolloClient(apolloConfig, initialState = {}) {
 
 export default (
   PageComponent,
+  { ssr = true } = {},
   {
     apolloConfig = {
       link: new HttpLink({
@@ -74,7 +75,6 @@ export default (
       }),
     },
   } = {},
-  { ssr = true } = {},
 ) => {
   const WithApollo = ({ apolloClient, apolloState, ...pageProps }) => {
     const client = useMemo(
