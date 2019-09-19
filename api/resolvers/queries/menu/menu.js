@@ -1,15 +1,10 @@
 const menu = require('./menu_items');
 
 module.exports = {
-  menu: (parent, args, { dataSources }) => {
-    console.log('in resolver...');
-    const result = Object.keys(menu)
+  menu: (parent, args, { dataSources }) =>
+    Object.keys(menu)
       .map(m => menu[m])
-      .reduce((acc, cur) => acc.concat(cur), []);
-
-    console.log('resolver results...', result);
-    return result;
-  },
+      .reduce((acc, cur) => acc.concat(cur), []),
   drinks: (parent, args, { dataSources }) => menu.drinks,
   appetizers: (parent, args, { dataSources }) => menu.appetizers,
   dinners: (parent, args, { dataSources }) => menu.dinners,

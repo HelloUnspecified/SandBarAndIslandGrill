@@ -13,4 +13,4 @@ const server = new ApolloServer({
 // const cors = microCors({ allowMethods: ['GET', 'POST'] });
 // module.exports = cors(server.createHandler());
 
-module.exports = server.createHandler({ path: '/api' });
+module.exports = server.createHandler();

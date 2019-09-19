@@ -8,7 +8,6 @@ export default App => {
     static displayName = 'withApollo(App)';
 
     static async getInitialProps(ctx) {
-      console.log('context request headers', ctx);
       const { AppTree } = ctx;
 
       let appProps = {};
