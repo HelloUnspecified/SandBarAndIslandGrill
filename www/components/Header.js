@@ -53,12 +53,23 @@ export default styled(Header)`
   background-color: transparent;
   z-index: 1;
   position: fixed;
-  width: 100%;
-  transition: background-color 0.5s ease;
+  width: 100vw;
+
+  &::before {
+    content: '';
+    background-color: white;
+    transition: all 0.3s;
+    transform: translateY(-100%);
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    position: absolute;
+  }
 
   &.scrolled {
-    background-color: ${({ theme }) => theme.colors.light};
-
     a {
       color: ${({ theme }) => theme.colors.dark};
       svg {
@@ -68,6 +79,10 @@ export default styled(Header)`
       &:hover {
         color: ${({ theme }) => theme.colors.orange};
       }
+    }
+
+    &::before {
+      transform: translateY(0) !important;
     }
   }
 `;
