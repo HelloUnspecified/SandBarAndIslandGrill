@@ -3,6 +3,23 @@ import Head from 'next/head';
 import { getDataFromTree } from '@apollo/react-ssr';
 import initApollo from './initApollo';
 
+// function apiUrl(path, { req }) {
+//   if (req && typeof window === 'undefined') {
+//     // this is running server-side, so we need an absolute URL
+//     const { host } = req.headers;
+//     if (host && host.startsWith('localhost')) {
+//       return `http://localhost:3000${path}`;
+//     }
+//     const nonDevPath = `https://${host}${path}`;
+//     console.log('nonDevPath', nonDevPath);
+//     return nonDevPath;
+//   }
+
+//   console.log('running client side');
+//   // this is running client-side, so a relative path is fine
+//   return path;
+// }
+
 export default App => {
   return class Apollo extends React.Component {
     static displayName = 'withApollo(App)';

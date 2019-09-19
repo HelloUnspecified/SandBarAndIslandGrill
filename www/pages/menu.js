@@ -33,9 +33,12 @@ const Menu = styled.div`
 `;
 
 export default props => {
-  const { loading, error, data } = useQuery(GET_MENU);
+  const context =
+    process.env.NODE_ENV === 'development'
+      ? { context: { uri: 'http://localhost:3000/api' } }
+      : {};
 
-  console.error('errror', error);
+  const { loading, error, data } = useQuery(GET_MENU, context);
 
   const groupedDinners = () => {
     return data.menu.reduce((r, a) => {
@@ -45,7 +48,6 @@ export default props => {
   };
 
   if (data) {
-    console.log('data returned', data);
     return (
       <ParallaxProvider>
         <>

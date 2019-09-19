@@ -11,7 +11,7 @@ function create(initialState) {
     ssrMode: !isBrowser, // Disables forceFetch on the server (so queries are only run once)
     link: new HttpLink({
       uri: 'https://sandbarandislandgrill.unspecified.now.sh/api', // Server URL (must be absolute)
-      credentials: 'same-origin', // Additional fetch() options like `credentials` or `headers`
+      //credentials: 'same-origin', // Additional fetch() options like `credentials` or `headers`
       // Use fetch() polyfill on the server
       fetch: !isBrowser && fetch,
     }),
