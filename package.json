@@ -5,7 +5,7 @@
     "node": "^10"
   },
   "dependencies": {
-    "sandbargraph": "file:graph",
+    "sandbargraph": "file:api",
     "sandbarwebsite": "file:www"
   },
   "devDependencies": {

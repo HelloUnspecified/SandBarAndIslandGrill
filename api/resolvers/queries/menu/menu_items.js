@@ -1,5 +1,3 @@
-const appertizers = require('./data/appetizers');
-
 const appetizers = require('./data/appetizers');
 const dinnersSeafood = require('./data/dinnersSeafood');
 const dinnersLandfood = require('./data/dinnersLandfood');

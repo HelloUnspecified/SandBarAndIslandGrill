@@ -16,7 +16,7 @@ const OutlineLink = styled.a`
 
 const LinkButton = props => {
   return (
-    <OutlineLink href={props.href} target="_blank">
+    <OutlineLink href={props.href}>
       <p>{props.label}</p>
     </OutlineLink>
   );

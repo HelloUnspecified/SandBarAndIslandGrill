@@ -1,14 +1,12 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { ParallaxProvider } from 'react-scroll-parallax';
-
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 
 import ContentSection from '../components/ContentSection';
 import Hero from '../components/Hero';
 import MenuGroup from '../components/MenuGroup';
-import withApollo from '../lib/withApollo';
 import { below } from '../utitlies/breakpoint.js';
 
 const GET_MENU = gql`
@@ -34,8 +32,13 @@ const Menu = styled.div`
   `};
 `;
 
-export default withApollo(props => {
-  const { loading, error, data } = useQuery(GET_MENU);
+export default props => {
+  const context =
+    process.env.NODE_ENV === 'development'
+      ? { context: { uri: 'http://localhost:3000/api' } }
+      : {};
+
+  const { loading, error, data } = useQuery(GET_MENU, context);
 
   const groupedDinners = () => {
     return data.menu.reduce((r, a) => {
@@ -88,4 +91,4 @@ export default withApollo(props => {
     );
   }
   return <p>Loading...</p>;
-});
+};

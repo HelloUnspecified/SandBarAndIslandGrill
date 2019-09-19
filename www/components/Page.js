@@ -1,13 +1,11 @@
-import React, { Component, Fragment } from 'react';
+import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-
 import GlobalStyle from '../styles/globalStyle';
 import baseTheme from '../styles/baseTheme';
 
 import Meta from './Meta';
 import Header from './Header';
 import Footer from './Footer';
-import withApollo from '../lib/withApollo';
 
 const StyledPage = styled.div`
   background: ${props => props.theme.colors.backgroundColor};
