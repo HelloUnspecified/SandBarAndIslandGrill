@@ -42,6 +42,7 @@ const StyledLink = styled.a`
 
 const NavImage = styled.img`
   width: 70px;
+  margin: 1rem;
 `;
 
 const NavItem = props => {

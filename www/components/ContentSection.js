@@ -8,6 +8,7 @@ const Container = styled.div`
   position: relative;
   display: block;
   overflow: hidden;
+  width: 100vw;
 `;
 
 const DetailContainer = styled.div`

@@ -27,13 +27,15 @@ const Icon = props => {
   return (
     <Svg
       role="img"
-      viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
       className={props.className}
       onClick={props.onClick}
+      viewBox={`0 0 ${props.height} ${props.width}`}
     >
       <title>{svgs[props.icon].title}</title>
-      <path d={svgs[props.icon].path} />
+      {svgs[props.icon].path.map(item => {
+        return <path d={item} />;
+      })}
     </Svg>
   );
 };

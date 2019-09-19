@@ -4,6 +4,9 @@ const baseTheme = {
 
     primary: '#fd7e14',
     secondary: '#028472',
+    tertiary: '#FE5F55',
+    highlight: '#F4F7BE',
+
     success: '#28a745',
     info: '#17a2b8',
     warning: '#ffc107',
@@ -15,6 +18,7 @@ const baseTheme = {
     orange: '#fd7e14',
     white: '#fff',
     black: '#393939',
+
 
     fonts: {
       light: '#777',
