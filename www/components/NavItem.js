@@ -7,7 +7,8 @@ const StyledLink = styled.a`
   text-transform: uppercase;
   font-size: 1.4rem;
   text-align: center;
-  color: ${({ theme }) => theme.colors.light};
+  color: ${props =>
+    props.color ? props.theme.colors[props.color] : props.theme.colors.light};
 
   &:hover {
     color: ${({ theme }) => theme.colors.orange};
@@ -41,14 +42,15 @@ const StyledLink = styled.a`
 `;
 
 const NavImage = styled.img`
-  width: 70px;
-  margin: 1rem;
+  width: ${props => (props.imageWidth ? props.imageWidth : '7rem')};
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
 `;
 
 const NavItem = props => {
   const displayedLink = () => {
     if (props.image) {
-      return <NavImage src={props.image} />;
+      return <NavImage src={props.image} imageWidth={props.imageWidth} />;
     }
 
     return props.title;
@@ -56,7 +58,13 @@ const NavItem = props => {
 
   return (
     <Link href={props.href} passHref>
-      <StyledLink display={props.display}>{displayedLink()}</StyledLink>
+      <StyledLink
+        display={props.display}
+        onClick={props.onClick}
+        color={props.color}
+      >
+        {displayedLink()}
+      </StyledLink>
     </Link>
   );
 };

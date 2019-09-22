@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
-import HamburgerNav from './HamburgerNav';
-import Icon from './Icon';
-import IconText from './IconText';
+import MobileFooter from './MobileFooter';
 import SocialLinks from './SocialLinks';
 import { above, below } from '../utitlies/breakpoint.js';
 
@@ -18,8 +16,11 @@ const SandBarLogo = styled.img`
   display: block;
   width: 40%;
   height: auto;
-  margin: auto;
   max-width: 18rem;
+
+  ${above.med`
+    margin-right: 2rem;
+  `};
 `;
 
 const Heading = styled.h3`
@@ -52,10 +53,9 @@ const FooterColumn = styled.div`
   padding: 0 2rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  max-width: 35rem;
   align-items: center;
+  width: 100%;
+  max-width: 27rem;
 
   ${below.med`
     :not(:first-child) {
@@ -97,58 +97,7 @@ const Trademark = styled.p`
   `};
 `;
 
-const MobileFooter = styled.div`
-  display: none;
-  position: fixed;
-  bottom: 0;
-  background-color: ${({ theme }) => theme.colors.secondary};
-  width: 100vw;
-  height: 7rem;
-
-  a {
-    color: ${({ theme }) => theme.colors.highlight};
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    &:hover {
-      color: ${({ theme }) => theme.colors.tertiary};
-      cursor: pointer;
-    }
-
-    svg:hover {
-      fill: ${({ theme }) => theme.colors.tertiary};
-    }
-  }
-
-  svg {
-    fill: ${({ theme }) => theme.colors.highlight};
-    height: 3.3rem;
-    width: 3.3rem;
-
-    &.lower-little {
-      position: relative;
-      top: 0.7rem;
-    }
-
-    &.lower {
-      position: relative;
-      top: 1rem;
-    }
-  }
-
-  ${below.med`
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-  `};
-`;
-
 const Footer = ({ className }) => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <footer className={className}>
       <section>
@@ -182,25 +131,8 @@ const Footer = ({ className }) => {
       <Trademark>
         © 2019 Sand Bar And Island Grill ™, Made by Unspecified
       </Trademark>
-      <MobileFooter>
-        <a href="/menu">
-          <Icon icon="foodDrink" height="80" width="80" />
-          Menu
-        </a>
-        <a href="/contact">
-          <Icon icon="quote" height="70" width="70" className="lower-little" />
-          Contact Us
-        </a>
-        <a href="/menu">
-          <Icon icon="hamburgerMenu" height="12" width="12" className="lower" />
-          More
-        </a>
-        {/* <HamburgerNav
-          onClick={() => setMenuOpen(!menuOpen)}
-          menuOpen={menuOpen}
-        /> */}
-      </MobileFooter>
-    </footer >
+      <MobileFooter />
+    </footer>
   );
 };
 
@@ -217,6 +149,7 @@ export default styled(Footer)`
 
     ${below.small`
       flex-direction: column;
+      align-items: center;
     `} ${above.small`
       flex-direction: row;
     `}

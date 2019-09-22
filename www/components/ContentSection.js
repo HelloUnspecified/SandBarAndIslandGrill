@@ -9,6 +9,10 @@ const Container = styled.div`
   display: block;
   overflow: hidden;
   width: 100vw;
+
+  ${below.xsmall`
+    padding: 5rem 1rem;
+  `}
 `;
 
 const DetailContainer = styled.div`

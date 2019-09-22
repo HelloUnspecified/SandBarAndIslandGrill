@@ -60,6 +60,7 @@ const FeaturedImage = styled.img`
 
 const PhoneNumber = styled.div`
   text-align: center;
+  order: 2;
 
   a {
     color: ${({ theme }) => theme.colors.light};
@@ -68,18 +69,26 @@ const PhoneNumber = styled.div`
     }
   }
 
-  order: 2;
   ${below.med`
-    order: 1;
     display: none;
+  `};
+
+  ${below.large`
+    order: 1;
+    padding-bottom: 0.7rem;
   `};
 `;
 
 const StackedSocialLinks = styled(SocialLinks)`
   order: 1;
+
   ${below.med`
-    order: 2;
     max-height: 3rem;
+  `};
+
+  ${below.large`
+    order: 2;
+    max-height: 4rem;
   `};
 `;
 

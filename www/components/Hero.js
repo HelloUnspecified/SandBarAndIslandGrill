@@ -3,17 +3,17 @@ import styled from 'styled-components';
 import { ParallaxBanner } from 'react-scroll-parallax';
 import Icon from './Icon';
 import LinkButton from './LinkButton';
-import { below } from '../utitlies/breakpoint.js';
+import { above, below } from '../utitlies/breakpoint.js';
 
 const HeroImage = styled.div`
-  height: ${({ fullHeight }) => (fullHeight ? '100vh' : '35vh')};
+  height: ${({ fullHeight }) => (fullHeight ? '100vh' : '37vh')};
   max-width: 100%;
   background-position: center;
   background-size: cover;
   background-color: ${({ theme }) => theme.colors.black};
 
   ${below.med`
-    height: ${({ fullHeight }) => (fullHeight ? 'calc(100vh - 7rem)' : '35vh')};
+    height: ${({ fullHeight }) => (fullHeight ? 'calc(100vh - 7rem)' : '37vh')};
   `};
 `;
 
@@ -30,6 +30,16 @@ const HeroFooterContainer = styled.div`
   ${below.med`
     flex-direction: column;
     margin-bottom: 9rem;
+  `};
+
+  ${above.med`
+    flex-direction: column;
+    margin-bottom: 4rem;
+  `};
+
+  ${above.large`
+    flex-direction: row;
+    margin-bottom: 0;
   `};
 
   div {
@@ -65,7 +75,8 @@ const BannerHeader = styled.div`
   flex-direction: column;
 
   ${below.med`
-    top: ${({ fullHeight }) => (fullHeight ? '37%' : '9%')};
+    top: ${({ fullHeight }) => (fullHeight ? '33%' : '9rem')};
+    
   `};
 
   h1 {
@@ -77,8 +88,12 @@ const BannerHeader = styled.div`
     color: ${({ theme }) => theme.colors.light};
 
     ${below.med`
-      font-size: 5rem;
-      margin: 0 2rem;
+      font-size: ${({ fullHeight }) => (fullHeight ? '5.3rem' : '4.3rem')};
+      margin: 0 auto;
+    `};
+
+    ${below.small`
+      max-width: 32rem;
     `};
   }
   h2 {

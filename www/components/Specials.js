@@ -20,10 +20,10 @@ const SpecialItem = styled.div`
 const SpecialTitle = styled.p`
   text-transform: uppercase;
   font-weight: 800;
-  margin: 0 0 0.2rem 0;
+  margin: 0 0 1rem 0;
   line-height: 1.7;
-  background-color: ${({ theme }) => theme.colors.light};
-  color: ${({ theme }) => theme.colors.orange};
+  background-color: ${({ theme }) => theme.colors.highlight};
+  color: ${({ theme }) => theme.colors.secondary};
 `;
 
 const SpecialSubtitle = styled.p`
