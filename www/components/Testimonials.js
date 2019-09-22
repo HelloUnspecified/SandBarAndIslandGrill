@@ -44,10 +44,12 @@ const RightQuotation = styled.img`
 
 const Review = styled.div`
   display: flex;
+  align-items: center;
 
   svg {
-    width: 10rem;
-    height: auto;
+    width: 3rem;
+    height: 3rem;
+    position: relative;
     fill: ${({ theme }) => theme.colors.orange};
 
     &:hover {
@@ -61,10 +63,19 @@ const Review = styled.div`
     path {
       max-height: 8rem;
     }
+
+    &.right {
+      right: -1rem;
+    }
+
+    &.left {
+      left: -1rem;
+    }
   }
 `;
 
 const ReviewDetail = styled.div`
+  flex-grow: 2;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -123,17 +134,19 @@ const Testimonials = ({ className }) => {
     <div className="testimonials">
       <ContentSection title="Customers and Friends" subtitle="Testimonials">
         <Review>
-          <Icon
-            icon="arrow"
-            className={`left ${reviewIndex === 0 ? 'medium' : ''}`}
-            onClick={
-              reviewIndex > 0
-                ? () => {
+          <div>
+            <Icon
+              icon="arrow"
+              className={`left ${reviewIndex === 0 ? 'medium' : ''}`}
+              onClick={
+                reviewIndex > 0
+                  ? () => {
                     setReviewIndex(reviewIndex - 1);
                   }
-                : false
-            }
-          />
+                  : false
+              }
+            />
+          </div>
           <ReviewDetail>
             <LeftQuotation src="../static/images/quotation-mark.png" />
             <RightQuotation src="../static/images/quotation-mark.png" />
@@ -144,19 +157,21 @@ const Testimonials = ({ className }) => {
               <Highlight>{review.source}</Highlight>
             </Source>
           </ReviewDetail>
-          <Icon
-            icon="arrow"
-            className={`right ${
-              reviewIndex === REVIEWS.length - 1 ? 'medium' : ''
-            }`}
-            onClick={
-              reviewIndex < REVIEWS.length - 1
-                ? () => {
+          <div>
+            <Icon
+              icon="arrow"
+              className={`right ${
+                reviewIndex === REVIEWS.length - 1 ? 'medium' : ''
+                }`}
+              onClick={
+                reviewIndex < REVIEWS.length - 1
+                  ? () => {
                     setReviewIndex(reviewIndex + 1);
                   }
-                : false
-            }
-          />
+                  : false
+              }
+            />
+          </div>
         </Review>
       </ContentSection>
       <NavDots>
