@@ -7,6 +7,7 @@ import { above, below } from '../utitlies/breakpoint.js';
 
 const HeroImage = styled.div`
   height: ${({ fullHeight }) => (fullHeight ? '100vh' : '37vh')};
+  min-height: 27rem;
   max-width: 100%;
   background-position: center;
   background-size: cover;

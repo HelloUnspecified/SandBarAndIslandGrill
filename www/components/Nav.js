@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import React, { useState } from 'react';
-import HamburgerNav from './HamburgerNav';
 import IconText from './IconText';
 import NavItem from './NavItem';
 import { above, below } from '../utitlies/breakpoint.js';
@@ -56,7 +55,9 @@ const Nav = ({ className }) => {
       <NavItem title="home" href="/" image="/static/images/sand-bar-logo.png" />
 
       <ButtonLink href="tel:1-262-877-9500">
-        <IconText icon="phone" align="right">(262) 877-9500</IconText>
+        <IconText icon="phone" align="right">
+          (262) 877-9500
+        </IconText>
       </ButtonLink>
 
       <NavList menuOpen={menuOpen}>
@@ -73,10 +74,6 @@ const Nav = ({ className }) => {
           <NavItem title="contact" href="/contact" />
         </NavListItem>
       </NavList>
-      {/* <HamburgerNav
-        onClick={() => setMenuOpen(!menuOpen)}
-        menuOpen={menuOpen}
-      /> */}
     </nav>
   );
 };
