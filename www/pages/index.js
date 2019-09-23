@@ -1,17 +1,18 @@
 import React, { Fragment, Component } from 'react';
 import styled from 'styled-components';
 import { ParallaxProvider } from 'react-scroll-parallax';
-import { FacebookProvider, Page } from 'react-facebook';
+
 import ContentSection from '../components/ContentSection';
 import FeaturedDishes from '../components/FeaturedDishes';
 import Gallery from '../components/Gallery';
-import NewsletterSignup from '../components/NewsletterSignup';
-import Specials from '../components/Specials';
-import Testimonials from '../components/Testimonials';
 import Hero from '../components/Hero';
+import HighlightImage from '../components/HighlightImage';
 import IconText from '../components/IconText';
 import Map from '../components/Map';
+import NewsletterSignup from '../components/NewsletterSignup';
 import SocialLinks from '../components/SocialLinks';
+import Specials from '../components/Specials';
+import Testimonials from '../components/Testimonials';
 
 import { above, below } from '../utitlies/breakpoint.js';
 
@@ -30,32 +31,6 @@ const Fancy = styled.span`
   font-family: 'Great Vibes', cursive;
   font-weight: 400;
   color: ${({ theme }) => theme.colors.orange};
-`;
-
-const ImageContainer = styled.div`
-  order: ${({ align }) => (align === 'left' ? 0 : 2)};
-  margin-left: ${({ align }) => (align === 'left' ? 0 : '30px')};
-  margin-right: ${({ align }) => (align === 'left' ? '30px' : 0)};
-  position: relative;
-
-  ${below.med`
-    margin: 0;
-  `};
-`;
-
-const FeaturedImage = styled.img`
-  object-fit: cover;
-  width: auto;
-  height: 200px;
-  position: relative;
-
-  -webkit-box-shadow: 10px 10px 0px -2px ${({ theme }) => theme.colors.orange};
-  -moz-box-shadow: 10px 10px 0px -2px ${({ theme }) => theme.colors.orange};
-  box-shadow: 10px 10px 0px -2px ${({ theme }) => theme.colors.orange};
-
-  ${below.small`
-    max-width: 30rem;
-  `};
 `;
 
 const PhoneNumber = styled.div`
@@ -160,9 +135,7 @@ const home = props => (
             Twin Lakes resident who has spent a great deal of his time on
             Florida's Suncoast in the Tampa Bay/Clearwater area.
           </p>
-          <ImageContainer>
-            <FeaturedImage src="../static/images/conversation.jpg" />
-          </ImageContainer>
+          <HighlightImage src="../static/images/conversation.jpg" />
         </ContentDetail>
       </ContentSection>
 
