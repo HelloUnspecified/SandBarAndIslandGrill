@@ -43,7 +43,7 @@ const RectangleImage = styled.img`
 
 const Gallery = ({ className }) => {
   return (
-    <ContentSection title="Gallery" color="light">
+    <ContentSection title="Gallery" color="light" className={className}>
       <ImageContainer>
         <ImageColumn>
           <RectangleImage src="/static/images/tacos-and-rings.jpg" />
