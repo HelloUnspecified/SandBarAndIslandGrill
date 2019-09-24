@@ -24,7 +24,6 @@ const FeaturedImage = styled.img`
 `;
 
 const HighlightImage = props => {
-  console.log(props);
   return (
     <HighlightBlock className={props.className} align={props.align}>
       <FeaturedImage src={props.src} height={props.height} />

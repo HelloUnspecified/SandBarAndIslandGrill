@@ -18,6 +18,7 @@ const Container = styled.div`
 const DetailContainer = styled.div`
   margin: auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
 
   ${below.med`

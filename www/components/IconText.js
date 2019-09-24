@@ -8,8 +8,6 @@ const IconBlock = styled.div`
 `;
 
 const IconText = ({ align, icon, children, className }) => {
-  // console.log(props);
-
   return (
     <IconBlock align={align} className={className}>
       <Icon icon={icon} height="24" width="24" />
