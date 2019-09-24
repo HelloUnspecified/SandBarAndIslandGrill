@@ -30,7 +30,7 @@ const Icon = props => {
       xmlns="http://www.w3.org/2000/svg"
       className={props.className}
       onClick={props.onClick}
-      viewBox={`0 0 ${props.height} ${props.width}`}
+      viewBox={`0 0 ${props.height || '24'} ${props.width || '24'}`}
     >
       <title>{svgs[props.icon].title}</title>
       {svgs[props.icon].path.map(item => {

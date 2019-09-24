@@ -32,7 +32,13 @@ const NavListItem = styled.div`
 `;
 
 const ButtonLink = styled.a`
-  color: ${({ theme }) => theme.colors.highlight};
+  a {
+    color: ${({ theme }) => theme.colors.highlight};
+
+    &:hover {
+      color: ${({ theme }) => theme.colors.highlight};
+    }
+  }
   padding: 1rem;
   font-size: 1.7rem;
 
@@ -56,7 +62,7 @@ const Nav = ({ className }) => {
 
       <ButtonLink href="tel:1-262-877-9500">
         <IconText icon="phone" align="right">
-          (262) 877-9500
+          <a href="tel:1-262-877-9500">(262) 877-9500</a>
         </IconText>
       </ButtonLink>
 
@@ -83,12 +89,5 @@ export default styled(Nav)`
   width: 100%;
   flex-wrap: no-wrap;
   align-items: center;
-
-  ${above.med`
-    justify-content: center;
-    
-  `} ${below.med`
-    justify-content: space-between;
-  `}
-);
+  justify-content: space-between;
 `;

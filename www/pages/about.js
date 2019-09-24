@@ -6,6 +6,7 @@ import { above, below } from '../utitlies/breakpoint.js';
 import ContentSection from '../components/ContentSection';
 import Hero from '../components/Hero';
 import HighlightImage from '../components/HighlightImage';
+import LinkButton from '../components/LinkButton';
 
 const ContentDetail = styled.div`
   display: flex;
@@ -25,6 +26,11 @@ const ContentDetail = styled.div`
       text-align: left;
     }
   }
+`;
+
+const ApplyButton = styled(LinkButton)`
+  order: 3;
+  background-color: ${({ theme }) => theme.colors.secondary};
 `;
 
 const about = props => (
@@ -80,7 +86,10 @@ const about = props => (
             and shaved Red Onions. Our half-pound Burgers are made with the very
             finest Angus beef available. Our Mango-infused Cole Slaw is a
             tropical delight.
-            <br />
+          </p>
+        </ContentDetail>
+        <ContentDetail>
+          <p>
             <br />A visit to our place will surely put you in a Caribbean state
             of mind and treat you to vistas of our beautiful lake and the
             breathtaking sunsets you will enjoy as evening sets in. We are open
@@ -112,6 +121,12 @@ const about = props => (
             and holidays.
           </p>
         </ContentDetail>
+        <ApplyButton
+          href="/apply"
+          label="Apply Online"
+          color="highlight"
+          borderColor="secondary"
+        />
       </ContentSection>
     </>
   </ParallaxProvider>
