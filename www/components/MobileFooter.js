@@ -40,7 +40,7 @@ const NavLink = styled.a`
 `;
 
 const FullNav = styled.div`
-  display: ${({ menuOpen }) => (menuOpen ? 'flex' : 'none')};
+  display: ${({ mobileMenuOpen }) => (mobileMenuOpen ? 'flex' : 'none')};
   flex-direction: column;
   position: absolute;
   bottom: 0;
@@ -83,7 +83,7 @@ const MobileSocialLinks = styled(SocialLinks)`
 `;
 
 const MobileFooter = ({ className }) => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className={className}>
@@ -95,11 +95,11 @@ const MobileFooter = ({ className }) => {
         <Icon icon="quote" height="70" width="70" className="lower-little" />
         Contact Us
       </NavLink>
-      <NavLink onClick={() => setMenuOpen(!menuOpen)}>
+      <NavLink onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
         <Icon icon="hamburgerMenu" height="12" width="12" className="lower" />
         More
       </NavLink>
-      <FullNav menuOpen={menuOpen}>
+      <FullNav mobileMenuOpen={mobileMenuOpen}>
         <NavItem
           title="home"
           href="/"
@@ -111,32 +111,32 @@ const MobileFooter = ({ className }) => {
           height="80"
           width="80"
           onClick={() => {
-            setMenuOpen(false);
+            setMobileMenuOpen(false);
           }}
-        />
-        <NavItem
-          title="about"
-          color="highlight"
-          href="/about"
-          onClick={() => setMenuOpen(false)}
         />
         <NavItem
           title="menu"
           color="highlight"
           href="/menu"
-          onClick={() => setMenuOpen(false)}
+          onClick={() => setMobileMenuOpen(false)}
         />
         <NavItem
           title="gallery"
           color="highlight"
           href="/gallery"
-          onClick={() => setMenuOpen(false)}
+          onClick={() => setMobileMenuOpen(false)}
         />
         <NavItem
           title="contact"
           color="highlight"
           href="/contact"
-          onClick={() => setMenuOpen(false)}
+          onClick={() => setMobileMenuOpen(false)}
+        />
+        <NavItem
+          title="about"
+          color="highlight"
+          href="/about"
+          onClick={() => setMobileMenuOpen(false)}
         />
         <MobileSocialLinks />
       </FullNav>

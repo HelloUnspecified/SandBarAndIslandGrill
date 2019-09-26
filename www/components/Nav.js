@@ -68,9 +68,6 @@ const Nav = ({ className }) => {
 
       <NavList menuOpen={menuOpen}>
         <NavListItem>
-          <NavItem title="about" href="/about" />
-        </NavListItem>
-        <NavListItem>
           <NavItem title="menu" href="/menu" />
         </NavListItem>
         <NavListItem>
@@ -78,6 +75,9 @@ const Nav = ({ className }) => {
         </NavListItem>
         <NavListItem>
           <NavItem title="contact" href="/contact" />
+        </NavListItem>
+        <NavListItem>
+          <NavItem title="about" href="/about" />
         </NavListItem>
       </NavList>
     </nav>
