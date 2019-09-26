@@ -6,23 +6,14 @@ import { above, below } from '../utitlies/breakpoint.js';
 
 const NavList = styled.div`
   display: flex;
+  flex-direction: row;
   width: 100%;
   flex-wrap: no-wrap;
   justify-content: flex-end;
   align-items: center;
 
   ${below.med`
-    flex-direction: column
-    ${({ menuOpen }) =>
-      !menuOpen &&
-      `
-      display: none;
-    `}
-    ${({ menuOpen }) =>
-      menuOpen &&
-      `
-      display: inline-block;
-    `}
+    display: none;
   `};
 `;
 
@@ -32,15 +23,13 @@ const NavListItem = styled.div`
 `;
 
 const ButtonLink = styled.a`
-  a {
-    color: ${({ theme }) => theme.colors.highlight};
-
-    &:hover {
-      color: ${({ theme }) => theme.colors.highlight};
-    }
-  }
   padding: 1rem;
   font-size: 1.7rem;
+  color: ${({ theme }) => theme.colors.highlight};
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.highlight};
+  }
 
   svg {
     height: 2rem;
@@ -54,19 +43,17 @@ const ButtonLink = styled.a`
 `;
 
 const Nav = ({ className }) => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <nav className={className}>
       <NavItem title="home" href="/" image="/static/images/sand-bar-logo.png" />
 
       <ButtonLink href="tel:1-262-877-9500">
         <IconText icon="phone" align="right">
-          <a href="tel:1-262-877-9500">(262) 877-9500</a>
+          (262) 877-9500
         </IconText>
       </ButtonLink>
 
-      <NavList menuOpen={menuOpen}>
+      <NavList>
         <NavListItem>
           <NavItem title="menu" href="/menu" />
         </NavListItem>
