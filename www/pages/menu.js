@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import styled from 'styled-components';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { useQuery } from '@apollo/react-hooks';
@@ -49,45 +50,50 @@ export default props => {
 
   if (data) {
     return (
-      <ParallaxProvider>
-        <>
-          <Hero
-            imagePath="/static/images/tacos-and-rings.jpg"
-            heading="Sand Bar and Island Grill"
-            href="tel:1-262-877-9500"
-            label="Call for Reservations"
-          />
+      <>
+        <Head>
+          <title key="title">Menu - Sand Bar and Island Grill</title>
+        </Head>
+        <ParallaxProvider>
+          <>
+            <Hero
+              imagePath="/static/images/tacos-and-rings.jpg"
+              heading="Sand Bar and Island Grill"
+              href="tel:1-262-877-9500"
+              label="Call for Reservations"
+            />
 
-          <ContentSection title="Menu">
-            <Menu>
-              <MenuGroup title="Drinks" items={groupedDinners().DRINK} />
-              <MenuGroup
-                title="Appetizers"
-                items={groupedDinners().APPETIZER}
-              />
-              <MenuGroup
-                title="Wraps"
-                items={groupedDinners().WRAP}
-                subtext="All wraps served with your choice of<br>French Fries or Island Slaw.<p class='addon'>Try a side of our Sweet Potato Fries for an additional $0.50 or Onion Rings for $3.00.</p>"
-              />
-              <MenuGroup
-                title="Salads"
-                items={groupedDinners().SALAD}
-                subtext="Add Chicken - $2.00<br/>Add Shrimp, Salmon, Grouper, Tuna or Mahi - $5.00"
-              />
-              <MenuGroup
-                title="Dinner on Land"
-                items={groupedDinners().DINNER_LANDFOOD}
-              />
-              <MenuGroup
-                title="Dinner from the Sea"
-                items={groupedDinners().DINNER_SEAFOOD}
-              />
-              <MenuGroup title="Kids" items={groupedDinners().KIDS} />
-            </Menu>
-          </ContentSection>
-        </>
-      </ParallaxProvider>
+            <ContentSection title="Menu">
+              <Menu>
+                <MenuGroup title="Drinks" items={groupedDinners().DRINK} />
+                <MenuGroup
+                  title="Appetizers"
+                  items={groupedDinners().APPETIZER}
+                />
+                <MenuGroup
+                  title="Wraps"
+                  items={groupedDinners().WRAP}
+                  subtext="All wraps served with your choice of<br>French Fries or Island Slaw.<p class='addon'>Try a side of our Sweet Potato Fries for an additional $0.50 or Onion Rings for $3.00.</p>"
+                />
+                <MenuGroup
+                  title="Salads"
+                  items={groupedDinners().SALAD}
+                  subtext="Add Chicken - $2.00<br/>Add Shrimp, Salmon, Grouper, Tuna or Mahi - $5.00"
+                />
+                <MenuGroup
+                  title="Dinner on Land"
+                  items={groupedDinners().DINNER_LANDFOOD}
+                />
+                <MenuGroup
+                  title="Dinner from the Sea"
+                  items={groupedDinners().DINNER_SEAFOOD}
+                />
+                <MenuGroup title="Kids" items={groupedDinners().KIDS} />
+              </Menu>
+            </ContentSection>
+          </>
+        </ParallaxProvider>
+      </>
     );
   }
   return <p>Loading...</p>;
