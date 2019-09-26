@@ -32,18 +32,21 @@ const SocialLinks = ({ className }) => {
       <a
         href="https://www.instagram.com/sandbarandislandgrill/"
         target="_blank"
+        rel="noreferrer noopener"
       >
         <Icon icon="instagram" height={iconHeight} width={iconWidth} />
       </a>
       <a
-        href="https://www.yelp.com/biz/sand-bar-and-island-grill-twin-lakes"
+        href="https://www.tripadvisor.com/Restaurant_Review-g60341-d2224176-Reviews-Sand_Bar_and_Island_Grill-Twin_Lakes_Wisconsin.html"
         target="_blank"
+        rel="noreferrer noopener"
       >
         <Icon icon="tripAdvisor" height={iconHeight} width={iconWidth} />
       </a>
       <a
-        href="https://www.tripadvisor.com/Restaurant_Review-g60341-d2224176-Reviews-Sand_Bar_and_Island_Grill-Twin_Lakes_Wisconsin.html"
+        href="https://www.yelp.com/biz/sand-bar-and-island-grill-twin-lakes"
         target="_blank"
+        rel="noreferrer noopener"
       >
         <Icon icon="yelp" height={iconHeight} width={iconWidth} />
       </a>
