@@ -113,7 +113,11 @@ const home = props => (
           <a href="tel:1-262-877-9500">(262) 877-9500</a>
         </PhoneNumber>
         <StackedLocation icon="location" align="center">
-          <a href="https://goo.gl/maps/9fvZcNvVcsiJ82Hj6" target="_blank">
+          <a
+            href="https://goo.gl/maps/9fvZcNvVcsiJ82Hj6"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             3101 E. Lakeshore Dr., Twin Lakes, WI 53181
           </a>
         </StackedLocation>

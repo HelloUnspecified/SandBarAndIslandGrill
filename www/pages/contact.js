@@ -102,7 +102,11 @@ const contact = props => (
         <DetailDiv>
           <Label>Address</Label>
           <IconText icon="location" align="center">
-            <a href="https://goo.gl/maps/9fvZcNvVcsiJ82Hj6" target="_blank">
+            <a
+              href="https://goo.gl/maps/9fvZcNvVcsiJ82Hj6"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
               3101 E. Lakeshore Dr.,
               <br />
               Twin Lakes, WI 53181
