@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import Head from 'next/head';
 import styled from 'styled-components';
 import { ParallaxProvider } from 'react-scroll-parallax';
 
@@ -76,48 +77,53 @@ const Socials = styled(SocialLinks)`
 `;
 
 const contact = props => (
-  <ParallaxProvider>
-    <>
-      <Hero
-        imagePath="/static/images/conversation.jpg"
-        heading="Sand Bar and Island Grill"
-        href="tel:1-262-877-9500"
-        label="Call for Reservations"
-      />
-      <ContentSection title="Contact Us">
-        <DetailDiv>
-          <Label>Email</Label>
-          <IconText icon="email" align="center">
-            <a href="mailto:eat@sandbarandislandgrill.com">
-              eat@sandbarandislandgrill.com
-            </a>
-          </IconText>
-        </DetailDiv>
-        <DetailDiv>
-          <Label>Phone</Label>
-          <IconText icon="phone" align="center">
-            <a href="tel:1-262-877-9500">(262) 877-9500</a>
-          </IconText>
-        </DetailDiv>
-        <DetailDiv>
-          <Label>Address</Label>
-          <IconText icon="location" align="center">
-            <a
-              href="https://goo.gl/maps/9fvZcNvVcsiJ82Hj6"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              3101 E. Lakeshore Dr.,
-              <br />
-              Twin Lakes, WI 53181
-            </a>
-          </IconText>
-        </DetailDiv>
-      </ContentSection>
-      <Socials />
-      <Map />
-    </>
-  </ParallaxProvider>
+  <>
+    <Head>
+      <title key="title">Contact Us - Sand Bar and Island Grill</title>
+    </Head>
+    <ParallaxProvider>
+      <>
+        <Hero
+          imagePath="/static/images/conversation.jpg"
+          heading="Sand Bar and Island Grill"
+          href="tel:1-262-877-9500"
+          label="Call for Reservations"
+        />
+        <ContentSection title="Contact Us">
+          <DetailDiv>
+            <Label>Email</Label>
+            <IconText icon="email" align="center">
+              <a href="mailto:eat@sandbarandislandgrill.com">
+                eat@sandbarandislandgrill.com
+              </a>
+            </IconText>
+          </DetailDiv>
+          <DetailDiv>
+            <Label>Phone</Label>
+            <IconText icon="phone" align="center">
+              <a href="tel:1-262-877-9500">(262) 877-9500</a>
+            </IconText>
+          </DetailDiv>
+          <DetailDiv>
+            <Label>Address</Label>
+            <IconText icon="location" align="center">
+              <a
+                href="https://goo.gl/maps/9fvZcNvVcsiJ82Hj6"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                3101 E. Lakeshore Dr.,
+                <br />
+                Twin Lakes, WI 53181
+              </a>
+            </IconText>
+          </DetailDiv>
+        </ContentSection>
+        <Socials />
+        <Map />
+      </>
+    </ParallaxProvider>
+  </>
 );
 
 export default contact;

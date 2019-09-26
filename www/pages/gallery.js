@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Head from 'next/head';
 import styled from 'styled-components';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import Lightbox from 'fslightbox-react';
@@ -51,36 +52,41 @@ const about = props => {
   };
 
   return (
-    <ParallaxProvider>
-      <>
-        <Hero
-          imagePath="/static/images/aerial.jpg"
-          heading="Sand Bar and Island Grill"
-          href="tel:1-262-877-9500"
-          label="Call for Reservations"
-        />
+    <>
+      <Head>
+        <title key="title">Gallery - Sand Bar and Island Grill</title>
+      </Head>
+      <ParallaxProvider>
+        <>
+          <Hero
+            imagePath="/static/images/aerial.jpg"
+            heading="Sand Bar and Island Grill"
+            href="tel:1-262-877-9500"
+            label="Call for Reservations"
+          />
 
-        <ContentSection title="Gallery">
-          <ContentDetail>
-            {IMAGES.map((item, index) => {
-              return (
-                <GalleryImage
-                  src={item}
-                  onClick={() => {
-                    updateIndex(index);
-                  }}
-                />
-              );
-            })}
-            <Lightbox
-              toggler={lightboxOpen}
-              sources={IMAGES}
-              slide={photoIndex + 1}
-            />
-          </ContentDetail>
-        </ContentSection>
-      </>
-    </ParallaxProvider>
+          <ContentSection title="Gallery">
+            <ContentDetail>
+              {IMAGES.map((item, index) => {
+                return (
+                  <GalleryImage
+                    src={item}
+                    onClick={() => {
+                      updateIndex(index);
+                    }}
+                  />
+                );
+              })}
+              <Lightbox
+                toggler={lightboxOpen}
+                sources={IMAGES}
+                slide={photoIndex + 1}
+              />
+            </ContentDetail>
+          </ContentSection>
+        </>
+      </ParallaxProvider>
+    </>
   );
 };
 
