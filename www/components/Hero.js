@@ -127,7 +127,7 @@ const Hero = props => {
           },
         ]}
         style={{
-          height: props.fullHeight ? '100vh' : '37vh',
+          height: props.fullHeight ? '100vh' : '100%',
           opacity: 0.5,
         }}
       />
