@@ -1,10 +1,19 @@
 const menu = require('./menu_items');
 
 module.exports = {
-  menu: (parent, args, { dataSources }) =>
-    Object.keys(menu)
+  menu: (parent, { isFeatured }, { dataSources }) => {
+    const flatMenu = Object.keys(menu)
       .map(m => menu[m])
-      .reduce((acc, cur) => acc.concat(cur), []),
+      .reduce((acc, cur) => acc.concat(cur), []);
+
+    console.log('args', isFeatured);
+
+    if (isFeatured) {
+      return flatMenu.filter(item => item.isFeatured);
+    }
+
+    return flatMenu;
+  },
   drinks: (parent, args, { dataSources }) => menu.drinks,
   appetizers: (parent, args, { dataSources }) => menu.appetizers,
   dinners: (parent, args, { dataSources }) => menu.dinners,

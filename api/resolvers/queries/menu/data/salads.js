@@ -7,6 +7,7 @@ module.exports = [
     description:
       'chopped salad topped with tomatoes, fresh grated asiago cheese, croutons & caesar dressing',
     price: 8.95,
+    isFeatured: false,
   },
   {
     id: '1234',
@@ -16,6 +17,7 @@ module.exports = [
     description:
       'with ham, turkey, onion, cheddar & Swiss cheese, cucumbers, tomatoes & choice of dressing',
     price: 11.95,
+    isFeatured: false,
   },
   {
     id: '1234',
@@ -25,6 +27,7 @@ module.exports = [
     description:
       'with crumbled bleu cheese, tomatoes, bacon & bleu cheese dressing',
     price: 9.95,
+    isFeatured: false,
   },
   {
     id: '1234',
@@ -34,5 +37,6 @@ module.exports = [
     description:
       'lettuce, tomato, bleu cheese crumbles, hard boiled egg, red onion, bacon and croutons with choice of dressing',
     price: 11.95,
+    isFeatured: false,
   },
 ];

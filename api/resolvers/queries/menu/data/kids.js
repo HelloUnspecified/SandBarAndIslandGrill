@@ -6,6 +6,7 @@ module.exports = [
     name: 'Chicken Strips',
     description: 'with ranch or BBQ',
     price: 7.95,
+    isFeatured: false,
   },
   {
     id: '1234',
@@ -14,6 +15,7 @@ module.exports = [
     name: 'Grilled Cheese Sandwich',
     description: '',
     price: 7.95,
+    isFeatured: false,
   },
   {
     id: '1234',
@@ -22,6 +24,7 @@ module.exports = [
     name: 'Hotdog',
     description: '',
     price: 7.95,
+    isFeatured: false,
   },
   {
     id: '1234',
@@ -30,5 +33,6 @@ module.exports = [
     name: 'Mac-n-cheese',
     description: '',
     price: 7.95,
+    isFeatured: false,
   },
 ];

@@ -6,6 +6,7 @@ module.exports = [
     name: 'Filet Mignon Sand Bar Sliders',
     description: 'with red onion 8 dijonaise (3 per serving)',
     price: 15.95,
+    isFeatured: false,
   },
   {
     id: '1234',
@@ -15,6 +16,7 @@ module.exports = [
     description:
       'American, Swiss, pepper jack or cheddar cheese, lettuce, tomato & onion',
     price: 10.95,
+    isFeatured: false,
   },
   {
     id: '1234',
@@ -23,6 +25,7 @@ module.exports = [
     name: 'Tiki Burger',
     description: 'lettuce, tomato & onion',
     price: 9.95,
+    isFeatured: false,
   },
   {
     id: '1234',
@@ -32,6 +35,7 @@ module.exports = [
     description:
       'American, Swiss, pepper jack or cheddar cheese, lettuce, tomato & onion',
     price: 11.95,
+    isFeatured: false,
   },
   {
     id: '1234',
@@ -41,6 +45,7 @@ module.exports = [
     description:
       'with bleu cheese, lettuce. tomato & onion, and blackening seasoning (optional).',
     price: 11.95,
+    isFeatured: false,
   },
   {
     id: '1234',
@@ -50,6 +55,7 @@ module.exports = [
     description:
       'with teriyaki, grilled pineapple 8 Swiss cheese lettuce, tomato & onion',
     price: 11.95,
+    isFeatured: false,
   },
   {
     id: '1234',
@@ -59,6 +65,7 @@ module.exports = [
     description:
       'topped with melted provolone, blackened grilled shrimp, bang bang sauce, grilled onion & lettuce.',
     price: 16.95,
+    isFeatured: false,
   },
   {
     id: '1234',
@@ -68,6 +75,7 @@ module.exports = [
     description:
       'melted gouda topped with savory roasted red peppers, lettuce, tomato & onion',
     price: 12.95,
+    isFeatured: false,
   },
   {
     id: '1234',
@@ -76,6 +84,7 @@ module.exports = [
     name: 'Black Bean Chipolte Veggie Burger',
     description: 'served with lettuce, tomato, onion and chipolte mayo',
     price: 10.95,
+    isFeatured: false,
   },
   {
     id: '1234',
@@ -84,6 +93,7 @@ module.exports = [
     name: 'Grilled Chicken Breast Sandwich',
     description: 'with lettuce, tomato, onion & honey dijon or ranch',
     price: 9.95,
+    isFeatured: false,
   },
   {
     id: '1234',
@@ -92,6 +102,7 @@ module.exports = [
     name: 'Chicken Focaccia Sandwich',
     description: 'served with lettuce, tomato, onion & asiago mayo',
     price: 10.95,
+    isFeatured: false,
   },
   {
     id: '1234',
@@ -101,6 +112,7 @@ module.exports = [
     description:
       '1/41b. hot dog with grilled onions and ground mustard served on a pretzel hoagie',
     price: 8.95,
+    isFeatured: false,
   },
   {
     id: '1234',
@@ -110,5 +122,6 @@ module.exports = [
     description:
       'fresh portabella mushroom cap with melted mozzarella, roasted red pepper and marinara sauce',
     price: 11.95,
+    isFeatured: false,
   },
 ];
