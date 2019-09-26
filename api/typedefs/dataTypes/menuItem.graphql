@@ -7,4 +7,5 @@ type MenuItem {
   category: MenuCategory!
   price: Float
   imageUrl: String
+  isFeatured: Boolean
 }

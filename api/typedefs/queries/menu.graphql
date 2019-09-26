@@ -2,7 +2,7 @@
 
 type Query {
   "query the entire menu"
-  menu: [MenuItem]
+  menu(isFeatured: Boolean): [MenuItem]
 
   "query the drink menu"
   drinks: [MenuItem]
