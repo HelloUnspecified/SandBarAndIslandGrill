@@ -4,8 +4,10 @@ import getConfig from 'next/config';
 
 import MapMarker from './MapMarker';
 
-const { serverRuntimeConfig } = getConfig();
-console.log('WAT: ', serverRuntimeConfig.gmapsKey);
+// const { serverRuntimeConfig } = getConfig();
+console.log('getConfig: ', getConfig);
+console.log('process.env: ', process.env.gmapsKey);
+console.log('process.env.ME: ', process.env.me);
 
 const customStyles = [
   {
@@ -88,7 +90,7 @@ class Map extends Component {
         }}
       >
         <GoogleMapReact
-          bootstrapURLKeys={{ key: serverRuntimeConfig.gmapsKey }}
+          bootstrapURLKeys={{ key: '' }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
           options={{
