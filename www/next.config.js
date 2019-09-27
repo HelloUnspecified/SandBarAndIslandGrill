@@ -1,7 +1,7 @@
 module.exports = {
   target: 'serverless',
   env: {
-    gmapsKey: process.env.gmaps_key,
+    gmapsKey: process.env.GMAPS_KEY,
     me: 'YOLO',
   },
   serverRuntimeConfig: {
