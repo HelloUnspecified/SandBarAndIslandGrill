@@ -1,7 +1,6 @@
 module.exports = {
   target: 'serverless',
-  env: {
-    recaptchaSiteKey: 'TODO',
-    sentryDsn: 'TODO',
+  serverRuntimeConfig: {
+    gmapsKey: process.env.GMAPS_KEY,
   },
 };
