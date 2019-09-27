@@ -1,12 +1,15 @@
 import React from 'react';
 import Head from 'next/head';
 
+import { GA_TRACKING_ID } from '../lib/gtag';
+
 const Meta = () => (
-  <Head>
+  <Head profile="http://www.w3.org/2005/10/profile">
     <title key="title">Sand Bar and Island Grill!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charSet="utf-8" />
-    <link rel="shortcut icon" href="/static/favicon.png" />
+    <link rel="icon" type="image/png" href="/static/favicon.png" />
+
     <link rel="stylesheet" type="text/css" href="/static/nprogress.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap"
@@ -47,6 +50,23 @@ const Meta = () => (
     <meta
       name="twitter:image"
       content="https://www.thatconference.com/images/icons/opengraph.jpg"
+    />
+
+    <script
+      async
+      src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+    />
+
+    <script
+      // eslint-disable-next-line react/no-danger
+      dangerouslySetInnerHTML={{
+        __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_TRACKING_ID}');
+          `,
+      }}
     />
   </Head>
 );
