@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import ContentSection from './ContentSection';
 import { above, below } from '../utitlies/breakpoint.js';
 
-const ImageContainer = styled.div`
+const ImageContainer = styled.a`
   display: flex;
 
   ${below.med`
@@ -44,7 +44,7 @@ const RectangleImage = styled.img`
 const Gallery = ({ className }) => {
   return (
     <ContentSection title="Gallery" color="light" className={className}>
-      <ImageContainer>
+      <ImageContainer href="./gallery">
         <ImageColumn>
           <RectangleImage src="/static/images/tacos-and-rings.jpg" />
           <RectangleImage src="/static/images/Gallery-Oysters2-1.jpg" />
