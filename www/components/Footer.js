@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
+import moment from 'moment';
 import MobileFooter from './MobileFooter';
 import SocialLinks from './SocialLinks';
 import { above, below } from '../utitlies/breakpoint.js';
@@ -92,6 +93,15 @@ const Trademark = styled.p`
   font-size: 10px;
   margin-top: 0;
 
+  a {
+    color: ${({ theme }) => theme.colors.highlight};
+
+    &:hover {
+      color: ${({ theme }) => theme.colors.tertiary};
+      cursor: pointer;
+    }
+  }
+
   ${below.med`
     padding-bottom: 7rem;
   `};
@@ -133,7 +143,14 @@ const Footer = ({ className }) => {
       </section>
       <FooterSocials />
       <Trademark>
-        © 2019 Sand Bar And Island Grill ™, Made by Unspecified
+        © {moment().year()} Sand Bar And Island Grill ™, Made with ❤️ by{' '}
+        <a
+          href="http://unspecified.io"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          Unspecified Software Co.
+        </a>
       </Trademark>
       <MobileFooter />
     </footer>
