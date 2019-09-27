@@ -7,7 +7,6 @@ import ContentSection from '../components/ContentSection';
 import Hero from '../components/Hero';
 import Map from '../components/Map';
 
-// const apply = props => {
 class apply extends React.Component {
   componentDidMount() {
     const script = document.createElement('script');
