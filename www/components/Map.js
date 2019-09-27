@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-import getConfig from 'next/config';
 
 import MapMarker from './MapMarker';
 
@@ -77,12 +76,6 @@ class Map extends Component {
   };
 
   render() {
-    const wat = getConfig();
-
-    console.log('svr runtime: ', wat);
-    console.log('process.env: ', process.env.gmapsKey);
-    console.log('process.env.ME: ', process.env.me);
-
     return (
       <div
         style={{
@@ -91,7 +84,7 @@ class Map extends Component {
         }}
       >
         <GoogleMapReact
-          bootstrapURLKeys={{ key: '' }}
+          bootstrapURLKeys={{ key: process.env.gmapsKey }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
           options={{
