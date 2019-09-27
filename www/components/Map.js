@@ -77,9 +77,9 @@ class Map extends Component {
   };
 
   render() {
-    const { serverRuntimeConfig } = getConfig();
+    const wat = getConfig();
 
-    console.log('svr runtime: ', serverRuntimeConfig);
+    console.log('svr runtime: ', wat);
     console.log('process.env: ', process.env.gmapsKey);
     console.log('process.env.ME: ', process.env.me);
 
