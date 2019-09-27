@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-import getConfig from 'next/config';
+// import getConfig from 'next/config';
 
 import MapMarker from './MapMarker';
 
-const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
-console.log('server runtime config', serverRuntimeConfig);
+// const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
 
 const customStyles = [
   {
