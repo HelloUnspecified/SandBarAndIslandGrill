@@ -48,9 +48,16 @@ const NavImage = styled.img`
 `;
 
 const NavItem = props => {
+  console.log('props', props);
   const displayedLink = () => {
     if (props.image) {
-      return <NavImage src={props.image} imageWidth={props.imageWidth} />;
+      return (
+        <NavImage
+          src={props.image}
+          imageWidth={props.imageWidth}
+          style={props.style}
+        />
+      );
     }
 
     return props.title;

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import React, { useState } from 'react';
+import { isAbsolute } from 'path';
 import IconText from './IconText';
 import NavItem from './NavItem';
 import { above, below } from '../utitlies/breakpoint.js';
@@ -11,6 +12,7 @@ const NavList = styled.div`
   flex-wrap: no-wrap;
   justify-content: flex-end;
   align-items: center;
+  margin: 1.2rem 0;
 
   ${below.med`
     display: none;
@@ -45,7 +47,12 @@ const ButtonLink = styled.a`
 const Nav = ({ className }) => {
   return (
     <nav className={className}>
-      <NavItem title="home" href="/" image="/static/images/sand-bar-logo.png" />
+      <NavItem
+        title="home"
+        href="/"
+        image="/static/images/sand-bar-logo.png"
+        style={{ position: 'absolute', top: 0, width: '10rem' }}
+      />
 
       <ButtonLink href="tel:1-262-877-9500">
         <IconText icon="phone" align="right">
