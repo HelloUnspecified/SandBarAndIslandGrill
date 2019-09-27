@@ -14,7 +14,7 @@ import SocialLinks from '../components/SocialLinks';
 import Specials from '../components/Specials';
 import Testimonials from '../components/Testimonials';
 
-import { above, below } from '../utitlies/breakpoint.js';
+import { below } from '../utitlies/breakpoint.js';
 
 const Title = styled.h2`
   font-size: 2.8rem;
