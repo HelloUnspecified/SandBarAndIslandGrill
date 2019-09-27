@@ -4,14 +4,19 @@ import styled from 'styled-components';
 const OutlineLink = styled.a`
   border: 3px solid
     ${({ borderColor, theme }) =>
-    borderColor ? theme.colors[borderColor] : theme.colors.orange};
-  width: 20rem;
+      borderColor ? theme.colors[borderColor] : theme.colors.orange};
   margin: auto;
   margin-top: 2rem;
+  min-width: 20rem;
+
+  &:hover {
+    background-color: ${({ borderColor, theme }) =>
+      borderColor ? theme.colors[borderColor] : theme.colors.orange};
+  }
 
   p {
     color: ${({ color, theme }) =>
-    color ? theme.colors[color] : theme.colors.light};
+      color ? theme.colors[color] : theme.colors.light};
     text-transform: uppercase;
     margin: 0.7rem;
     text-align: center;
