@@ -4,11 +4,6 @@ import getConfig from 'next/config';
 
 import MapMarker from './MapMarker';
 
-// const { serverRuntimeConfig } = getConfig();
-console.log('getConfig: ', getConfig);
-console.log('process.env: ', process.env.gmapsKey);
-console.log('process.env.ME: ', process.env.me);
-
 const customStyles = [
   {
     featureType: 'administrative',
@@ -82,6 +77,12 @@ class Map extends Component {
   };
 
   render() {
+    // const { serverRuntimeConfig } = getConfig();
+
+    console.log('getConfig: ', getConfig);
+    console.log('process.env: ', process.env.gmapsKey);
+    console.log('process.env.ME: ', process.env.me);
+
     return (
       <div
         style={{
