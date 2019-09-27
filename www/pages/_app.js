@@ -2,21 +2,15 @@
 import React from 'react';
 import App from 'next/app';
 import { ApolloProvider } from '@apollo/react-hooks';
-import withApolloClient from '../lib/withApolloClient';
+import Router from 'next/router';
 
+import * as gtag from '../lib/gtag';
+import withApolloClient from '../lib/withApolloClient';
 import Page from '../components/Page';
 
+Router.events.on('routeChangeComplete', url => gtag.pageview(url));
+
 class MyApp extends App {
-  // static async getInitialProps({ Component, router, ctx }) {
-  //   let pageProps = {};
-
-  //   if (Component.getInitialProps) {
-  //     pageProps = await Component.getInitialProps(ctx);
-  //   }
-
-  //   return { pageProps };
-  // }
-
   render() {
     const { Component, pageProps, apolloClient } = this.props;
 
