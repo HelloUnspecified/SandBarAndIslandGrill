@@ -98,11 +98,17 @@ const AccentImage = styled.img`
   top: 18%;
 `;
 
+const HeroImages = [
+  '/static/images/sandbar-inside.jpg',
+  '/static/images/inside-bar.jpg',
+  '/static/images/inside-night.jpg',
+];
+
 const home = props => (
   <ParallaxProvider>
     <>
       <Hero
-        imagePath="/static/images/sandbar-inside.jpg"
+        imagePath={HeroImages[Math.floor(Math.random() * HeroImages.length)]}
         fullHeight="true"
         heading="Sand Bar and Island Grill"
         href="/menu"
