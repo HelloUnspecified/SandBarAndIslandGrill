@@ -6,8 +6,6 @@ module.exports = {
       .map(m => menu[m])
       .reduce((acc, cur) => acc.concat(cur), []);
 
-    console.log('args', isFeatured);
-
     if (isFeatured) {
       return flatMenu.filter(item => item.isFeatured);
     }

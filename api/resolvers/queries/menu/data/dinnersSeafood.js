@@ -57,13 +57,13 @@ module.exports = [
   },
   {
     id: '1234',
-    imageUrl: '',
+    imageUrl: '/static/images/Gallery-Toast-Sandwich.jpg',
     category: 'DINNER_SEAFOOD',
     name: 'Lobster Roll',
     description:
       'juicy lobster salad served on a New England style bun with lettuce, tomato, fresh lemon & dijonaise sauce - May be ordered as a wrap if desired',
     price: 16.95,
-    isFeatured: false,
+    isFeatured: true,
   },
   {
     id: '1234',
@@ -97,13 +97,13 @@ module.exports = [
   },
   {
     id: '1234',
-    imageUrl: '',
+    imageUrl: '/static/images/tacos-and-rings.jpg',
     category: 'DINNER_SEAFOOD',
     name: 'Blackended Seafood Tacos',
     description:
       'your choice of grilled shrimp, yellowfin tuna, grouper, or mahi with fresh mango salsa & drizzled in homemade chipotle sauce',
     price: 15.95,
-    isFeatured: false,
+    isFeatured: true,
   },
   {
     id: '1234',
@@ -123,6 +123,6 @@ module.exports = [
     description:
       'blackened grouper served on a fresh marble rye with crunchy coleslaw, Swiss cheese & 1000 island',
     price: 16.95,
-    isFeatured: true,
+    isFeatured: false,
   },
 ];
