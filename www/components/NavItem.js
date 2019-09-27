@@ -48,7 +48,6 @@ const NavImage = styled.img`
 `;
 
 const NavItem = props => {
-  console.log('props', props);
   const displayedLink = () => {
     if (props.image) {
       return (

@@ -37,10 +37,10 @@ const Meta = () => (
     />
     <meta property="og:url" content="https://sandbarandislandgrill.com/" />
     <meta property="og:site_name" content="Sand Bar And Island Grill" />
-    <meta property="og:image" content="https://s0.wp.com/i/blank.jpg" />
+    {/* <meta property="og:image" content="" /> */}
     <meta property="og:locale" content="en_US" />
 
-    <meta name="twitter:site" content="@SandBar" />
+    {/* <meta name="twitter:site" content="@SandBar" />
     <meta name="twitter:title" content="FILL ME OUT" />
     <meta name="twitter:card" content="summary" />
     <meta
@@ -49,8 +49,8 @@ const Meta = () => (
     />
     <meta
       name="twitter:image"
-      content="https://www.thatconference.com/images/icons/opengraph.jpg"
-    />
+      content="https://www.sandbarandislandgrill.com/images/icons/opengraph.jpg"
+    /> */}
 
     <script
       async
