@@ -6,8 +6,21 @@ import { ParallaxProvider } from 'react-scroll-parallax';
 import ContentSection from '../components/ContentSection';
 import Hero from '../components/Hero';
 import Map from '../components/Map';
+import Spinner from '../components/Spinner';
+
+const ApplySpinner = styled(Spinner)`
+  position: relative;
+  top: 30rem;
+`;
 
 class apply extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: true,
+    };
+  }
+
   componentDidMount() {
     const script = document.createElement('script');
 
@@ -16,6 +29,12 @@ class apply extends React.Component {
 
     document.body.appendChild(script);
   }
+
+  hideSpinner = () => {
+    this.setState({
+      loading: false,
+    });
+  };
 
   render() {
     return (
@@ -31,20 +50,21 @@ class apply extends React.Component {
               href="tel:1-262-877-9500"
               label="Call for Reservations"
             />
-            <ContentSection title="Apply Online" />
-
-            <iframe
-              className="airtable-embed airtable-dynamic-height"
-              src="https://airtable.com/embed/shrOAxp5AKqkIowZP?backgroundColor=pink"
-              frameBorder="0"
-              onmousewheel=""
-              width="100%"
-              height="3956"
-              style={{
-                background: 'transparent',
-                border: '1px solid #ccc',
-              }}
-            />
+            {this.state.loading ? <ApplySpinner /> : null}
+            <ContentSection title="Apply Online">
+              <iframe
+                className="airtable-embed airtable-dynamic-height"
+                src="https://airtable.com/embed/shrOAxp5AKqkIowZP?backgroundColor=pink"
+                frameBorder="0"
+                onmousewheel=""
+                width="100%"
+                height="3956"
+                onLoad={this.hideSpinner}
+                style={{
+                  background: 'transparent',
+                }}
+              />
+            </ContentSection>
             <Map />
           </>
         </ParallaxProvider>
