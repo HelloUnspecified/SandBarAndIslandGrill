@@ -46,15 +46,15 @@ const Gallery = ({ className }) => {
     <ContentSection title="Gallery" color="light" className={className}>
       <ImageContainer href="./gallery">
         <ImageColumn>
-          <RectangleImage src="/static/images/tacos-and-rings.jpg" />
+          <RectangleImage src="/static/images/bartender.jpg" />
           <RectangleImage src="/static/images/Gallery-Oysters2-1.jpg" />
         </ImageColumn>
         <ImageColumn className="large">
-          <SquareImage src="/static/images/Gallery-Toast-Sandwich.jpg" />
+          <SquareImage src="/static/images/outside-night.jpg" />
         </ImageColumn>
         <ImageColumn>
-          <RectangleImage src="/static/images/tacos-and-rings.jpg" />
-          <RectangleImage src="/static/images/Gallery-Oysters2-1.jpg" />
+          <RectangleImage src="/static/images/fish.jpg" />
+          <RectangleImage src="/static/images/grill.jpg" />
         </ImageColumn>
       </ImageContainer>
     </ContentSection>
