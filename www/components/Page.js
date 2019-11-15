@@ -6,6 +6,7 @@ import baseTheme from '../styles/baseTheme';
 import Meta from './Meta';
 import Header from './Header';
 import Footer from './Footer';
+import Modal from './Modal';
 
 const StyledPage = styled.div`
   background: ${props => props.theme.colors.backgroundColor};
@@ -33,6 +34,7 @@ export default props => {
         <StyledPage>
           <Meta />
           <CorePage>
+            <Modal />
             <Header />
             <InnerPage>{props.children}</InnerPage>
             <Footer modifiers="site" />
