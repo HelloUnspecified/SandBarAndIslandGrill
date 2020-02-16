@@ -11,20 +11,20 @@
     "node": "^10"
   },
   "dependencies": {
-    "apollo-server-micro": "^2.9.3",
-    "graphql": "^14.5.4",
+    "apollo-server-micro": "^2.10.1",
+    "graphql": "^14.6.0",
     "graphql-import": "^0.7.1",
     "micro-cors": "^0.1.1"
   },
   "devDependencies": {
-    "eslint": "^6.1.0",
+    "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-config-prettier": "^6.2.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-prettier": "^3.1.2",
     "micro": "^9.3.4",
     "micro-dev": "^3.0.0",
-    "prettier": "^1.18.2"
+    "prettier": "^1.19.1"
   },
   "name": "sandbargraph",
   "license": "gpl-3.0",

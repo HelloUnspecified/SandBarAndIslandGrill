@@ -45,10 +45,10 @@ const Modal = ({ className }) => {
     <ModalMain showModal={showModal} className={className}>
       <ModalContent>
         <CloseIcon icon="close" onClick={() => setShowModal(!showModal)} />
-        <h2>We are closed for the season</h2>
-        <p>But don't worry we will be back in before you know it in spring!</p>
+        <h2>We're currently closed for the season</h2>
+        <p>But it's almost spring. Our doors reopen on April 1st 2020!</p>
         <h3>
-          Signup for our newsletter to be the first to know when we re-open!
+          Signup for our newsletter toady and be the first to know when you can book a reservation!
         </h3>
         <NewsletterSignupForm />
       </ModalContent>
