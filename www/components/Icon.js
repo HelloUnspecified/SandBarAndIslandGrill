@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import svgs from '../utitlies/svgs.js';
+import PropTypes from 'prop-types';
+import svgs from '../utilities/svgs';
 
 const Svg = styled.svg`
   width: auto;
@@ -23,21 +24,36 @@ const Svg = styled.svg`
   }
 `;
 
-const Icon = props => {
+const Icon = ({ className, onClick, height, width, icon }) => {
   return (
     <Svg
       role="img"
       xmlns="http://www.w3.org/2000/svg"
-      className={props.className}
-      onClick={props.onClick}
-      viewBox={`0 0 ${props.height || '24'} ${props.width || '24'}`}
+      className={className}
+      onClick={onClick}
+      viewBox={`0 0 ${height} ${width}`}
     >
-      <title>{svgs[props.icon].title}</title>
-      {svgs[props.icon].path.map(item => {
+      <title>{svgs[icon].title}</title>
+      {svgs[icon].path.map(item => {
         return <path d={item} />;
       })}
     </Svg>
   );
+};
+
+Icon.propTypes = {
+  className: PropTypes.string,
+  height: PropTypes.string,
+  icon: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
+  width: PropTypes.string,
+};
+
+Icon.defaultProps = {
+  className: '',
+  height: '24',
+  onClick: () => {},
+  width: '24',
 };
 
 export default Icon;

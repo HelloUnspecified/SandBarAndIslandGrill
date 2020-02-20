@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { ParallaxProvider } from 'react-scroll-parallax';
 
@@ -13,8 +13,9 @@ import NewsletterSignup from '../components/NewsletterSignup';
 import SocialLinks from '../components/SocialLinks';
 import Specials from '../components/Specials';
 import Testimonials from '../components/Testimonials';
-
-import { below } from '../utitlies/breakpoint.js';
+import Modal from '../components/Modal';
+import NewsletterSignupForm from '../components/NewsletterSignupForm';
+import { below } from '../utilities/breakpoint.js';
 
 const Title = styled.h2`
   font-size: 2.8rem;
@@ -104,59 +105,72 @@ const HeroImages = [
   '/static/images/inside-night.jpg',
 ];
 
-const home = props => (
-  <ParallaxProvider>
-    <>
-      <Hero
-        imagePath={HeroImages[Math.floor(Math.random() * HeroImages.length)]}
-        fullHeight="true"
-        heading="Sand Bar and Island Grill"
-        href="/menu"
-        label="Menu"
-      >
-        <StackedSocialLinks />
-        <PhoneNumber>
-          <a href="tel:1-262-877-9500">(262) 877-9500</a>
-        </PhoneNumber>
-        <StackedLocation icon="location" align="center">
-          <a
-            href="https://goo.gl/maps/9fvZcNvVcsiJ82Hj6"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            3101 E. Lakeshore Dr., Twin Lakes, WI 53181
-          </a>
-        </StackedLocation>
-      </Hero>
+const home = props => {
+  const [showModal, setShowModal] = useState(true);
 
-      <ContentSection
-        title={[
-          <span className="normal">A </span>,
-          <span className="highlight">Tropical Oasis</span>,
-          <span className="normal"> In The Least Likely Of Places</span>,
-        ]}
-      >
-        <AccentImage src="../static/images/tiki-bar.png" />
-        <ContentDetail>
-          <p>
-            The Sand Bar & Island Grill is a waterfront, "open-air"
-            establishment located in the Lake Elizabeth marina literally a few
-            feet away from the shore. It was founded in 2009 by Carlo DiCarlo, a
-            Twin Lakes resident who has spent a great deal of his time on
-            Florida's Suncoast in the Tampa Bay/Clearwater area.
-          </p>
-          <HighlightImage src="../static/images/conversation.jpg" />
-        </ContentDetail>
-      </ContentSection>
+  return (
+    <ParallaxProvider>
+      <>
+        <Hero
+          imagePath={HeroImages[Math.floor(Math.random() * HeroImages.length)]}
+          fullHeight="true"
+          heading="Sand Bar and Island Grill"
+          href="/menu"
+          label="Menu"
+        >
+          <Modal showModal={showModal} setShowModal={setShowModal}>
+            <h2>We're currently closed for the season</h2>
+            <p>But it's almost spring. Our doors reopen on April 1st 2020!</p>
+            <h3>
+              Signup for our newsletter toady and be the first to know when you
+              can book a reservation!
+            </h3>
+            <NewsletterSignupForm />
+          </Modal>
+          <StackedSocialLinks />
+          <PhoneNumber>
+            <a href="tel:1-262-877-9500">(262) 877-9500</a>
+          </PhoneNumber>
+          <StackedLocation icon="location" align="center" key="location">
+            <a
+              href="https://goo.gl/maps/9fvZcNvVcsiJ82Hj6"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              3101 E. Lakeshore Dr., Twin Lakes, WI 53181
+            </a>
+          </StackedLocation>
+        </Hero>
 
-      <FeaturedDishes />
-      <Specials />
-      <NewsletterSignup />
-      <Testimonials />
-      <Gallery />
-      <Map />
-    </>
-  </ParallaxProvider>
-);
+        <ContentSection
+          title={[
+            <span className="normal">A </span>,
+            <span className="highlight">Tropical Oasis</span>,
+            <span className="normal"> In The Least Likely Of Places</span>,
+          ]}
+        >
+          <AccentImage src="../static/images/tiki-bar.png" />
+          <ContentDetail>
+            <p>
+              The Sand Bar & Island Grill is a waterfront, "open-air"
+              establishment located in the Lake Elizabeth marina literally a few
+              feet away from the shore. It was founded in 2009 by Carlo DiCarlo,
+              a Twin Lakes resident who has spent a great deal of his time on
+              Florida's Suncoast in the Tampa Bay/Clearwater area.
+            </p>
+            <HighlightImage src="../static/images/conversation.jpg" />
+          </ContentDetail>
+        </ContentSection>
+
+        <FeaturedDishes />
+        <Specials />
+        <NewsletterSignup />
+        <Testimonials />
+        <Gallery />
+        <Map />
+      </>
+    </ParallaxProvider>
+  );
+};
 
 export default home;

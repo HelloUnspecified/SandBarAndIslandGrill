@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import ContentSection from './ContentSection';
 import NewsletterSignupForm from './NewsletterSignupForm';
 
-import { below } from '../utitlies/breakpoint.js';
+import { below } from '../utilities/breakpoint.js';
 
 const Text = styled.p`
   line-height: 1.8;

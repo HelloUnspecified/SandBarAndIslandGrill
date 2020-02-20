@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { above, below } from '../utitlies/breakpoint.js';
+import { below } from '../utilities/breakpoint';
 
 const Container = styled.div`
   padding: 5rem;

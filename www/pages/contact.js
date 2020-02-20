@@ -9,7 +9,7 @@ import IconText from '../components/IconText';
 import Map from '../components/Map';
 import SocialLinks from '../components/SocialLinks';
 
-import { above, below } from '../utitlies/breakpoint.js';
+import { above, below } from '../utilities/breakpoint.js';
 
 const DetailDiv = styled.div`
   

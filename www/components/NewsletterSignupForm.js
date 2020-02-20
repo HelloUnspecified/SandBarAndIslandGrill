@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { below } from '../utitlies/breakpoint.js';
+import { below } from '../utilities/breakpoint.js';
 
 const Form = styled.form`
   margin-top: 2rem;

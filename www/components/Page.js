@@ -1,12 +1,11 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
+import PropTypes from 'prop-types';
 import GlobalStyle from '../styles/globalStyle';
 import baseTheme from '../styles/baseTheme';
-
 import Meta from './Meta';
 import Header from './Header';
 import Footer from './Footer';
-import Modal from './Modal';
 
 const StyledPage = styled.div`
   background: ${props => props.theme.colors.backgroundColor};
@@ -26,7 +25,7 @@ const InnerPage = styled.div`
   flex-direction: column;
 `;
 
-export default props => {
+const Page = ({ children }) => {
   return (
     <ThemeProvider theme={baseTheme}>
       <>
@@ -34,9 +33,8 @@ export default props => {
         <StyledPage>
           <Meta />
           <CorePage>
-            <Modal />
             <Header />
-            <InnerPage>{props.children}</InnerPage>
+            <InnerPage>{children}</InnerPage>
             <Footer modifiers="site" />
           </CorePage>
         </StyledPage>
@@ -44,3 +42,9 @@ export default props => {
     </ThemeProvider>
   );
 };
+
+Page.propTypes = {
+  children: PropTypes.element.isRequired,
+};
+
+export default Page;

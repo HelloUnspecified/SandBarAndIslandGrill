@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import ContentSection from './ContentSection';
 import Icon from './Icon';
-import { above, below } from '../utitlies/breakpoint.js';
+import { above, below } from '../utilities/breakpoint.js';
 
 const REVIEWS = [
   {

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Icon from './Icon';
-import { below } from '../utitlies/breakpoint.js';
+import { below } from '../utilities/breakpoint.js';
 
 const SocialLinksContainer = styled.div`
   display: flex;
@@ -26,13 +26,18 @@ const SocialLinks = ({ className }) => {
 
   return (
     <SocialLinksContainer className={className}>
-      <a href="https://www.facebook.com/sandbarandislandgrill/" target="_blank">
+      <a
+        href="https://www.facebook.com/sandbarandislandgrill/"
+        target="_blank"
+        key="facebook"
+      >
         <Icon icon="facebook" height={iconHeight} width={iconWidth} />
       </a>
       <a
         href="https://www.instagram.com/sandbarandislandgrill/"
         target="_blank"
         rel="noreferrer noopener"
+        key="instagram"
       >
         <Icon icon="instagram" height={iconHeight} width={iconWidth} />
       </a>
@@ -40,6 +45,7 @@ const SocialLinks = ({ className }) => {
         href="https://www.tripadvisor.com/Restaurant_Review-g60341-d2224176-Reviews-Sand_Bar_and_Island_Grill-Twin_Lakes_Wisconsin.html"
         target="_blank"
         rel="noreferrer noopener"
+        key="tripAdvisor"
       >
         <Icon icon="tripAdvisor" height={iconHeight} width={iconWidth} />
       </a>
@@ -47,6 +53,7 @@ const SocialLinks = ({ className }) => {
         href="https://www.yelp.com/biz/sand-bar-and-island-grill-twin-lakes"
         target="_blank"
         rel="noreferrer noopener"
+        key="yelp"
       >
         <Icon icon="yelp" height={iconHeight} width={iconWidth} />
       </a>

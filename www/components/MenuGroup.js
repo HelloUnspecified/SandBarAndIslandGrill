@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Icon from './Icon';
-import { below } from '../utitlies/breakpoint.js';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+import { below } from '../utilities/breakpoint';
 
 const MenuGrouping = styled.div`
   width: 47%;
@@ -49,21 +50,30 @@ const ItemPrice = styled.span`
   padding-left: 0.7rem;
 `;
 
-const ItemDescription = styled.p``;
+const MenuGroup = ({
+  title,
+  subtext,
+  items,
+  setSelectedMenuItem,
+  setshowModal,
+}) => {
+  const handleClick = (e, item) => {
+    setSelectedMenuItem(item);
+    setshowModal(true);
+  };
 
-const MenuGroup = props => {
   return (
     <MenuGrouping>
-      <GroupTitle>{props.title.replace('_', ' ')}</GroupTitle>
-      {props.subtext && (
+      <GroupTitle>{title.replace('_', ' ')}</GroupTitle>
+      {subtext && (
         <>
-          <GroupSubtext dangerouslySetInnerHTML={{ __html: props.subtext }} />
+          <GroupSubtext dangerouslySetInnerHTML={{ __html: subtext }} />
           <hr />
         </>
       )}
-      {props.items.map((item, index) => {
+      {items.map(item => {
         return (
-          <MenuItem>
+          <MenuItem onClick={e => handleClick(e, item)} key={item.name}>
             <ItemName>{item.name}</ItemName>
             {item.description}
             <ItemPrice>{item.price}</ItemPrice>

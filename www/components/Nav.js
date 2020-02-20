@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import React, { useState } from 'react';
-import { isAbsolute } from 'path';
+import React from 'react';
+import PropTypes from 'prop-types';
 import IconText from './IconText';
 import NavItem from './NavItem';
-import { above, below } from '../utitlies/breakpoint.js';
+import { above, below } from '../utilities/breakpoint.js';
 
 const NavList = styled.div`
   display: flex;
@@ -56,7 +56,7 @@ const Nav = ({ className }) => {
 
       <ButtonLink href="tel:1-262-877-9500">
         <IconText icon="phone" align="right">
-          (262) 877-9500
+          <>(262) 877-9500</>
         </IconText>
       </ButtonLink>
 
@@ -76,6 +76,14 @@ const Nav = ({ className }) => {
       </NavList>
     </nav>
   );
+};
+
+Nav.propTypes = {
+  className: PropTypes.string,
+};
+
+Nav.defaultProps = {
+  className: '',
 };
 
 export default styled(Nav)`

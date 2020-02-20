@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 import { ParallaxProvider } from 'react-scroll-parallax';
-import { above, below } from '../utitlies/breakpoint.js';
+import { above, below } from '../utilities/breakpoint.js';
 
 import ContentSection from '../components/ContentSection';
 import Hero from '../components/Hero';

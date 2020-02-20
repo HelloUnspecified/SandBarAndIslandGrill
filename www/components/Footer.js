@@ -4,7 +4,7 @@ import { applyStyleModifiers } from 'styled-components-modifiers';
 import moment from 'moment';
 import MobileFooter from './MobileFooter';
 import SocialLinks from './SocialLinks';
-import { above, below } from '../utitlies/breakpoint.js';
+import { above, below } from '../utilities/breakpoint.js';
 
 const FOOTER_MODIFIERS = {
   site: ({ theme }) => `

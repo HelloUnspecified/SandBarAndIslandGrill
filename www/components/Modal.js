@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { above, below } from '../utitlies/breakpoint.js';
-import NewsletterSignupForm from './NewsletterSignupForm';
+import PropTypes from 'prop-types';
+
 import Icon from './Icon';
 
 const ModalMain = styled.div`
@@ -38,22 +38,45 @@ const CloseIcon = styled(Icon)`
   }
 `;
 
-const Modal = ({ className }) => {
-  const [showModal, setShowModal] = useState(true);
+const Modal = ({
+  className,
+  children,
+  onClose,
+  onLoad,
+  showModal,
+  setShowModal,
+}) => {
+  onLoad();
 
   return (
     <ModalMain showModal={showModal} className={className}>
       <ModalContent>
-        <CloseIcon icon="close" onClick={() => setShowModal(!showModal)} />
-        <h2>We're currently closed for the season</h2>
-        <p>But it's almost spring. Our doors reopen on April 1st 2020!</p>
-        <h3>
-          Signup for our newsletter toady and be the first to know when you can book a reservation!
-        </h3>
-        <NewsletterSignupForm />
+        <CloseIcon
+          icon="close"
+          onClick={() => {
+            onClose();
+            setShowModal(!showModal);
+          }}
+        />
+        {children}
       </ModalContent>
     </ModalMain>
   );
+};
+
+Modal.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.shape({}).isRequired,
+  onClose: PropTypes.func,
+  onLoad: PropTypes.func,
+  showModal: PropTypes.bool.isRequired,
+  setShowModal: PropTypes.func.isRequired,
+};
+
+Modal.defaultProps = {
+  className: '',
+  onClose: () => {},
+  onLoad: () => {},
 };
 
 export default styled(Modal)`
