@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import IconText from './IconText';
 import NavItem from './NavItem';
-import { above, below } from '../utilities/breakpoint.js';
+import { above, below } from '../utilities/breakpoint';
 
 const NavList = styled.div`
   display: flex;

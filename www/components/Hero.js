@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { ParallaxBanner } from 'react-scroll-parallax';
 import Icon from './Icon';
 import LinkButton from './LinkButton';
@@ -116,32 +117,59 @@ const BannerHeader = styled.div`
   }
 `;
 
-const Hero = props => {
+const Hero = ({
+  children,
+  fullHeight,
+  heading,
+  href,
+  imagePath,
+  label,
+  subheading,
+}) => {
   return (
-    <HeroImage fullHeight={props.fullHeight}>
+    <HeroImage fullHeight={fullHeight}>
       <ParallaxBanner
         layers={[
           {
-            image: props.imagePath,
+            image: imagePath,
             amount: 0.1,
           },
         ]}
         style={{
-          height: props.fullHeight ? '100vh' : '100%',
+          height: fullHeight ? '100vh' : '100%',
           opacity: 0.5,
         }}
       />
-      <BannerHeader fullHeight={props.fullHeight}>
-        <h1>{props.heading}</h1>
-        {props.subheading && <h2>{props.subheading}</h2>}
-        {props.href && <LinkButton href={props.href} label={props.label} />}
-        {props.fullHeight && (
+      <BannerHeader fullHeight={fullHeight}>
+        <h1>{heading}</h1>
+        {subheading && <h2>{subheading}</h2>}
+        {href && <LinkButton href={href} label={label} />}
+        {fullHeight && (
           <Icon icon="arrow" className="down" height="29" width="29" />
         )}
       </BannerHeader>
-      <HeroFooterContainer>{props.children}</HeroFooterContainer>
+      <HeroFooterContainer>{children}</HeroFooterContainer>
     </HeroImage>
   );
+};
+
+Hero.propTypes = {
+  children: PropTypes.element.isRequired,
+  fullHeight: PropTypes.string,
+  heading: PropTypes.string,
+  href: PropTypes.string,
+  imagePath: PropTypes.string,
+  label: PropTypes.string,
+  subheading: PropTypes.string,
+};
+
+Hero.defaultProps = {
+  fullHeight: '',
+  heading: '',
+  href: '',
+  imagePath: '',
+  label: '',
+  subheading: '',
 };
 
 export default Hero;

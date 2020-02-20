@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 import { below } from '../utilities/breakpoint';
 
 const MenuGrouping = styled.div`
