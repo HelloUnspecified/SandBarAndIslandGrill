@@ -46,7 +46,8 @@ const menuItem = () => {
       <FullMenu />
       <Modal
         onClose={() => {
-          window.history.pushState('', '', '/menu');
+          // window.history.pushState('', '', '/menu');
+          router.replace('/menu');
         }}
         showModal={showModal}
         setShowModal={setShowModal}

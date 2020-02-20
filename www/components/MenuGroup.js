@@ -37,6 +37,10 @@ const GroupSubtext = styled.p`
 const MenuItem = styled.p`
   font-size: 1.4rem;
   line-height: 1.4;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const ItemName = styled.span`
@@ -54,12 +58,14 @@ const MenuGroup = ({
   title,
   subtext,
   items,
-  setSelectedMenuItem,
-  setshowModal,
+  // setSelectedMenuItem,
+  // setshowModal,
 }) => {
+  const router = useRouter();
   const handleClick = (e, item) => {
-    setSelectedMenuItem(item);
-    setshowModal(true);
+    // setSelectedMenuItem(item);
+    // setshowModal(true);
+    router.replace('/menu/[menuItem]', '/menu/bacon');
   };
 
   return (

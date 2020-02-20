@@ -90,6 +90,7 @@ export default styled(Modal)`
   p {
     text-align: center;
     line-height: 1.2;
+    color: ${({ theme }) => theme.colors.dark};
   }
 
   h2,
