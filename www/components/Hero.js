@@ -45,7 +45,7 @@ const HeroFooterContainer = styled.div`
   `};
 
   div {
-    width: 50%;
+    width: 100%;
 
     ${below.med`
       width: 100%;

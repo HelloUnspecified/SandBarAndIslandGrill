@@ -33,6 +33,10 @@ const CloseIcon = styled(Icon)`
   position: absolute;
   right: 1rem;
 
+  svg {
+    fill: ${({ theme }) => theme.colors.dark};
+  }
+
   &:hover {
     cursor: pointer;
   }
@@ -49,7 +53,14 @@ const Modal = ({
   onLoad();
 
   return (
-    <ModalMain showModal={showModal} className={className}>
+    <ModalMain
+      showModal={showModal}
+      className={className}
+      onClick={() => {
+        onClose();
+        setShowModal(!showModal);
+      }}
+    >
       <ModalContent>
         <CloseIcon
           icon="close"

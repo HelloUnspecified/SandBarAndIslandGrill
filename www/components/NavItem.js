@@ -92,7 +92,7 @@ NavItem.propTypes = {
   image: PropTypes.string,
   imageWidth: PropTypes.string,
   onClick: PropTypes.func,
-  style: PropTypes.string,
+  style: PropTypes.shape({}),
   title: PropTypes.string,
 };
 
@@ -103,7 +103,7 @@ NavItem.defaultProps = {
   image: '',
   imageWidth: '',
   onClick: () => {},
-  style: '',
+  style: {},
   title: '',
 };
 

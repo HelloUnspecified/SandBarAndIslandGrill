@@ -30,7 +30,7 @@ const SocialLinks = ({ className }) => {
     gtag.event({
       clientWindow: window,
       action: 'click',
-      category: 'link button',
+      category: 'social link',
       label,
     });
   };

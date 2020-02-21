@@ -20,6 +20,7 @@ const Form = styled.form`
 
   label {
     padding-right: 1rem;
+    color: ${({ theme }) => theme.colors.dark};
   }
 
   input.email {
@@ -41,7 +42,7 @@ const SubmitButton = styled.input`
 
 const NewsletterSignupForm = ({ className }) => {
   return (
-    <div id="mc_embed_signup">
+    <div id="mc_embed_signup" style={{ width: '100%' }}>
       <Form
         action="https://sandbarandislandgrill.us20.list-manage.com/subscribe/post?u=9b30f5d6de6cbfe580fddd3c7&amp;id=465a291c6d"
         method="post"
@@ -99,4 +100,8 @@ const NewsletterSignupForm = ({ className }) => {
   );
 };
 
-export default styled(NewsletterSignupForm)``;
+export default styled(NewsletterSignupForm)`
+  div {
+    width: 100%;
+  }
+`;
