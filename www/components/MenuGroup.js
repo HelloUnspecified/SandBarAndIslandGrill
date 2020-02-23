@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
+import { Grid, Cell } from 'styled-css-grid';
 import { below } from '../utilities/breakpoint';
 
 const MenuGrouping = styled.div`
-  width: 47%;
-  margin: 0 1.5%;
+  width: 100%;
   padding-bottom: 2rem;
 
   ${below.med`
@@ -22,32 +22,32 @@ const GroupTitle = styled.h2`
   padding-left: 1rem;
   font-size: 1.4rem;
   text-transform: uppercase;
+  margin: 5rem 0;
 `;
 
 const GroupSubtext = styled.p`
   line-height: 1.2;
   text-align: center;
   font-style: italic;
+  position: relative;
+  top: -2rem;
 
   p.addon {
     margin: 1rem 0 0 0;
   }
 `;
 
-const MenuItem = styled.p`
+const MenuItem = styled(Cell)`
   font-size: 1.4rem;
   line-height: 1.4;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding: 0 4rem;
 
   &:hover {
     cursor: pointer;
   }
-`;
-
-const ItemTopLine = styled.div`
-  display: flex;
-  flex-direction: row;
 `;
 
 const ItemName = styled.span`
@@ -55,11 +55,15 @@ const ItemName = styled.span`
   padding-right: 0.4rem;
   font-weight: 800;
   text-transform: uppercase;
-  flex-grow: 2;
 `;
 
 const ItemPrice = styled.span`
   padding-left: 0.7rem;
+`;
+
+const ItemDescription = styled.p`
+  margin-top: 0;
+  text-align: center;
 `;
 
 const MenuGroup = ({ title, subtext, items }) => {
@@ -74,20 +78,19 @@ const MenuGroup = ({ title, subtext, items }) => {
       {subtext && (
         <>
           <GroupSubtext dangerouslySetInnerHTML={{ __html: subtext }} />
-          <hr />
         </>
       )}
-      {items.map(item => {
-        return (
-          <MenuItem onClick={e => handleClick(e, item)} key={item.name}>
-            <ItemTopLine>
+      <Grid columns="repeat(auto-fit,minmax(30rem,1fr))" gap="4rem 10rem">
+        {items.map(item => {
+          return (
+            <MenuItem onClick={e => handleClick(e, item)} key={item.name}>
               <ItemName>{item.name}</ItemName>
+              <ItemDescription>{item.description}</ItemDescription>
               <ItemPrice>{item.price}</ItemPrice>
-            </ItemTopLine>
-            {item.description}
-          </MenuItem>
-        );
-      })}
+            </MenuItem>
+          );
+        })}
+      </Grid>
     </MenuGrouping>
   );
 };
@@ -97,11 +100,15 @@ MenuGroup.propTypes = {
     PropTypes.shape({
       description: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      price: PropTypes.number.isRequired,
+      price: PropTypes.number,
     }),
   ).isRequired,
-  subtext: PropTypes.string.isRequired,
+  subtext: PropTypes.string,
   title: PropTypes.string.isRequired,
+};
+
+MenuGroup.defaultProps = {
+  subtext: '',
 };
 
 export default styled(MenuGroup)``;

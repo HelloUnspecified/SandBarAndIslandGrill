@@ -16,7 +16,7 @@ const Meta = () => (
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css?family=Roboto"
+      href="https://fonts.googleapis.com/css?family=Roboto:400,600,800"
       rel="stylesheet"
     />
 

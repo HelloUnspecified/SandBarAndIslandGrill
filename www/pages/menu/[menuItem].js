@@ -20,8 +20,24 @@ const GET_MENU_ITEM = gql`
 `;
 
 const FoodImage = styled.img`
-  width: 10rem;
+  width: 40rem;
   height: auto;
+`;
+
+const ModalItem = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+const ModalDetails = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: 3rem;
+`;
+
+const ItemPrice = styled.p`
+  border-bottom: none;
 `;
 
 const menuItem = () => {
@@ -52,12 +68,17 @@ const menuItem = () => {
         showModal={showModal}
         setShowModal={setShowModal}
       >
-        <h2>{menuItemSelected.name}</h2>
-        <p>{menuItemSelected.description}</p>
-        <FoodImage
-          src="/static/images/tacos-and-rings.jpg"
-          alt={menuItemSelected.name}
-        />
+        <ModalItem>
+          <FoodImage
+            src="/static/images/tacos-and-rings.jpg"
+            alt={menuItemSelected.name}
+          />
+          <ModalDetails>
+            <h2>{menuItemSelected.name}</h2>
+            <p className="underline">{menuItemSelected.description}</p>
+            <ItemPrice>{menuItemSelected.price}</ItemPrice>
+          </ModalDetails>
+        </ModalItem>
       </Modal>
     </>
   );

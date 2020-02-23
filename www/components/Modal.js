@@ -111,10 +111,13 @@ export default styled(Modal)`
   }
 
   p {
-    padding-bottom: 2rem;
-    border-bottom: 1px solid ${({ theme }) => theme.colors.orange};
     max-width: 60rem;
     margin: auto;
+  }
+
+  .underline {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.orange};
   }
 
   .mc-field-group {

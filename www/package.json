@@ -28,7 +28,8 @@
     "react-facebook": "^8.1.4",
     "react-scroll-parallax": "^2.3.1",
     "styled-components": "^4.4.1",
-    "styled-components-modifiers": "^1.2.5"
+    "styled-components-modifiers": "^1.2.5",
+    "styled-css-grid": "^1.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",

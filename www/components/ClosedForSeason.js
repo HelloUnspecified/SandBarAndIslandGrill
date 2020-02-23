@@ -7,7 +7,9 @@ const ClosedForSeason = ({ className }) => {
   return (
     <div className={className}>
       <h2>We're currently closed for the season</h2>
-      <p>But it's almost spring. Our doors reopen on April 1st 2020!</p>
+      <p className="underline">
+        But it's almost spring. Our doors reopen on April 1st 2020!
+      </p>
       <h3>
         Signup for our newsletter toady and be the first to know when you can
         book a reservation!
