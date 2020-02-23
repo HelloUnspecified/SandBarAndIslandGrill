@@ -32,6 +32,7 @@ const CloseIcon = styled(Icon)`
   width: 2rem;
   position: absolute;
   right: 1rem;
+  top: 1rem;
 
   svg {
     fill: ${({ theme }) => theme.colors.dark};

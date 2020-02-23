@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
+import PropTypes from 'prop-types';
 import { below } from '../utilities/breakpoint';
 
 const MenuGrouping = styled.div`
@@ -36,10 +37,17 @@ const GroupSubtext = styled.p`
 const MenuItem = styled.p`
   font-size: 1.4rem;
   line-height: 1.4;
+  display: flex;
+  flex-direction: column;
 
   &:hover {
     cursor: pointer;
   }
+`;
+
+const ItemTopLine = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
 
 const ItemName = styled.span`
@@ -47,23 +55,16 @@ const ItemName = styled.span`
   padding-right: 0.4rem;
   font-weight: 800;
   text-transform: uppercase;
+  flex-grow: 2;
 `;
 
 const ItemPrice = styled.span`
   padding-left: 0.7rem;
 `;
 
-const MenuGroup = ({
-  title,
-  subtext,
-  items,
-  // setSelectedMenuItem,
-  // setshowModal,
-}) => {
+const MenuGroup = ({ title, subtext, items }) => {
   const router = useRouter();
   const handleClick = (e, item) => {
-    // setSelectedMenuItem(item);
-    // setshowModal(true);
     router.replace('/menu/[menuItem]', '/menu/bacon');
   };
 
@@ -79,14 +80,28 @@ const MenuGroup = ({
       {items.map(item => {
         return (
           <MenuItem onClick={e => handleClick(e, item)} key={item.name}>
-            <ItemName>{item.name}</ItemName>
+            <ItemTopLine>
+              <ItemName>{item.name}</ItemName>
+              <ItemPrice>{item.price}</ItemPrice>
+            </ItemTopLine>
             {item.description}
-            <ItemPrice>{item.price}</ItemPrice>
           </MenuItem>
         );
       })}
     </MenuGrouping>
   );
+};
+
+MenuGroup.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      description: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+    }),
+  ).isRequired,
+  subtext: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default styled(MenuGroup)``;

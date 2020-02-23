@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-
-import { below } from '../utilities/breakpoint.js';
+import PropTypes from 'prop-types';
+import { below } from '../utilities/breakpoint';
 
 const Form = styled.form`
   margin-top: 2rem;
@@ -10,6 +10,7 @@ const Form = styled.form`
   div.mc-field-group {
     display: flex;
     flex-direction: row;
+    justify-content: center;
 
     ${below.med`
       text-align: center;
@@ -98,6 +99,14 @@ const NewsletterSignupForm = ({ className }) => {
       </Form>
     </div>
   );
+};
+
+NewsletterSignupForm.propTypes = {
+  className: PropTypes.string,
+};
+
+NewsletterSignupForm.defaultProps = {
+  className: '',
 };
 
 export default styled(NewsletterSignupForm)`

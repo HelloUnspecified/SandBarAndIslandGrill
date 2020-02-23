@@ -126,7 +126,7 @@ const Highlight = styled.span`
   font-weight: 800;
 `;
 
-const Testimonials = ({ className }) => {
+const Testimonials = () => {
   const [reviewIndex, setReviewIndex] = useState(0);
   const review = REVIEWS[reviewIndex];
 
@@ -141,8 +141,8 @@ const Testimonials = ({ className }) => {
               onClick={
                 reviewIndex > 0
                   ? () => {
-                    setReviewIndex(reviewIndex - 1);
-                  }
+                      setReviewIndex(reviewIndex - 1);
+                    }
                   : false
               }
             />
@@ -162,12 +162,12 @@ const Testimonials = ({ className }) => {
               icon="arrow"
               className={`right ${
                 reviewIndex === REVIEWS.length - 1 ? 'medium' : ''
-                }`}
+              }`}
               onClick={
                 reviewIndex < REVIEWS.length - 1
                   ? () => {
-                    setReviewIndex(reviewIndex + 1);
-                  }
+                      setReviewIndex(reviewIndex + 1);
+                    }
                   : false
               }
             />
@@ -180,6 +180,7 @@ const Testimonials = ({ className }) => {
             <Dot
               onClick={() => setReviewIndex(index)}
               className={index === reviewIndex ? 'orange' : ''}
+              key={item.name}
             />
           );
         })}

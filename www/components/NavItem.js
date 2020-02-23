@@ -77,8 +77,15 @@ const NavItem = ({
   };
 
   return (
-    <Link href={href} passHref onClick={clickTracking}>
-      <StyledLink display={display} onClick={onClick} color={color}>
+    <Link href={href} passHref>
+      <StyledLink
+        display={display}
+        onClick={() => {
+          clickTracking();
+          onClick();
+        }}
+        color={color}
+      >
         {displayedLink()}
       </StyledLink>
     </Link>

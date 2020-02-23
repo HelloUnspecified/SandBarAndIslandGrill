@@ -20,15 +20,6 @@ const Meta = () => (
       rel="stylesheet"
     />
 
-    <meta
-      name="description"
-      content="A Tropical Oasis in the least likely of places!"
-    />
-    <meta
-      name="keywords"
-      content="TIKI Bar, Resturant, Twin Lakes, Lake Elizabeth"
-    />
-
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Sand Bar And Island Grill" />
     <meta

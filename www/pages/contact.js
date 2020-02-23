@@ -8,8 +8,8 @@ import Hero from '../components/Hero';
 import IconText from '../components/IconText';
 import Map from '../components/Map';
 import SocialLinks from '../components/SocialLinks';
-
-import { above, below } from '../utilities/breakpoint.js';
+import ClosedForSeason from '../components/ClosedForSeason';
+import { above, below } from '../utilities/breakpoint';
 
 const DetailDiv = styled.div`
   
@@ -76,7 +76,35 @@ const Socials = styled(SocialLinks)`
   `};
 `;
 
-const contact = props => (
+const StyledClosedForSeason = styled(ClosedForSeason)`
+  h2 {
+    font-size: 2.8rem;
+    margin-bottom: 0.7rem;
+  }
+
+  h2,
+  h3,
+  p {
+    text-align: center;
+    line-height: 1.2;
+    color: ${({ theme }) => theme.colors.dark};
+  }
+
+  h2,
+  h3 {
+    font-weight: 400;
+  }
+  p {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.orange};
+    max-width: 60rem;
+    margin: auto;
+  }
+
+  margin-bottom: 8rem;
+`;
+
+const contact = () => (
   <>
     <Head>
       <title key="title">Contact Us - Sand Bar and Island Grill</title>
@@ -90,6 +118,7 @@ const contact = props => (
           label="Call for Reservations"
         />
         <ContentSection title="Contact Us">
+          <StyledClosedForSeason />
           <DetailDiv>
             <Label>Email</Label>
             <IconText icon="email" align="center">

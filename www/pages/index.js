@@ -14,25 +14,8 @@ import SocialLinks from '../components/SocialLinks';
 import Specials from '../components/Specials';
 import Testimonials from '../components/Testimonials';
 import Modal from '../components/Modal';
-import NewsletterSignupForm from '../components/NewsletterSignupForm';
-import { below } from '../utilities/breakpoint.js';
-
-const Title = styled.h2`
-  font-size: 2.8rem;
-  text-align: center;
-  margin-top: 0;
-  line-height: 1.2;
-  font-weight: 400;
-  font-family: 'Roboto', sans-serif;
-  margin-bottom: 0.5rem;
-`;
-
-const Fancy = styled.span`
-  font-size: 4.2rem;
-  font-family: 'Great Vibes', cursive;
-  font-weight: 400;
-  color: ${({ theme }) => theme.colors.orange};
-`;
+import ClosedForSeason from '../components/ClosedForSeason';
+import { below } from '../utilities/breakpoint';
 
 const PhoneNumber = styled.div`
   text-align: center;
@@ -78,11 +61,6 @@ const StackedLocation = styled(IconText)`
   }
 `;
 
-const ContentBlock = styled.div`
-  margin: auto;
-  max-width: 1000px;
-`;
-
 const ContentDetail = styled.div`
   display: flex;
 
@@ -105,7 +83,7 @@ const HeroImages = [
   '/static/images/inside-night.jpg',
 ];
 
-const home = props => {
+const home = () => {
   const [showModal, setShowModal] = useState(true);
 
   return (
@@ -118,15 +96,6 @@ const home = props => {
           href="/menu"
           label="Menu"
         >
-          <Modal showModal={showModal} setShowModal={setShowModal}>
-            <h2>We're currently closed for the season</h2>
-            <p>But it's almost spring. Our doors reopen on April 1st 2020!</p>
-            <h3>
-              Signup for our newsletter toady and be the first to know when you
-              can book a reservation!
-            </h3>
-            <NewsletterSignupForm />
-          </Modal>
           <StackedSocialLinks />
           <PhoneNumber>
             <a href="tel:1-262-877-9500">(262) 877-9500</a>
@@ -141,7 +110,9 @@ const home = props => {
             </a>
           </StackedLocation>
         </Hero>
-
+        <Modal showModal={showModal} setShowModal={setShowModal}>
+          <ClosedForSeason />
+        </Modal>
         <ContentSection
           title={[
             <span className="normal">A </span>,

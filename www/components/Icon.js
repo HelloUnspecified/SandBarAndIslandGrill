@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import svgs from '../utilities/svgs';
+import { svgs } from '../utilities';
 
 const Svg = styled.svg`
   width: auto;
@@ -34,8 +34,8 @@ const Icon = ({ className, onClick, height, width, icon }) => {
       viewBox={`0 0 ${height} ${width}`}
     >
       <title>{svgs[icon].title}</title>
-      {svgs[icon].path.map(item => {
-        return <path d={item} />;
+      {svgs[icon].path.map((item, index) => {
+        return <path d={item} key={`${icon}${index}`} />;
       })}
     </Svg>
   );

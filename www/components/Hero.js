@@ -154,7 +154,7 @@ const Hero = ({
 };
 
 Hero.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.element,
   fullHeight: PropTypes.string,
   heading: PropTypes.string,
   href: PropTypes.string,
@@ -164,6 +164,7 @@ Hero.propTypes = {
 };
 
 Hero.defaultProps = {
+  children: React.createElement('div'),
   fullHeight: '',
   heading: '',
   href: '',
