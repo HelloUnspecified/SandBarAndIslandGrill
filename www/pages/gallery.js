@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Head from 'next/head';
 import styled from 'styled-components';
 import { ParallaxProvider } from 'react-scroll-parallax';
+import { NextSeo } from 'next-seo';
 import Lightbox from 'fslightbox-react';
-import { above, below } from '../utilities/breakpoint.js';
+import { above } from '../utilities/breakpoint';
 
 import ContentSection from '../components/ContentSection';
 import Hero from '../components/Hero';
@@ -53,9 +53,10 @@ const about = props => {
 
   return (
     <>
-      <Head>
-        <title key="title">Gallery - Sand Bar and Island Grill</title>
-      </Head>
+      <NextSeo
+        title="Gallery - Sand Bar and Island Grill"
+        description="Photos of our food and restaurant here at Sand Bar and Island Grill."
+      />
       <ParallaxProvider>
         <>
           <Hero

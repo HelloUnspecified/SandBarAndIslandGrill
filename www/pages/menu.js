@@ -1,13 +1,14 @@
 import React from 'react';
-import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 import FullMenu from '../components/FullMenu';
 
 const menu = () => {
   return (
     <>
-      <Head>
-        <title key="title">Menu - Sand Bar and Island Grill</title>
-      </Head>
+      <NextSeo
+        title="Menu - Sand Bar and Island Grill"
+        description="All of are delicious food and drink specials here at Sand Bar and Island Grill."
+      />
       <FullMenu />
     </>
   );

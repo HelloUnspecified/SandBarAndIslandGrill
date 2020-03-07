@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react';
-import Head from 'next/head';
+import React from 'react';
 import styled from 'styled-components';
+import { NextSeo } from 'next-seo';
 import { ParallaxProvider } from 'react-scroll-parallax';
 
 import ContentSection from '../components/ContentSection';
@@ -106,9 +106,10 @@ const StyledClosedForSeason = styled(ClosedForSeason)`
 
 const contact = () => (
   <>
-    <Head>
-      <title key="title">Contact Us - Sand Bar and Island Grill</title>
-    </Head>
+    <NextSeo
+      title="Contact Us - Sand Bar and Island Grill"
+      description="Reach out to us here at Sand Bar and Island Grill."
+    />
     <ParallaxProvider>
       <>
         <Hero
