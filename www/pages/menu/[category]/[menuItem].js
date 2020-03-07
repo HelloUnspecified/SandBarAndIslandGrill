@@ -24,6 +24,7 @@ const GET_MENU_ITEM = gql`
 const FoodImage = styled.img`
   width: 40rem;
   height: auto;
+  padding-right: 3rem;
 `;
 
 const ModalItem = styled.div`
@@ -35,11 +36,13 @@ const ModalDetails = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  left: 3rem;
+  width: 100%;
+  padding: 3rem 2rem;
 `;
 
 const ItemPrice = styled.p`
   border-bottom: none;
+  width: 100%;
 `;
 
 const menuItem = () => {
@@ -62,8 +65,7 @@ const menuItem = () => {
   if (loading) return null;
   if (error) return null;
 
-  console.log('---data', data);
-
+  // TO DO: should just return an item not an array
   const { name, description, imageUrl, price } = data.menuItem[0];
 
   return (
@@ -74,7 +76,6 @@ const menuItem = () => {
       <FullMenu />
       <Modal
         onClose={() => {
-          // window.history.pushState('', '', '/menu');
           router.replace('/menu');
         }}
         showModal={showModal}
@@ -83,9 +84,9 @@ const menuItem = () => {
         <ModalItem>
           {imageUrl && <FoodImage src={imageUrl} alt={name} />}
           <ModalDetails>
-            <h2>{name}</h2>
-            <p className="underline">{description}</p>
-            <ItemPrice>{price}</ItemPrice>
+            <h2 style={{ marginBottom: '3rem', marginTop: '0' }}>{name}</h2>
+            <p>{description}</p>
+            {price && <ItemPrice className="top-line">${price}</ItemPrice>}
           </ModalDetails>
         </ModalItem>
       </Modal>

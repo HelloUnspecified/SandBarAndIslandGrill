@@ -120,6 +120,12 @@ export default styled(Modal)`
     border-bottom: 1px solid ${({ theme }) => theme.colors.orange};
   }
 
+  .top-line {
+    padding-top: 1.5rem;
+    margin-top: 2rem;
+    border-top: 1px solid ${({ theme }) => theme.colors.orange};
+  }
+
   .mc-field-group {
     justify-content: center;
   }
