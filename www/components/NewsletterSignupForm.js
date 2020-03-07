@@ -83,7 +83,6 @@ const NewsletterSignupForm = ({ className }) => {
               type="text"
               name="b_9b30f5d6de6cbfe580fddd3c7_465a291c6d"
               tabIndex="-1"
-              value=""
             />
           </div>
           <div>

@@ -60,7 +60,7 @@ const FeaturedDishes = ({ className }) => {
     <ContentSection title="Featured Dishes" color="light">
       <div className={className}>
         {data.menu.map(i => (
-          <FeaturedDish>
+          <FeaturedDish key={i.name}>
             <FoodImage src={i.imageUrl} />
             <Name>{i.name}</Name>
             <Description>{i.description}</Description>

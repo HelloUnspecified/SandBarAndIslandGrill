@@ -48,35 +48,37 @@ const HighlightImage = styled.img`
 
 const Specials = ({ className }) => (
   <ContentSection title="Drink and Dinner Specials">
-    <SpecialItem>
-      <SpecialTitle>EVERY FRIDAY</SpecialTitle>
-      <SpecialSubtitle>Fresh Oysters & Mussels</SpecialSubtitle>
-      <SpecialDescription>
-        Every Friday after 4PM through Sunday we ship in Fresh Plump Quality
-        East Coast Oysters and Mussels. When they're gone, they're gone, well
-        until next Friday.
-      </SpecialDescription>
-    </SpecialItem>
+    <>
+      <SpecialItem>
+        <SpecialTitle>EVERY FRIDAY</SpecialTitle>
+        <SpecialSubtitle>Fresh Oysters & Mussels</SpecialSubtitle>
+        <SpecialDescription>
+          Every Friday after 4PM through Sunday we ship in Fresh Plump Quality
+          East Coast Oysters and Mussels. When they're gone, they're gone, well
+          until next Friday.
+        </SpecialDescription>
+      </SpecialItem>
 
-    <SpecialItem>
-      <SpecialTitle>SUNDAY FUNDAY</SpecialTitle>
-      <SpecialSubtitle>$1.50 Bloody Marys</SpecialSubtitle>
-      <SpecialDescription>
-        Every Sunday from open till close, Bloody Marys are just a $1.50.
-      </SpecialDescription>
-    </SpecialItem>
+      <SpecialItem>
+        <SpecialTitle>SUNDAY FUNDAY</SpecialTitle>
+        <SpecialSubtitle>$1.50 Bloody Marys</SpecialSubtitle>
+        <SpecialDescription>
+          Every Sunday from open till close, Bloody Marys are just a $1.50.
+        </SpecialDescription>
+      </SpecialItem>
 
-    <SpecialItem>
-      <SpecialTitle>EVERYDAY</SpecialTitle>
-      <SpecialSubtitle>Something Different Daily</SpecialSubtitle>
-      <SpecialDescription>
-        Each and every day we mix it up. That's right our chefs come up with a
-        few crazy dishes. How about a tried and true Cuban Sandwich or Scallop
-        Tacos? What will it be today?
-      </SpecialDescription>
-    </SpecialItem>
+      <SpecialItem>
+        <SpecialTitle>EVERYDAY</SpecialTitle>
+        <SpecialSubtitle>Something Different Daily</SpecialSubtitle>
+        <SpecialDescription>
+          Each and every day we mix it up. That's right our chefs come up with a
+          few crazy dishes. How about a tried and true Cuban Sandwich or Scallop
+          Tacos? What will it be today?
+        </SpecialDescription>
+      </SpecialItem>
 
-    <HighlightImage src="../static/images/tiki-drink.png" />
+      <HighlightImage src="../static/images/tiki-drink.png" />
+    </>
   </ContentSection>
 );
 

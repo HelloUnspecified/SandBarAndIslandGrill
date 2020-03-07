@@ -16,11 +16,13 @@ const NewsletterSignUp = ({ className }) => {
       color="light"
       className={className}
     >
-      <Text>
-        Sign up for our newsletter list to be the first to hear about spring
-        opening, specials, events and all we are up here at Sand Bar.
-      </Text>
-      <NewsletterSignupForm />
+      <>
+        <Text>
+          Sign up for our newsletter list to be the first to hear about spring
+          opening, specials, events and all we are up here at Sand Bar.
+        </Text>
+        <NewsletterSignupForm />
+      </>
     </ContentSection>
   );
 };

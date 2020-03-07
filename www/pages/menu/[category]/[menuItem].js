@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/react-hooks';
@@ -70,9 +70,10 @@ const menuItem = () => {
 
   return (
     <>
-      <Head>
-        <title key="title">Menu - Sand Bar and Island Grill</title>
-      </Head>
+      <NextSeo
+        title={`${name} - Sand Bar and Island Grill`}
+        description={description}
+      />
       <FullMenu />
       <Modal
         onClose={() => {

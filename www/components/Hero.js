@@ -164,7 +164,7 @@ Hero.propTypes = {
 };
 
 Hero.defaultProps = {
-  children: React.createElement('div'),
+  children: null,
   fullHeight: '',
   heading: '',
   href: '',

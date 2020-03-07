@@ -143,7 +143,7 @@ const Testimonials = () => {
                   ? () => {
                       setReviewIndex(reviewIndex - 1);
                     }
-                  : false
+                  : () => {}
               }
             />
           </div>
@@ -168,7 +168,7 @@ const Testimonials = () => {
                   ? () => {
                       setReviewIndex(reviewIndex + 1);
                     }
-                  : false
+                  : () => {}
               }
             />
           </div>

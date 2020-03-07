@@ -96,41 +96,53 @@ const home = () => {
           href="/menu"
           label="Menu"
         >
-          <StackedSocialLinks />
-          <PhoneNumber>
-            <a href="tel:1-262-877-9500">(262) 877-9500</a>
-          </PhoneNumber>
-          <StackedLocation icon="location" align="center" key="location">
-            <a
-              href="https://goo.gl/maps/9fvZcNvVcsiJ82Hj6"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              3101 E. Lakeshore Dr., Twin Lakes, WI 53181
-            </a>
-          </StackedLocation>
+          <>
+            <StackedSocialLinks />
+            <PhoneNumber>
+              <a href="tel:1-262-877-9500">(262) 877-9500</a>
+            </PhoneNumber>
+            <StackedLocation icon="location" align="center" key="location">
+              <a
+                href="https://goo.gl/maps/9fvZcNvVcsiJ82Hj6"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                3101 E. Lakeshore Dr., Twin Lakes, WI 53181
+              </a>
+            </StackedLocation>
+          </>
         </Hero>
         <Modal showModal={showModal} setShowModal={setShowModal}>
           <ClosedForSeason />
         </Modal>
         <ContentSection
           title={[
-            <span className="normal">A </span>,
-            <span className="highlight">Tropical Oasis</span>,
-            <span className="normal"> In The Least Likely Of Places</span>,
+            <span className="normal" key="a">
+              A{' '}
+            </span>,
+            <span className="highlight" key="tropical-oasis">
+              Tropical Oasis
+            </span>,
+            <span className="normal" key="least-likely">
+              {' '}
+              In The Least Likely Of Places
+            </span>,
           ]}
+          key="tropical-oasis"
         >
-          <AccentImage src="../static/images/tiki-bar.png" />
-          <ContentDetail>
-            <p>
-              The Sand Bar & Island Grill is a waterfront, "open-air"
-              establishment located in the Lake Elizabeth marina literally a few
-              feet away from the shore. It was founded in 2009 by Carlo DiCarlo,
-              a Twin Lakes resident who has spent a great deal of his time on
-              Florida's Suncoast in the Tampa Bay/Clearwater area.
-            </p>
-            <HighlightImage src="../static/images/conversation.jpg" />
-          </ContentDetail>
+          <>
+            <AccentImage src="../static/images/tiki-bar.png" />
+            <ContentDetail>
+              <p>
+                The Sand Bar & Island Grill is a waterfront, "open-air"
+                establishment located in the Lake Elizabeth marina literally a
+                few feet away from the shore. It was founded in 2009 by Carlo
+                DiCarlo, a Twin Lakes resident who has spent a great deal of his
+                time on Florida's Suncoast in the Tampa Bay/Clearwater area.
+              </p>
+              <HighlightImage src="../static/images/conversation.jpg" />
+            </ContentDetail>
+          </>
         </ContentSection>
 
         <FeaturedDishes />

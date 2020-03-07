@@ -94,7 +94,7 @@ ContentSection.propTypes = {
   children: PropTypes.element,
   color: PropTypes.string,
   subtitle: PropTypes.string,
-  title: PropTypes.string,
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
 };
 
 ContentSection.defaultProps = {

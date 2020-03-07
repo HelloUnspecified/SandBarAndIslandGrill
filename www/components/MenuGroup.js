@@ -79,9 +79,7 @@ const MenuGroup = ({ title, subtext, items }) => {
     <MenuGrouping>
       <GroupTitle>{title.replace('_', ' ')}</GroupTitle>
       {subtext && (
-        <>
-          <GroupSubtext dangerouslySetInnerHTML={{ __html: subtext }} />
-        </>
+        <GroupSubtext dangerouslySetInnerHTML={{ __html: subtext }} />
       )}
       <Grid columns="repeat(auto-fit,minmax(30rem,1fr))" gap="4rem 10rem">
         {items.map(item => {
