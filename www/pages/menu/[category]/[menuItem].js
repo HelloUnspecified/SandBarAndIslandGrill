@@ -4,17 +4,19 @@ import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
-import FullMenu from '../../components/FullMenu';
-import Modal from '../../components/Modal';
+import _ from 'lodash';
+import FullMenu from '../../../components/FullMenu';
+import Modal from '../../../components/Modal';
 
 const GET_MENU_ITEM = gql`
-  query getMenuItem {
-    menu {
+  query getMenuItem($category: String!, $slug: String!) {
+    menuItem(category: $category, slug: $slug) {
       name
       description
       price
       category
       imageUrl
+      slug
     }
   }
 `;
@@ -44,15 +46,25 @@ const menuItem = () => {
   const [showModal, setShowModal] = useState(true);
   const router = useRouter();
 
+  const context =
+    process.env.NODE_ENV === 'development'
+      ? { context: { uri: 'http://localhost:3000/api' } }
+      : {};
+
   const { loading, error, data } = useQuery(GET_MENU_ITEM, {
-    variables: { slug: router.query.slug },
+    variables: {
+      category: router.query.category,
+      slug: router.query.menuItem,
+    },
+    ...context,
   });
 
   if (loading) return null;
   if (error) return null;
 
-  const { menu } = data;
-  const menuItemSelected = menu[0];
+  console.log('---data', data);
+
+  const { name, description, imageUrl, price } = data.menuItem[0];
 
   return (
     <>
@@ -69,14 +81,11 @@ const menuItem = () => {
         setShowModal={setShowModal}
       >
         <ModalItem>
-          <FoodImage
-            src="/static/images/tacos-and-rings.jpg"
-            alt={menuItemSelected.name}
-          />
+          {imageUrl && <FoodImage src={imageUrl} alt={name} />}
           <ModalDetails>
-            <h2>{menuItemSelected.name}</h2>
-            <p className="underline">{menuItemSelected.description}</p>
-            <ItemPrice>{menuItemSelected.price}</ItemPrice>
+            <h2>{name}</h2>
+            <p className="underline">{description}</p>
+            <ItemPrice>{price}</ItemPrice>
           </ModalDetails>
         </ModalItem>
       </Modal>

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import { Grid, Cell } from 'styled-css-grid';
-import { below } from '../utilities/breakpoint';
+import { below, categories } from '../utilities';
 
 const MenuGrouping = styled.div`
   width: 100%;
@@ -69,7 +69,10 @@ const ItemDescription = styled.p`
 const MenuGroup = ({ title, subtext, items }) => {
   const router = useRouter();
   const handleClick = (e, item) => {
-    router.replace('/menu/[menuItem]', '/menu/bacon');
+    router.replace(
+      '/menu/[category]/[menuItem]',
+      `/menu/${categories[item.category]}/${item.slug}`,
+    );
   };
 
   return (

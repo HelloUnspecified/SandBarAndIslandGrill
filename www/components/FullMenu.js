@@ -6,7 +6,7 @@ import { gql } from 'apollo-boost';
 import ContentSection from './ContentSection';
 import Hero from './Hero';
 import MenuGroup from './MenuGroup';
-import { below } from '../utilities/breakpoint';
+import { below } from '../utilities';
 
 const GET_MENU = gql`
   query getMenu {
@@ -16,6 +16,7 @@ const GET_MENU = gql`
       price
       category
       imageUrl
+      slug
     }
   }
 `;
