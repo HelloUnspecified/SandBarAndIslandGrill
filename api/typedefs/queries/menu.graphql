@@ -4,6 +4,9 @@ type Query {
   "query the entire menu"
   menu(isFeatured: Boolean): [MenuItem]
 
+  "query for a specific menu item"
+  menuItem(category: String, slug: String): [MenuItem]
+
   "query the drink menu"
   drinks: [MenuItem]
 

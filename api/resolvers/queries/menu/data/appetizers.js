@@ -7,6 +7,7 @@ module.exports = [
     description: 'with capers and crackers or pita chips',
     price: 11.95,
     isFeatured: false,
+    slug: 'smoked-fish-spread',
   },
   {
     id: '1234',
@@ -16,6 +17,7 @@ module.exports = [
     description: 'with marinara sauce',
     price: 8.95,
     isFeatured: false,
+    slug: 'mozzerella-sticks',
   },
   {
     id: '1234',
@@ -25,6 +27,7 @@ module.exports = [
     description: 'with homemade cocktail sauce',
     price: 11.95,
     isFeatured: false,
+    slug: 'fried-calamari',
   },
   {
     id: '1234',
@@ -34,6 +37,7 @@ module.exports = [
     description: 'plain or buffalo style with choice of dipping sauce',
     price: 7.95,
     isFeatured: false,
+    slug: 'chicken-tenders',
   },
   {
     id: '1234',
@@ -44,6 +48,7 @@ module.exports = [
       '(hot, mild, teriyaki or BBQ) with ranch or bleu cheese & celery',
     price: 10.95,
     isFeatured: false,
+    slug: 'buffalo-wings',
   },
   {
     id: '1234',
@@ -53,6 +58,7 @@ module.exports = [
     description: 'with homemade cocktail sauce and crackers or pita chips',
     price: 11.95,
     isFeatured: false,
+    slug: 'shrimp-cocktail',
   },
   {
     id: '1234',
@@ -63,6 +69,7 @@ module.exports = [
       'with gherkin pickles, course ground mustard and crackers or pita chips',
     price: 9.95,
     isFeatured: false,
+    slug: 'gouda-cheese-wheel',
   },
   {
     id: '1234',
@@ -73,6 +80,7 @@ module.exports = [
       'jalapeno bites with corn, bacon and cream cheese served with chipotle mayo',
     price: 7.95,
     isFeatured: false,
+    slug: 'corn-fritters',
   },
   {
     id: '1234',
@@ -82,6 +90,7 @@ module.exports = [
     description: '3 sticks served with Sam Adams Beer Cheese dip',
     price: 6.95,
     isFeatured: false,
+    slug: 'pretzel-sticks',
   },
   {
     id: '1234',
@@ -91,6 +100,7 @@ module.exports = [
     description: 'our homemade crab cakes drizzled with dijonaise',
     price: 14.95,
     isFeatured: false,
+    slug: 'crab-cakes',
   },
   {
     id: '1234',
@@ -100,6 +110,7 @@ module.exports = [
     description: 'with raspberry horseradish BBQ and baby gherkins',
     price: 11.95,
     isFeatured: false,
+    slug: 'duck-tenders',
   },
   {
     id: '1234',
@@ -109,6 +120,7 @@ module.exports = [
     description: 'served with dijonaise',
     price: 7.95,
     isFeatured: false,
+    slug: 'fried-green-beans',
   },
   {
     id: '1234',
@@ -118,6 +130,7 @@ module.exports = [
     description: 'with dijonaise or ranch',
     price: 7.95,
     isFeatured: false,
+    slug: 'onion-rings',
   },
   {
     id: '1234',
@@ -128,6 +141,7 @@ module.exports = [
       'sautéed shrimp in extra virgin olive oil, white wine and garlic with lemon juice',
     price: 11.95,
     isFeatured: false,
+    slug: 'shrimp-scampi',
   },
   {
     id: '1234',
@@ -137,6 +151,7 @@ module.exports = [
     description: 'sliced & grilled tomatoes with melted bleu cheese',
     price: 9.95,
     isFeatured: false,
+    slug: 'grilled-tomatoes',
   },
   {
     id: '1234',
@@ -146,6 +161,7 @@ module.exports = [
     description: '(hot or mild) with bleu cheese & celery',
     price: 11.95,
     isFeatured: false,
+    slug: 'buffalo-shrimp',
   },
   {
     id: '1234',
@@ -156,6 +172,7 @@ module.exports = [
       'deep fried lightly battered shrimp tossed in a homemade spicy sauce.',
     price: 11.95,
     isFeatured: false,
+    slug: 'bang-bang-shrimp',
   },
   {
     id: '1234',
@@ -166,6 +183,7 @@ module.exports = [
       'Zesty chunks of lobster marinated in our special blend of sauces and flash fried... Served with drawn butter.',
     price: 15.95,
     isFeatured: false,
+    slug: 'lobster-bites',
   },
   {
     id: '1234',
@@ -175,5 +193,6 @@ module.exports = [
     description: 'Ale battered shrimp tossed in spicy sauce with ranch',
     price: 10.95,
     isFeatured: false,
+    slug: 'sriracha-shrimp',
   },
 ];

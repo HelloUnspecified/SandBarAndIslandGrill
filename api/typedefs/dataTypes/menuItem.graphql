@@ -8,4 +8,5 @@ type MenuItem {
   price: Float
   imageUrl: String
   isFeatured: Boolean
+  slug: String!
 }

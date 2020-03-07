@@ -12,6 +12,10 @@ module.exports = {
 
     return flatMenu;
   },
+
+  menuItem: (parent, { category, slug }, { dataSources }) =>
+    menu[category].filter(item => item.slug === slug),
+
   drinks: (parent, args, { dataSources }) => menu.drinks,
   appetizers: (parent, args, { dataSources }) => menu.appetizers,
   dinners: (parent, args, { dataSources }) => menu.dinners,
