@@ -7,6 +7,7 @@ import { gql } from 'apollo-boost';
 import _ from 'lodash';
 import FullMenu from '../../../components/FullMenu';
 import Modal from '../../../components/Modal';
+import { categories } from '../../../utilities';
 
 const GET_MENU_ITEM = gql`
   query getMenuItem($category: String!, $slug: String!) {
@@ -56,7 +57,7 @@ const menuItem = () => {
 
   const { loading, error, data } = useQuery(GET_MENU_ITEM, {
     variables: {
-      category: router.query.category,
+      category: categories.find(c => c.route === router.query.category).route,
       slug: router.query.menuItem,
     },
     ...context,

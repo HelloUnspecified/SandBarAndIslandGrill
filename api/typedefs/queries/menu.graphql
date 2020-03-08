@@ -7,21 +7,6 @@ type Query {
   "query for a specific menu item"
   menuItem(category: String, slug: String): [MenuItem]
 
-  "query the drink menu"
-  drinks: [MenuItem]
-
-  "query the appetiser menu"
-  appetizers: [MenuItem]
-
-  "query the dinner menu"
-  dinners: [MenuItem]
-
-  "query the salads menue"
-  salads: [MenuItem]
-
-  "query the kids menu"
-  kids: [MenuItem]
-
-  "query for all the wraps"
-  wraps: [MenuItem]
+  "query for a category of menu item"
+  menuCategory(category: String): [MenuItem]
 }

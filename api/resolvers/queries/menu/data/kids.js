@@ -36,6 +36,7 @@ module.exports = [
     name: 'Mac-n-cheese',
     description: '',
     price: 7.95,
+    isFeatured: false,
     slug: 'mac-n-cheese',
   },
 ];

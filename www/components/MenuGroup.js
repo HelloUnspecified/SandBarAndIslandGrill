@@ -23,6 +23,10 @@ const GroupTitle = styled.h2`
   font-size: 1.4rem;
   text-transform: uppercase;
   margin: 5rem 0;
+
+  &:first-child {
+    margin-top: 2rem;
+  }
 `;
 
 const GroupSubtext = styled.p`
@@ -71,7 +75,9 @@ const MenuGroup = ({ title, subtext, items }) => {
   const handleClick = (e, item) => {
     router.replace(
       '/menu/[category]/[menuItem]',
-      `/menu/${categories[item.category]}/${item.slug}`,
+      `/menu/${categories.find(c => c.key === item.category).route}/${
+        item.slug
+      }`,
     );
   };
 
