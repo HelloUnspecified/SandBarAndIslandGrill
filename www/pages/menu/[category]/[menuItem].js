@@ -4,10 +4,9 @@ import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
-import _ from 'lodash';
 import FullMenu from '../../../components/FullMenu';
 import Modal from '../../../components/Modal';
-import { categories } from '../../../utilities';
+import { below, categories } from '../../../utilities';
 
 const GET_MENU_ITEM = gql`
   query getMenuItem($category: String!, $slug: String!) {
@@ -26,11 +25,24 @@ const FoodImage = styled.img`
   width: 40rem;
   height: auto;
   padding-right: 3rem;
+  object-fit: cover;
+
+  ${below.med`
+    width: 100%;
+    max-width: 55rem;
+    padding-right: 0;
+    margin: auto;
+  `}
 `;
 
 const ModalItem = styled.div`
   display: flex;
   flex-direction: row;
+
+  ${below.med`
+    flex-direction: column;
+    margin-top: 3rem;
+  `}
 `;
 
 const ModalDetails = styled.div`
