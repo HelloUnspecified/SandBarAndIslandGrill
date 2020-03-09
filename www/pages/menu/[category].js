@@ -46,6 +46,7 @@ const BackLink = styled.a`
 
 const menuCategory = () => {
   const router = useRouter();
+  const routerCategory = router.query.category;
 
   const context =
     process.env.NODE_ENV === 'development'
@@ -54,7 +55,7 @@ const menuCategory = () => {
 
   const { loading, error, data } = useQuery(GET_MENU_CATEGORY, {
     variables: {
-      category: router.query.category,
+      category: routerCategory,
     },
     ...context,
   });
@@ -64,7 +65,9 @@ const menuCategory = () => {
 
   const { menuCategory: categoryItems } = data;
 
-  const category = categories.find(c => c.route === router.query.category);
+  const { subtext, title } = categories.find(c => c.route === routerCategory);
+
+  const displayTitle = routerCategory === 'dinners' ? 'Dinners' : title;
 
   return (
     <>
@@ -81,14 +84,14 @@ const menuCategory = () => {
             label="Call for Reservations"
           />
 
-          <ContentSection title={`${category.title} Menu`}>
+          <ContentSection title={`${displayTitle} Menu`}>
             <>
               <BackLink href="/menu">Full Menu</BackLink>
               <Menu>
                 <MenuGroup
-                  title={category.title}
+                  title={displayTitle}
                   items={categoryItems}
-                  subtext={category.subtext}
+                  subtext={subtext}
                 />
               </Menu>
             </>
