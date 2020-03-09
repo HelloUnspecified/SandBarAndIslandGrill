@@ -27,6 +27,7 @@ const Form = styled.form`
   input.email {
     min-width: 27rem;
     max-width: 33rem;
+    border: solid 1px ${({ theme }) => theme.colors.medium};
   }
 `;
 

@@ -112,9 +112,9 @@ const home = () => {
             </StackedLocation>
           </>
         </Hero>
-        <Modal showModal={showModal} setShowModal={setShowModal}>
+        {/* <Modal showModal={showModal} setShowModal={setShowModal}>
           <ClosedForSeason />
-        </Modal>
+        </Modal> */}
         <ContentSection
           title={[
             <span className="normal" key="a">

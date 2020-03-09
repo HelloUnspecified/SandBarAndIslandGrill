@@ -9,6 +9,7 @@ import IconText from '../components/IconText';
 import Map from '../components/Map';
 import SocialLinks from '../components/SocialLinks';
 import ClosedForSeason from '../components/ClosedForSeason';
+import NewsletterSignupForm from '../components/NewsletterSignupForm';
 import { above, below } from '../utilities/breakpoint';
 
 const DetailDiv = styled.div`
@@ -119,7 +120,7 @@ const contact = () => (
           label="Call for Reservations"
         />
         <ContentSection title="Contact Us">
-          <StyledClosedForSeason />
+          {/* <StyledClosedForSeason /> */}
           <DetailDiv>
             <Label>Email</Label>
             <IconText icon="email" align="center">
@@ -148,6 +149,13 @@ const contact = () => (
               </a>
             </IconText>
           </DetailDiv>
+          <div style={{ padding: '7rem 0' }}>
+            <h3>
+              Signup for our newsletter toady and be the first to know when you
+              can book a reservation!
+            </h3>
+            <NewsletterSignupForm />
+          </div>
         </ContentSection>
         <Socials />
         <Map />
