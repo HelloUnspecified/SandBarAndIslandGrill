@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { ParallaxProvider } from 'react-scroll-parallax';
-
 import ContentSection from '../components/ContentSection';
 import FeaturedDishes from '../components/FeaturedDishes';
 import Gallery from '../components/Gallery';
@@ -13,8 +12,8 @@ import NewsletterSignup from '../components/NewsletterSignup';
 import SocialLinks from '../components/SocialLinks';
 import Specials from '../components/Specials';
 import Testimonials from '../components/Testimonials';
-import Modal from '../components/Modal';
-import ClosedForSeason from '../components/ClosedForSeason';
+// import Modal from '../components/Modal';
+// import ClosedForSeason from '../components/ClosedForSeason';
 import { below } from '../utilities/breakpoint';
 
 const PhoneNumber = styled.div`
@@ -48,6 +47,7 @@ const StackedSocialLinks = styled(SocialLinks)`
   ${below.large`
     order: 2;
     max-height: 4rem;
+    min-height: 4rem;
   `};
 `;
 
@@ -84,7 +84,7 @@ const HeroImages = [
 ];
 
 const home = () => {
-  const [showModal, setShowModal] = useState(true);
+  // const [showModal, setShowModal] = useState(true);
 
   return (
     <ParallaxProvider>
