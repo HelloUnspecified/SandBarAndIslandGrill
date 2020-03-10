@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react';
-import Head from 'next/head';
+import React from 'react';
 import styled from 'styled-components';
+import { NextSeo } from 'next-seo';
 import { ParallaxProvider } from 'react-scroll-parallax';
 
 import ContentSection from '../components/ContentSection';
@@ -8,8 +8,9 @@ import Hero from '../components/Hero';
 import IconText from '../components/IconText';
 import Map from '../components/Map';
 import SocialLinks from '../components/SocialLinks';
-
-import { above, below } from '../utitlies/breakpoint.js';
+import ClosedForSeason from '../components/ClosedForSeason';
+import NewsletterSignupForm from '../components/NewsletterSignupForm';
+import { above, below } from '../utilities/breakpoint';
 
 const DetailDiv = styled.div`
   
@@ -76,11 +77,40 @@ const Socials = styled(SocialLinks)`
   `};
 `;
 
-const contact = props => (
+const StyledClosedForSeason = styled(ClosedForSeason)`
+  h2 {
+    font-size: 2.8rem;
+    margin-bottom: 0.7rem;
+  }
+
+  h2,
+  h3,
+  p {
+    text-align: center;
+    line-height: 1.2;
+    color: ${({ theme }) => theme.colors.dark};
+  }
+
+  h2,
+  h3 {
+    font-weight: 400;
+  }
+  p {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.orange};
+    max-width: 60rem;
+    margin: auto;
+  }
+
+  margin-bottom: 8rem;
+`;
+
+const contact = () => (
   <>
-    <Head>
-      <title key="title">Contact Us - Sand Bar and Island Grill</title>
-    </Head>
+    <NextSeo
+      title="Contact Us - Sand Bar and Island Grill"
+      description="Reach out to us here at Sand Bar and Island Grill."
+    />
     <ParallaxProvider>
       <>
         <Hero
@@ -90,6 +120,7 @@ const contact = props => (
           label="Call for Reservations"
         />
         <ContentSection title="Contact Us">
+          {/* <StyledClosedForSeason /> */}
           <DetailDiv>
             <Label>Email</Label>
             <IconText icon="email" align="center">
@@ -118,6 +149,13 @@ const contact = props => (
               </a>
             </IconText>
           </DetailDiv>
+          <div style={{ padding: '7rem 0' }}>
+            <h3>
+              Signup for our newsletter toady and be the first to know when you
+              can book a reservation!
+            </h3>
+            <NewsletterSignupForm />
+          </div>
         </ContentSection>
         <Socials />
         <Map />

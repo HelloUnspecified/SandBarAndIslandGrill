@@ -1,8 +1,7 @@
-import React, { Fragment } from 'react';
-import Head from 'next/head';
+import React from 'react';
 import styled from 'styled-components';
 import { ParallaxProvider } from 'react-scroll-parallax';
-
+import { NextSeo } from 'next-seo';
 import ContentSection from '../components/ContentSection';
 import Hero from '../components/Hero';
 import Map from '../components/Map';
@@ -39,9 +38,10 @@ class apply extends React.Component {
   render() {
     return (
       <>
-        <Head>
-          <title key="title">Apply Online - Sand Bar and Island Grill</title>
-        </Head>
+        <NextSeo
+          title="Apply Online - Sand Bar and Island Grill"
+          description="Want to work at Sand Bar and Island Grill? Apply online anytime."
+        />
         <ParallaxProvider>
           <>
             <Hero

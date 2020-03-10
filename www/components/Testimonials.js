@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import ContentSection from './ContentSection';
 import Icon from './Icon';
-import { above, below } from '../utitlies/breakpoint.js';
+import { above, below } from '../utilities/breakpoint.js';
 
 const REVIEWS = [
   {
@@ -126,7 +126,7 @@ const Highlight = styled.span`
   font-weight: 800;
 `;
 
-const Testimonials = ({ className }) => {
+const Testimonials = () => {
   const [reviewIndex, setReviewIndex] = useState(0);
   const review = REVIEWS[reviewIndex];
 
@@ -141,9 +141,9 @@ const Testimonials = ({ className }) => {
               onClick={
                 reviewIndex > 0
                   ? () => {
-                    setReviewIndex(reviewIndex - 1);
-                  }
-                  : false
+                      setReviewIndex(reviewIndex - 1);
+                    }
+                  : () => {}
               }
             />
           </div>
@@ -162,13 +162,13 @@ const Testimonials = ({ className }) => {
               icon="arrow"
               className={`right ${
                 reviewIndex === REVIEWS.length - 1 ? 'medium' : ''
-                }`}
+              }`}
               onClick={
                 reviewIndex < REVIEWS.length - 1
                   ? () => {
-                    setReviewIndex(reviewIndex + 1);
-                  }
-                  : false
+                      setReviewIndex(reviewIndex + 1);
+                    }
+                  : () => {}
               }
             />
           </div>
@@ -180,6 +180,7 @@ const Testimonials = ({ className }) => {
             <Dot
               onClick={() => setReviewIndex(index)}
               className={index === reviewIndex ? 'orange' : ''}
+              key={item.name}
             />
           );
         })}

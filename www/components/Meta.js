@@ -16,17 +16,8 @@ const Meta = () => (
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css?family=Roboto"
+      href="https://fonts.googleapis.com/css?family=Roboto:400,600,800"
       rel="stylesheet"
-    />
-
-    <meta
-      name="description"
-      content="A Tropical Oasis in the least likely of places!"
-    />
-    <meta
-      name="keywords"
-      content="TIKI Bar, Resturant, Twin Lakes, Lake Elizabeth"
     />
 
     <meta property="og:type" content="website" />

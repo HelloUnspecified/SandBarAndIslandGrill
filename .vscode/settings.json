@@ -8,5 +8,8 @@
     "titleBar.inactiveForeground": "#000000CC",
     "titleBar.activeBackground": "#FF7200",
     "titleBar.inactiveBackground": "#FF7200"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
   }
 }

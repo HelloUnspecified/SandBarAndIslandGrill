@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 import { ParallaxProvider } from 'react-scroll-parallax';
-import { above, below } from '../utitlies/breakpoint.js';
-
+import { NextSeo } from 'next-seo';
+import { below } from '../utilities/breakpoint';
 import ContentSection from '../components/ContentSection';
 import Hero from '../components/Hero';
 import HighlightImage from '../components/HighlightImage';
@@ -34,11 +34,12 @@ const ApplyButton = styled(LinkButton)`
   background-color: ${({ theme }) => theme.colors.secondary};
 `;
 
-const about = props => (
+const about = () => (
   <>
-    <Head>
-      <title key="title">About Us - Sand Bar and Island Grill</title>
-    </Head>
+    <NextSeo
+      title="About Us - Sand Bar and Island Grill"
+      description="Learn more about Sand Bar and Island Grill located in Twin Lakes, Wisconsin."
+    />
     <ParallaxProvider>
       <>
         <Hero

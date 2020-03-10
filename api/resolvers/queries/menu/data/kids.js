@@ -7,6 +7,7 @@ module.exports = [
     description: 'with ranch or BBQ',
     price: 7.95,
     isFeatured: false,
+    slug: 'chicken-strips',
   },
   {
     id: '1234',
@@ -16,6 +17,7 @@ module.exports = [
     description: '',
     price: 7.95,
     isFeatured: false,
+    slug: 'grilled-cheese',
   },
   {
     id: '1234',
@@ -25,6 +27,7 @@ module.exports = [
     description: '',
     price: 7.95,
     isFeatured: false,
+    slug: 'hotdog',
   },
   {
     id: '1234',
@@ -34,5 +37,6 @@ module.exports = [
     description: '',
     price: 7.95,
     isFeatured: false,
+    slug: 'mac-n-cheese',
   },
 ];

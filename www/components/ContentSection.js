@@ -1,5 +1,7 @@
+import React from 'react';
 import styled from 'styled-components';
-import { above, below } from '../utitlies/breakpoint.js';
+import PropTypes from 'prop-types';
+import { below } from '../utilities/breakpoint';
 
 const Container = styled.div`
   padding: 5rem;
@@ -76,16 +78,30 @@ const Subtitle = styled.h3`
   top: -0.8rem;
 `;
 
-const ContentSection = props => {
+const ContentSection = ({ children, color, subtitle, title }) => {
   return (
-    <Container color={props.color}>
+    <Container color={color}>
       <ContainerInner>
-        <Title subtitle={props.subtitle}>{props.title}</Title>
-        {props.subtitle && <Subtitle>{props.subtitle}</Subtitle>}
-        <DetailContainer>{props.children}</DetailContainer>
+        <Title subtitle={subtitle}>{title}</Title>
+        {subtitle && <Subtitle>{subtitle}</Subtitle>}
+        <DetailContainer>{children}</DetailContainer>
       </ContainerInner>
     </Container>
   );
+};
+
+ContentSection.propTypes = {
+  children: PropTypes.element,
+  color: PropTypes.string,
+  subtitle: PropTypes.string,
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+};
+
+ContentSection.defaultProps = {
+  children: React.createElement('div'),
+  color: '',
+  subtitle: '',
+  title: '',
 };
 
 export default ContentSection;

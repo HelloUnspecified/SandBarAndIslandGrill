@@ -7,6 +7,7 @@ module.exports = [
     description: 'with red onion 8 dijonaise (3 per serving)',
     price: 15.95,
     isFeatured: false,
+    slug: 'filet-mignon-sliders',
   },
   {
     id: '1234',
@@ -17,6 +18,7 @@ module.exports = [
       'American, Swiss, pepper jack or cheddar cheese, lettuce, tomato & onion',
     price: 10.95,
     isFeatured: false,
+    slug: 'cheeseburger',
   },
   {
     id: '1234',
@@ -26,6 +28,7 @@ module.exports = [
     description: 'lettuce, tomato & onion',
     price: 9.95,
     isFeatured: false,
+    slug: 'tiki-burger',
   },
   {
     id: '1234',
@@ -36,6 +39,7 @@ module.exports = [
       'American, Swiss, pepper jack or cheddar cheese, lettuce, tomato & onion',
     price: 11.95,
     isFeatured: false,
+    slug: 'bacon-cheeseburger',
   },
   {
     id: '1234',
@@ -46,6 +50,7 @@ module.exports = [
       'with bleu cheese, lettuce. tomato & onion, and blackening seasoning (optional).',
     price: 11.95,
     isFeatured: false,
+    slug: 'black-bleu-cheeseburger',
   },
   {
     id: '1234',
@@ -56,6 +61,7 @@ module.exports = [
       'with teriyaki, grilled pineapple 8 Swiss cheese lettuce, tomato & onion',
     price: 11.95,
     isFeatured: false,
+    slug: 'maui-burger',
   },
   {
     id: '1234',
@@ -66,6 +72,7 @@ module.exports = [
       'topped with melted provolone, blackened grilled shrimp, bang bang sauce, grilled onion & lettuce.',
     price: 16.95,
     isFeatured: false,
+    slug: 'surfer-burger',
   },
   {
     id: '1234',
@@ -76,6 +83,7 @@ module.exports = [
       'melted gouda topped with savory roasted red peppers, lettuce, tomato & onion',
     price: 12.95,
     isFeatured: false,
+    slug: 'gouda-burger',
   },
   {
     id: '1234',
@@ -85,6 +93,7 @@ module.exports = [
     description: 'served with lettuce, tomato, onion and chipolte mayo',
     price: 10.95,
     isFeatured: false,
+    slug: 'chipolte-veggie-burger',
   },
   {
     id: '1234',
@@ -94,6 +103,7 @@ module.exports = [
     description: 'with lettuce, tomato, onion & honey dijon or ranch',
     price: 9.95,
     isFeatured: false,
+    slug: 'grilled-chicken-sandwich',
   },
   {
     id: '1234',
@@ -103,6 +113,7 @@ module.exports = [
     description: 'served with lettuce, tomato, onion & asiago mayo',
     price: 10.95,
     isFeatured: false,
+    slug: 'chicken-focaccia',
   },
   {
     id: '1234',
@@ -113,6 +124,7 @@ module.exports = [
       '1/41b. hot dog with grilled onions and ground mustard served on a pretzel hoagie',
     price: 8.95,
     isFeatured: false,
+    slug: 'hot-dog',
   },
   {
     id: '1234',
@@ -123,5 +135,6 @@ module.exports = [
       'fresh portabella mushroom cap with melted mozzarella, roasted red pepper and marinara sauce',
     price: 11.95,
     isFeatured: false,
+    slug: 'portabella-sandwich',
   },
 ];

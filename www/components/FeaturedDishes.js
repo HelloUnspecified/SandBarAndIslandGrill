@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 import styled from 'styled-components';
 import ContentSection from './ContentSection';
-import { below } from '../utitlies/breakpoint.js';
+import { below } from '../utilities/breakpoint.js';
 
 const FoodImage = styled.img`
   height: 160px;
@@ -60,7 +60,7 @@ const FeaturedDishes = ({ className }) => {
     <ContentSection title="Featured Dishes" color="light">
       <div className={className}>
         {data.menu.map(i => (
-          <FeaturedDish>
+          <FeaturedDish key={i.name}>
             <FoodImage src={i.imageUrl} />
             <Name>{i.name}</Name>
             <Description>{i.description}</Description>

@@ -1,7 +1,8 @@
 import router from 'next/router';
 import nprogress from 'nprogress';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Nav from './Nav';
 
@@ -26,7 +27,6 @@ const Header = ({ className }) => {
     const handleScroll = () => {
       setScrollY(window.pageYOffset);
     };
-    const { scrollingElement } = document;
 
     handleScroll();
     document.addEventListener('scroll', handleScroll);
@@ -43,6 +43,14 @@ const Header = ({ className }) => {
       <Nav />
     </header>
   );
+};
+
+Header.propTypes = {
+  className: PropTypes.string,
+};
+
+Header.defaultProps = {
+  className: '',
 };
 
 export default styled(Header)`

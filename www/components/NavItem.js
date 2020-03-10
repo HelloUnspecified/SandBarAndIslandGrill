@@ -1,7 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { above, below } from '../utitlies/breakpoint.js';
+import * as gtag from '../lib/gtag';
+import { above, below } from '../utilities/breakpoint';
 
 const StyledLink = styled.a`
   text-transform: uppercase;
@@ -47,32 +49,69 @@ const NavImage = styled.img`
   margin-bottom: 0.3rem;
 `;
 
-const NavItem = props => {
+const NavItem = ({
+  color,
+  display,
+  href,
+  image,
+  imageWidth,
+  onClick,
+  style,
+  title,
+}) => {
+  const clickTracking = () => {
+    gtag.event({
+      clientWindow: window,
+      action: 'click',
+      category: 'nav item',
+      title,
+    });
+  };
+
   const displayedLink = () => {
-    if (props.image) {
-      return (
-        <NavImage
-          src={props.image}
-          imageWidth={props.imageWidth}
-          style={props.style}
-        />
-      );
+    if (image) {
+      return <NavImage src={image} imageWidth={imageWidth} style={style} />;
     }
 
-    return props.title;
+    return title;
   };
 
   return (
-    <Link href={props.href} passHref>
+    <Link href={href} passHref>
       <StyledLink
-        display={props.display}
-        onClick={props.onClick}
-        color={props.color}
+        display={display}
+        onClick={() => {
+          clickTracking();
+          onClick();
+        }}
+        color={color}
       >
         {displayedLink()}
       </StyledLink>
     </Link>
   );
+};
+
+NavItem.propTypes = {
+  color: PropTypes.string,
+  display: PropTypes.string,
+  href: PropTypes.string,
+  image: PropTypes.string,
+  imageWidth: PropTypes.string,
+  onClick: PropTypes.func,
+  style: PropTypes.shape({}),
+  title: PropTypes.string,
+};
+
+NavItem.defaultProps = {
+  color: '',
+  display: '',
+  href: '',
+  image: '',
+  imageWidth: '',
+  onClick: () => {},
+  style: {},
+  title: '',
 };
 
 export default NavItem;

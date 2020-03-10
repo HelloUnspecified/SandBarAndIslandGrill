@@ -12,10 +12,9 @@ module.exports = {
 
     return flatMenu;
   },
-  drinks: (parent, args, { dataSources }) => menu.drinks,
-  appetizers: (parent, args, { dataSources }) => menu.appetizers,
-  dinners: (parent, args, { dataSources }) => menu.dinners,
-  salads: (parent, args, { dataSources }) => menu.salads,
-  kids: (parent, args, { dataSources }) => menu.kids,
-  wraps: (parent, args, { dataSources }) => menu.wraps,
+
+  menuCategory: (_, { category }) => menu[category],
+
+  menuItem: (_, { category, slug }) =>
+    menu[category].filter(item => item.slug === slug),
 };

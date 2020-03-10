@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Icon from './Icon';
 import NavItem from './NavItem';
 import SocialLinks from './SocialLinks';
-import { above, below } from '../utitlies/breakpoint.js';
+import { above, below } from '../utilities/breakpoint.js';
 
 const NavLink = styled.a`
   color: ${({ theme }) => theme.colors.highlight};
@@ -87,15 +87,18 @@ const MobileFooter = ({ className }) => {
 
   return (
     <div className={className}>
-      <NavLink href="/menu">
+      <NavLink href="/menu" key="foodDrink-link">
         <Icon icon="foodDrink" height="80" width="80" />
         Menu
       </NavLink>
-      <NavLink href="/contact">
+      <NavLink href="/contact" key="contact-link">
         <Icon icon="quote" height="70" width="70" className="lower-little" />
         Contact Us
       </NavLink>
-      <NavLink onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+      <NavLink
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        key="menu-link"
+      >
         <Icon icon="hamburgerMenu" height="12" width="12" className="lower" />
         More
       </NavLink>

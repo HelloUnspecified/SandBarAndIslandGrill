@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import Icon from './Icon';
-import { below } from '../utitlies/breakpoint.js';
+import { useRouter } from 'next/router';
+import PropTypes from 'prop-types';
+import { Grid, Cell } from 'styled-css-grid';
+import { below, categories } from '../utilities';
 
 const MenuGrouping = styled.div`
-  width: 47%;
-  margin: 0 1.5%;
+  width: 100%;
   padding-bottom: 2rem;
 
   ${below.med`
@@ -21,21 +22,36 @@ const GroupTitle = styled.h2`
   padding-left: 1rem;
   font-size: 1.4rem;
   text-transform: uppercase;
+  margin: 5rem 0;
+
+  &:first-child {
+    margin-top: 2rem;
+  }
 `;
 
 const GroupSubtext = styled.p`
   line-height: 1.2;
   text-align: center;
   font-style: italic;
+  position: relative;
+  top: -2rem;
 
   p.addon {
     margin: 1rem 0 0 0;
   }
 `;
 
-const MenuItem = styled.p`
+const MenuItem = styled(Cell)`
   font-size: 1.4rem;
   line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 4rem;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const ItemName = styled.span`
@@ -49,29 +65,57 @@ const ItemPrice = styled.span`
   padding-left: 0.7rem;
 `;
 
-const ItemDescription = styled.p``;
+const ItemDescription = styled.p`
+  margin-top: 0;
+  text-align: center;
+`;
 
-const MenuGroup = props => {
+const MenuGroup = ({ title, subtext, items }) => {
+  const router = useRouter();
+  const handleClick = (e, item) => {
+    router.replace(
+      '/menu/[category]/[menuItem]',
+      `/menu/${categories.find(c => c.key === item.category).route}/${
+        item.slug
+      }`,
+    );
+  };
+
   return (
     <MenuGrouping>
-      <GroupTitle>{props.title.replace('_', ' ')}</GroupTitle>
-      {props.subtext && (
-        <>
-          <GroupSubtext dangerouslySetInnerHTML={{ __html: props.subtext }} />
-          <hr />
-        </>
+      <GroupTitle>{title.replace('_', ' ')}</GroupTitle>
+      {subtext && (
+        <GroupSubtext dangerouslySetInnerHTML={{ __html: subtext }} />
       )}
-      {props.items.map((item, index) => {
-        return (
-          <MenuItem>
-            <ItemName>{item.name}</ItemName>
-            {item.description}
-            <ItemPrice>{item.price}</ItemPrice>
-          </MenuItem>
-        );
-      })}
+      <Grid columns="repeat(auto-fit,minmax(30rem,1fr))" gap="4rem 10rem">
+        {items.map(item => {
+          return (
+            <MenuItem onClick={e => handleClick(e, item)} key={item.name}>
+              <ItemName>{item.name}</ItemName>
+              <ItemDescription>{item.description}</ItemDescription>
+              <ItemPrice>{item.price}</ItemPrice>
+            </MenuItem>
+          );
+        })}
+      </Grid>
     </MenuGrouping>
   );
+};
+
+MenuGroup.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      description: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      price: PropTypes.number,
+    }),
+  ).isRequired,
+  subtext: PropTypes.string,
+  title: PropTypes.string.isRequired,
+};
+
+MenuGroup.defaultProps = {
+  subtext: '',
 };
 
 export default styled(MenuGroup)``;

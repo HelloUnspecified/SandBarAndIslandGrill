@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { above, below } from '../utitlies/breakpoint.js';
-import NewsletterSignupForm from './NewsletterSignupForm';
+import PropTypes from 'prop-types';
+
 import Icon from './Icon';
 
 const ModalMain = styled.div`
@@ -32,28 +32,63 @@ const CloseIcon = styled(Icon)`
   width: 2rem;
   position: absolute;
   right: 1rem;
+  top: 1rem;
+
+  svg {
+    fill: ${({ theme }) => theme.colors.dark};
+  }
 
   &:hover {
     cursor: pointer;
   }
 `;
 
-const Modal = ({ className }) => {
-  const [showModal, setShowModal] = useState(true);
+const Modal = ({
+  className,
+  children,
+  onClose,
+  onLoad,
+  showModal,
+  setShowModal,
+}) => {
+  onLoad();
 
   return (
-    <ModalMain showModal={showModal} className={className}>
+    <ModalMain
+      showModal={showModal}
+      className={className}
+      onClick={() => {
+        onClose();
+        setShowModal(!showModal);
+      }}
+    >
       <ModalContent>
-        <CloseIcon icon="close" onClick={() => setShowModal(!showModal)} />
-        <h2>We're currently closed for the season</h2>
-        <p>But it's almost spring. Our doors reopen on April 1st 2020!</p>
-        <h3>
-          Signup for our newsletter toady and be the first to know when you can book a reservation!
-        </h3>
-        <NewsletterSignupForm />
+        <CloseIcon
+          icon="close"
+          onClick={() => {
+            onClose();
+            setShowModal(!showModal);
+          }}
+        />
+        {children}
       </ModalContent>
     </ModalMain>
   );
+};
+
+Modal.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.shape({}).isRequired,
+  onClose: PropTypes.func,
+  onLoad: PropTypes.func,
+  showModal: PropTypes.bool.isRequired,
+  setShowModal: PropTypes.func.isRequired,
+};
+
+Modal.defaultProps = {
+  className: '',
+  onClose: () => {},
+  onLoad: () => {},
 };
 
 export default styled(Modal)`
@@ -67,6 +102,7 @@ export default styled(Modal)`
   p {
     text-align: center;
     line-height: 1.2;
+    color: ${({ theme }) => theme.colors.dark};
   }
 
   h2,
@@ -75,10 +111,19 @@ export default styled(Modal)`
   }
 
   p {
-    padding-bottom: 2rem;
-    border-bottom: 1px solid ${({ theme }) => theme.colors.orange};
     max-width: 60rem;
     margin: auto;
+  }
+
+  .underline {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.orange};
+  }
+
+  .top-line {
+    padding-top: 1.5rem;
+    margin-top: 2rem;
+    border-top: 1px solid ${({ theme }) => theme.colors.orange};
   }
 
   .mc-field-group {
