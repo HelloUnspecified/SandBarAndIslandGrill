@@ -4,7 +4,8 @@ export default [
     imageUrl: '',
     category: 'DINNER_LANDFOOD',
     name: 'Filet Mignon Sand Bar Sliders',
-    description: 'with red onion 8 dijonaise (3 per serving)',
+    description:
+      'Filet mignon Sand Bar sliders served with red onion and dijonaise. 3 per serving',
     price: 15.95,
     isFeatured: false,
     slug: 'filet-mignon-sliders',
@@ -15,7 +16,7 @@ export default [
     category: 'DINNER_LANDFOOD',
     name: 'Tiki Cheeseburger',
     description:
-      'American, Swiss, pepper jack or cheddar cheese, lettuce, tomato & onion',
+      'Tiki Cheeseburger. Choose from American, Swiss, pepper jack, or cheddar cheese, served with lettuce, tomato & onion.',
     price: 10.95,
     isFeatured: false,
     slug: 'cheeseburger',
@@ -25,7 +26,7 @@ export default [
     imageUrl: '',
     category: 'DINNER_LANDFOOD',
     name: 'Tiki Burger',
-    description: 'lettuce, tomato & onion',
+    description: 'Tiki Burger served with lettuce, tomato & onion.',
     price: 9.95,
     isFeatured: false,
     slug: 'tiki-burger',
@@ -36,8 +37,8 @@ export default [
     category: 'DINNER_LANDFOOD',
     name: 'Bacon Cheeseburger',
     description:
-      'American, Swiss, pepper jack or cheddar cheese, lettuce, tomato & onion',
-    price: 11.95,
+      'Bacon Cheeseburger. Choose from American, Swiss, pepper jack, or cheddar cheese, served with lettuce, tomato & onion.',
+    price: 12.95,
     isFeatured: false,
     slug: 'bacon-cheeseburger',
   },
@@ -47,7 +48,7 @@ export default [
     category: 'DINNER_LANDFOOD',
     name: 'Black & Bleu Cheeseburger',
     description:
-      'with bleu cheese, lettuce. tomato & onion, and blackening seasoning (optional).',
+      'Black & Bleu Cheeseburger, served with lettuce, tomato & onion. Wanna kick it up a notch? Add blackening seasoning!',
     price: 11.95,
     isFeatured: false,
     slug: 'black-bleu-cheeseburger',
@@ -58,8 +59,8 @@ export default [
     category: 'DINNER_LANDFOOD',
     name: 'Maui Burger',
     description:
-      'with teriyaki, grilled pineapple 8 Swiss cheese lettuce, tomato & onion',
-    price: 11.95,
+      'Maui Burger, teriyaki glaze, served with grilled pineapple, Swiss cheese, lettuce, tomato and onion.',
+    price: 12.95,
     isFeatured: false,
     slug: 'maui-burger',
   },
@@ -69,7 +70,7 @@ export default [
     category: 'DINNER_LANDFOOD',
     name: 'Surfer Burger',
     description:
-      'topped with melted provolone, blackened grilled shrimp, bang bang sauce, grilled onion & lettuce.',
+      'The Surfer Burger! Juicy burger topped with melted provolone, blackened grilled shrimp, bang bang sauce, served with grilled onion and lettuce.',
     price: 16.95,
     isFeatured: false,
     slug: 'surfer-burger',
@@ -80,7 +81,7 @@ export default [
     category: 'DINNER_LANDFOOD',
     name: 'Gouda & Roasted Red Pepper Burger',
     description:
-      'melted gouda topped with savory roasted red peppers, lettuce, tomato & onion',
+      'The Gouda & Roasted Red Pepper Burger! A juicy burger topped with melted gouda and savory roasted red peppers. Served with lettuce, tomato & onion.',
     price: 12.95,
     isFeatured: false,
     slug: 'gouda-burger',
@@ -90,8 +91,9 @@ export default [
     imageUrl: '',
     category: 'DINNER_LANDFOOD',
     name: 'Black Bean Chipolte Veggie Burger',
-    description: 'served with lettuce, tomato, onion and chipolte mayo',
-    price: 10.95,
+    description:
+      'Black Bean Chipolte Veggie Burger, served with lettuce, tomato, onion dressed with our signature chipolte mayo.',
+    price: 11.95,
     isFeatured: false,
     slug: 'chipolte-veggie-burger',
   },
@@ -100,7 +102,8 @@ export default [
     imageUrl: '',
     category: 'DINNER_LANDFOOD',
     name: 'Grilled Chicken Breast Sandwich',
-    description: 'with lettuce, tomato, onion & honey dijon or ranch',
+    description:
+      'Grilled Chicken Breast Sandwich, served with lettuce, tomato and onion. Add honey dijon or ranch for a little extra.',
     price: 9.95,
     isFeatured: false,
     slug: 'grilled-chicken-sandwich',
@@ -110,8 +113,9 @@ export default [
     imageUrl: '',
     category: 'DINNER_LANDFOOD',
     name: 'Chicken Focaccia Sandwich',
-    description: 'served with lettuce, tomato, onion & asiago mayo',
-    price: 10.95,
+    description:
+      'Chicken Focaccia Sandwich served with lettuce, tomato and onion topped with asiago mayo.',
+    price: 11.95,
     isFeatured: false,
     slug: 'chicken-focaccia',
   },
@@ -121,7 +125,7 @@ export default [
     category: 'DINNER_LANDFOOD',
     name: 'Hebrew National Hot Dog',
     description:
-      '1/41b. hot dog with grilled onions and ground mustard served on a pretzel hoagie',
+      '1/41b Hebrew National Hot Dog. Dressed with grilled onions, ground mustard, served on a pretzel hoagie.',
     price: 8.95,
     isFeatured: false,
     slug: 'hot-dog',
@@ -132,7 +136,7 @@ export default [
     category: 'DINNER_LANDFOOD',
     name: 'Italian Portabella Sandwich',
     description:
-      'fresh portabella mushroom cap with melted mozzarella, roasted red pepper and marinara sauce',
+      'Italian Portabella Sandwich. Fresh portabella mushroom cap topped melted mozzarella, roasted red pepper, served with marinara sauce.',
     price: 11.95,
     isFeatured: false,
     slug: 'portabella-sandwich',

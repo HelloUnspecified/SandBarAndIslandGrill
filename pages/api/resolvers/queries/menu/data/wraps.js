@@ -78,7 +78,7 @@ export default [
     category: 'WRAP',
     name: 'Grilled Chicken Ranch',
     description: 'with bacon, lettuce, tomato & cheese with ranch dressing',
-    price: 10.95,
+    price: 11.95,
     isFeatured: false,
     slug: 'grilled-chicken-ranch',
   },
