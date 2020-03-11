@@ -3,10 +3,10 @@ export default [
     id: '1234',
     imageUrl: '',
     category: 'DINNER_SEAFOOD',
-    name: 'Lobster Mac-n-cheese',
+    name: 'Lobster Mac-n-Cheese',
     description:
-      'succulent lobster smothered in homemade cheese sauce served with cavatappi pasta\n\nBuffalo Chicken $13.95\nMac-N-Cheese $7 .95',
-    price: 16.95,
+      'Succulent lobster smothered in homemade cheese sauce served with cavatappi pasta.\n\nBuffalo Chicken $13.95\nMac-N-Cheese $7.95',
+    price: 17.95,
     isFeatured: false,
     slug: 'lobster-mac-n-cheese',
   },
@@ -15,7 +15,8 @@ export default [
     imageUrl: '',
     category: 'DINNER_SEAFOOD',
     name: 'Mahi Mahi',
-    description: 'seasoned & grilled with a fresh mango mayo on a bun',
+    description:
+      'Mahi Mahi seasoned & grilled with a fresh mango mayo on a bun.',
     price: 15.95,
     isFeatured: false,
     slug: 'mahi-mahi',
@@ -25,7 +26,7 @@ export default [
     imageUrl: '',
     category: 'DINNER_SEAFOOD',
     name: 'Grouper',
-    description: 'blackened served with lemon zest mayo on a bun',
+    description: 'Blackened Grouper served with lemon zest mayo on a bun.',
     price: 16.95,
     isFeatured: false,
     slug: 'grouper',
@@ -36,7 +37,7 @@ export default [
     category: 'DINNER_SEAFOOD',
     name: 'Teriyaki Tuna',
     description:
-      'yellowfin sushi-grade to order with teriyaki and seared pineapple on a bun',
+      'Yellowfin sushi-grade tuna made to order with teriyaki and seared pineapple on a bun.',
     price: 15.95,
     isFeatured: false,
     slug: 'teriyaki-tuna',
@@ -46,7 +47,8 @@ export default [
     imageUrl: '',
     category: 'DINNER_SEAFOOD',
     name: "Shrimp Po'boy",
-    description: 'served with lettuce, tomato & dijonaise on a roll',
+    description:
+      "Shrimp Po'boy served with lettuce, tomato & dijonaise on a roll.",
     price: 13.95,
     isFeatured: false,
     slug: 'shrimp-po-boy',
@@ -56,7 +58,8 @@ export default [
     imageUrl: '',
     category: 'DINNER_SEAFOOD',
     name: 'Breaded Butterfly Shrimp',
-    description: 'with homemade cocktail sauce',
+    description:
+      'Breaded Butterfly Shrimp served with homemade cocktail sauce.',
     price: 13.95,
     isFeatured: false,
     slug: 'butterfly-shrimp',
@@ -67,7 +70,7 @@ export default [
     category: 'DINNER_SEAFOOD',
     name: 'Lobster Roll',
     description:
-      'juicy lobster salad served on a New England style bun with lettuce, tomato, fresh lemon & dijonaise sauce - May be ordered as a wrap if desired',
+      'Juicy lobster salad served on a New England style bun with lettuce, tomato, fresh lemon & dijonaise sauce. \n\n May be ordered as a wrap if desired.',
     price: 16.95,
     isFeatured: true,
     slug: 'lobster-roll',
@@ -78,8 +81,8 @@ export default [
     category: 'DINNER_SEAFOOD',
     name: 'Crab Cake Dinner',
     description:
-      'our homemade recipe served with dijonaise & a side of seasonal vegetables',
-    price: 16.95,
+      'Our homemade crab cake recipe served with dijonaise & a side of seasonal vegetables.',
+    price: 17.95,
     isFeatured: false,
     slug: 'crab-cake',
   },
@@ -89,8 +92,8 @@ export default [
     category: 'DINNER_SEAFOOD',
     name: 'Smoked Salmon Blt',
     description:
-      'smoked salmon atop of bacon, lettuce and tomato and drizzled with red pepper sour cream mayo',
-    price: 13.95,
+      'Smoked salmon atop of bacon, lettuce and tomato and drizzled with red pepper sour cream mayo.',
+    price: 14.95,
     isFeatured: false,
     slug: 'smoked-salmon-blt',
   },
@@ -100,7 +103,7 @@ export default [
     category: 'DINNER_SEAFOOD',
     name: 'Seafood Slider Trio',
     description:
-      'our signature yellowfin tuna, blackened grouper & homemade crab cake trio sliders. Why not add an extra Filet Mignon slider for $4.95 more!',
+      'Our signature yellowfin tuna, blackened grouper & homemade crab cake trio sliders. \n\n Why not add an extra Filet Mignon slider for just $4.95 more!',
     price: 16.95,
     isFeatured: false,
     slug: 'seafood-slider-trio',
@@ -111,7 +114,7 @@ export default [
     category: 'DINNER_SEAFOOD',
     name: 'Blackended Seafood Tacos',
     description:
-      'your choice of grilled shrimp, yellowfin tuna, grouper, or mahi with fresh mango salsa & drizzled in homemade chipotle sauce',
+      'Blackended Seafood Tacos serverd with your choice of grilled shrimp, yellowfin tuna, grouper, or mahi with fresh mango salsa & drizzled in homemade chipotle sauce',
     price: 15.95,
     isFeatured: true,
     slug: 'blackened-seafood-tacos',
@@ -122,7 +125,7 @@ export default [
     category: 'DINNER_SEAFOOD',
     name: 'Salmon Dinner',
     description:
-      'pan seared salmon filet served with creamy dill sauce & a side of seasonal vegetables',
+      'Pan seared salmon filet served with creamy dill sauce & a side of seasonal vegetables',
     price: 16.95,
     isFeatured: false,
     slug: 'salmon',
@@ -133,9 +136,20 @@ export default [
     category: 'DINNER_SEAFOOD',
     name: 'Grouper Reuben',
     description:
-      'blackened grouper served on a fresh marble rye with crunchy coleslaw, Swiss cheese & 1000 island',
+      'Blackened grouper served on a fresh marble rye with crunchy coleslaw, Swiss cheese & 1000 island.',
     price: 16.95,
     isFeatured: false,
     slug: 'grouper-reuben',
+  },
+  {
+    id: '1234',
+    imageUrl: '',
+    category: 'DINNER_SEAFOOD',
+    name: 'Red Snapper Dinner',
+    description:
+      'Red Snapper Dinner served with Asian Cucumber Salsa, seasonal veggies and quinoa grain blend.',
+    price: 17.95,
+    isFeatured: false,
+    slug: 'red-snapper-dinner',
   },
 ];
