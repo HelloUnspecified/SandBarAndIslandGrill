@@ -4,18 +4,12 @@
   "env": {
     "SENTRY_DSN": "TODO"
   },
-  "builds": [
-    {
-      "src": "api/index.js",
-      "use": "@now/node",
-      "config": {
-        "includeFiles": ["**/*.graphql"]
-      }
-    },
-    { "src": "www/package.json", "use": "@now/next" }
-  ],
-  "routes": [
-    { "src": "/api", "dest": "/api/index.js" },
-    { "src": "/(.*)", "dest": "/www/$1" }
+  "build": {
+    "env": {
+      "SENTRY_DSN": "TODO"
+    }
+  },
+  "regions": [
+    "cle"
   ]
 }
