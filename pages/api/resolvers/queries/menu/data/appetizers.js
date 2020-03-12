@@ -24,7 +24,7 @@ export default [
     imageUrl: '',
     category: 'APPETIZER',
     name: 'Flash Fried Calamari',
-    description: 'with homemade cocktail sauce',
+    description: 'served with either a homemade cocktail sauce or marinara.',
     price: 12.95,
     isFeatured: false,
     slug: 'fried-calamari',

@@ -93,7 +93,9 @@ const MenuGroup = ({ title, subtext, items }) => {
             <MenuItem onClick={e => handleClick(e, item)} key={item.name}>
               <ItemName>{item.name}</ItemName>
               <ItemDescription>{item.description}</ItemDescription>
-              <ItemPrice>{item.price}</ItemPrice>
+              <ItemPrice>
+                {item.price === 0.0 ? 'Market Price' : item.price}
+              </ItemPrice>
             </MenuItem>
           );
         })}
