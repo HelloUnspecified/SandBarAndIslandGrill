@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 export const categories = [
   {
     key: 'APPETIZER',
@@ -10,14 +11,15 @@ export const categories = [
     key: 'DINNER_LANDFOOD',
     order: 50,
     route: 'dinners',
-    subtext: '',
+    subtext:
+      'Substitue for a Beyond Meat Burger + $4.00 or a Portabella Mushroom Cap + $2.00. Some exclusions may apply.',
     title: 'Dinner on Land',
   },
   {
     key: 'DINNER_SEAFOOD',
     order: 60,
     route: 'dinners',
-    subtext: '',
+    subtext: 'Add Avocado Slices - $2.95 <br/>Side Salad - $3.45',
     title: 'Dinner from the Sea',
   },
   {
