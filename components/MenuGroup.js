@@ -11,7 +11,7 @@ const MenuGrouping = styled.div`
 
   ${below.med`
     width: 100%;
-    text-align: left;
+    text-align: center;
   `};
 `;
 
