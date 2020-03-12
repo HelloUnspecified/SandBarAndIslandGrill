@@ -27,7 +27,7 @@ export default [
     category: 'DINNER_SEAFOOD',
     name: 'Grouper',
     description: 'Blackened Grouper served with lemon zest mayo on a bun.',
-    price: 16.95,
+    price: 0.0,
     isFeatured: false,
     slug: 'grouper',
   },
@@ -48,7 +48,7 @@ export default [
     category: 'DINNER_SEAFOOD',
     name: "Shrimp Po'boy",
     description:
-      "Shrimp Po'boy served with lettuce, tomato & dijonaise on a roll.",
+      "Lager battered shrimp po'boy served with lettuce, tomato & dijonaise on a roll.",
     price: 13.95,
     isFeatured: false,
     slug: 'shrimp-po-boy',
@@ -103,7 +103,7 @@ export default [
     category: 'DINNER_SEAFOOD',
     name: 'Seafood Slider Trio',
     description:
-      'Our signature yellowfin tuna, blackened grouper & homemade crab cake trio sliders. \n\n Why not add an extra Filet Mignon slider for just $4.95 more!',
+      'Our signature yellowfin tuna, homemade crab cake and mahi trio sliders. \n\n Why not add an extra Filet Mignon slider for just $4.95 more!',
     price: 16.95,
     isFeatured: false,
     slug: 'seafood-slider-trio',
@@ -114,7 +114,7 @@ export default [
     category: 'DINNER_SEAFOOD',
     name: 'Blackended Seafood Tacos',
     description:
-      'Blackended Seafood Tacos serverd with your choice of Red Snapper, Grilled Shrimp, Yellowfin Tuna, Grouper, or Mahi with fresh mango salsa & drizzled in homemade chipotle sauce',
+      'Blackended Seafood Tacos serverd with your choice of Red Snapper, Grilled Shrimp, Yellowfin Tuna, or Mahi with fresh mango salsa & drizzled in homemade chipotle sauce',
     price: 15.95,
     isFeatured: true,
     slug: 'blackened-seafood-tacos',
@@ -137,7 +137,7 @@ export default [
     name: 'Grouper Reuben',
     description:
       'Blackened grouper served on a fresh marble rye with crunchy coleslaw, Swiss cheese & 1000 island.',
-    price: 16.95,
+    price: 0.0,
     isFeatured: false,
     slug: 'grouper-reuben',
   },

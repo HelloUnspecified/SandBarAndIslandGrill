@@ -19,7 +19,7 @@ export const categories = [
     key: 'DINNER_SEAFOOD',
     order: 60,
     route: 'dinners',
-    subtext: 'Add Avocado Slices - $2.95 <br/>Side Salad - $3.45',
+    subtext: '',
     title: 'Dinner from the Sea',
   },
   {
@@ -40,8 +40,7 @@ export const categories = [
     key: 'SALAD',
     order: 40,
     route: 'salads',
-    subtext:
-      'Add Chicken - $2.00<br/>Add Shrimp, Salmon, Grouper, Tuna or Mahi - $5.00',
+    subtext: 'Add Chicken - $4.00<br/>Add Shrimp, Salmon, Tuna or Mahi - $7.00',
     title: 'Salads',
   },
   {
