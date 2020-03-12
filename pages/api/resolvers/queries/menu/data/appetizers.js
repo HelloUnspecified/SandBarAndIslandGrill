@@ -5,7 +5,7 @@ export default [
     category: 'APPETIZER',
     name: 'Florida Smoked Fish Spread',
     description: 'with capers and crackers or pita chips',
-    price: 11.95,
+    price: 12.95,
     isFeatured: false,
     slug: 'smoked-fish-spread',
   },
@@ -129,7 +129,7 @@ export default [
     name: 'Shrimp Scampi',
     description:
       'sautéed shrimp in extra virgin olive oil, white wine and garlic with lemon juice',
-    price: 11.95,
+    price: 13.95,
     isFeatured: false,
     slug: 'shrimp-scampi',
   },

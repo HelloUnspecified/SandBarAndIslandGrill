@@ -81,7 +81,7 @@ export default [
     category: 'DINNER_SEAFOOD',
     name: 'Crab Cake Dinner',
     description:
-      'Our homemade crab cake recipe served with dijonaise & a side of seasonal vegetables.',
+      'Our homemade crab cake recipe served with dijonaise, a side of seasonal vegetables and quinoa grain blend.',
     price: 17.95,
     isFeatured: false,
     slug: 'crab-cake',
@@ -114,7 +114,7 @@ export default [
     category: 'DINNER_SEAFOOD',
     name: 'Blackended Seafood Tacos',
     description:
-      'Blackended Seafood Tacos serverd with your choice of grilled shrimp, yellowfin tuna, grouper, or mahi with fresh mango salsa & drizzled in homemade chipotle sauce',
+      'Blackended Seafood Tacos serverd with your choice of Red Snapper, Grilled Shrimp, Yellowfin Tuna, Grouper, or Mahi with fresh mango salsa & drizzled in homemade chipotle sauce',
     price: 15.95,
     isFeatured: true,
     slug: 'blackened-seafood-tacos',
@@ -125,7 +125,7 @@ export default [
     category: 'DINNER_SEAFOOD',
     name: 'Salmon Dinner',
     description:
-      'Pan seared salmon filet served with creamy dill sauce & a side of seasonal vegetables',
+      'Pan seared salmon filet served with creamy dill sauce, a side of seasonal vegetables and quinoa grain blend',
     price: 16.95,
     isFeatured: false,
     slug: 'salmon',
