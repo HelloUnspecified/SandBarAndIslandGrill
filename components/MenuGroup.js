@@ -92,7 +92,9 @@ const MenuGroup = ({ title, subtext, items }) => {
           return (
             <MenuItem onClick={e => handleClick(e, item)} key={item.name}>
               <ItemName>{item.name}</ItemName>
-              <ItemDescription>{item.description}</ItemDescription>
+              <ItemDescription
+                dangerouslySetInnerHTML={{ __html: item.description }}
+              />
               <ItemPrice>
                 {item.price === 0.0 ? 'Market Price' : item.price}
               </ItemPrice>

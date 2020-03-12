@@ -5,7 +5,7 @@ export default [
     category: 'DINNER_SEAFOOD',
     name: 'Lobster Mac-n-Cheese',
     description:
-      'Succulent lobster smothered in homemade cheese sauce served with cavatappi pasta.\n\nBuffalo Chicken $13.95\nMac-N-Cheese $7.95',
+      'Succulent lobster smothered in homemade cheese sauce served with cavatappi pasta.<br/>Buffalo Chicken $13.95<br/>Mac-N-Cheese $7.95',
     price: 17.95,
     isFeatured: false,
     slug: 'lobster-mac-n-cheese',
