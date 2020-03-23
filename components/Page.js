@@ -3,6 +3,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import PropTypes from 'prop-types';
 import { DefaultSeo, LogoJsonLd, LocalBusinessJsonLd } from 'next-seo';
 import { useRouter } from 'next/router';
+
 import GlobalStyle from '../styles/globalStyle';
 import baseTheme from '../styles/baseTheme';
 import Meta from './Meta';
