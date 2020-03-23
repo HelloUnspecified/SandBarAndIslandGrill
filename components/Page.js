@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import PropTypes from 'prop-types';
 import { DefaultSeo, LogoJsonLd, LocalBusinessJsonLd } from 'next-seo';
 import { useRouter } from 'next/router';
+
+import Modal from './Modal';
+import Covid from './Covid';
 import GlobalStyle from '../styles/globalStyle';
 import baseTheme from '../styles/baseTheme';
 import Meta from './Meta';
@@ -30,6 +33,7 @@ const InnerPage = styled.div`
 
 const Page = ({ children }) => {
   const router = useRouter();
+  const [showModal, setShowModal] = useState(true);
 
   return (
     <ThemeProvider theme={baseTheme}>
@@ -94,6 +98,9 @@ const Page = ({ children }) => {
           />
 
           <CorePage>
+            <Modal showModal={showModal} setShowModal={setShowModal}>
+              <Covid />
+            </Modal>
             <Header />
             <InnerPage>{children}</InnerPage>
             <Footer modifiers="site" />

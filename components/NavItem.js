@@ -77,7 +77,7 @@ const NavItem = ({
   };
 
   return (
-    <Link href={href} passHref>
+    <Link href={href} passHref prefetch={false}>
       <StyledLink
         display={display}
         onClick={() => {
