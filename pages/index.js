@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { ParallaxProvider } from 'react-scroll-parallax';
+
+import Modal from '../components/Modal';
+import Covid from '../components/Covid';
 import ContentSection from '../components/ContentSection';
 import FeaturedDishes from '../components/FeaturedDishes';
 import Gallery from '../components/Gallery';
@@ -12,8 +15,6 @@ import NewsletterSignup from '../components/NewsletterSignup';
 import SocialLinks from '../components/SocialLinks';
 import Specials from '../components/Specials';
 import Testimonials from '../components/Testimonials';
-// import Modal from '../components/Modal';
-// import ClosedForSeason from '../components/ClosedForSeason';
 import { below } from '../utilities/breakpoint';
 
 const PhoneNumber = styled.div`
@@ -84,11 +85,14 @@ const HeroImages = [
 ];
 
 const home = () => {
-  // const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(true);
 
   return (
     <ParallaxProvider>
       <>
+        <Modal showModal={showModal} setShowModal={setShowModal}>
+          <Covid />
+        </Modal>
         <Hero
           imagePath={HeroImages[Math.floor(Math.random() * HeroImages.length)]}
           fullHeight="true"
