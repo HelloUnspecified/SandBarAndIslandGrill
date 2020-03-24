@@ -13,6 +13,5 @@
   },
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
-  },
-  "peacock.color": "#FF7200"
+  }
 }
