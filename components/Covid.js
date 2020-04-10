@@ -12,17 +12,14 @@ const Covid = ({ className }) => {
         postpone our opening.
       </h3>
       <p>
-        We apologize to those that have reservations in our books, we are doing
-        our part by limiting exposure to our employees, their families and you
-        our amazing customers. We here at the Sand Bar are anxious for the
-        season to get started and assure you we’ll open as soon as it is safe
-        for everyone.
+        We here at the Sand Bar are anxious for the season to get started and
+        assure you we’ll open as soon as it is safe for everyone.
       </p>
       <br />
       <p>
-        It’s easy to get stir crazy. Every Friday we’re going to post a Tiki
-        food or drink recipe that you can make at home. We want you to kick off
-        your weekend Tiki style and we hope this helps just a little.
+        It’s easy to get stir crazy. Every week we’re posting a Tiki drink
+        recipe that you can make at home. We want you to kick off your weekend
+        Tiki style and we hope this helps just a little.
       </p>
       <br />
       <p className="underline">
@@ -33,7 +30,7 @@ const Covid = ({ className }) => {
       </p>
       <br />
       <p>
-        Signup for our newsletter toady and be the first to know when you can
+        Signup for our newsletter today and be the first to know when you can
         book a reservation!
       </p>
       <NewsletterSignupForm />
