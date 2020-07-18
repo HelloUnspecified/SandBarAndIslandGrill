@@ -22,7 +22,7 @@
     "google-map-react": "^1.1.6",
     "graphql": "^14.6.0",
     "isomorphic-unfetch": "^3.0.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "merge-graphql-schemas": "^1.7.6",
     "micro-cors": "^0.1.1",
     "moment": "^2.24.0",
