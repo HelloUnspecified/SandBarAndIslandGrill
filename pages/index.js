@@ -4,6 +4,7 @@ import { ParallaxProvider } from 'react-scroll-parallax';
 
 import Modal from '../components/Modal';
 import Covid from '../components/Covid';
+import OpeningSoon from '../components/OpeningSoon';
 import ContentSection from '../components/ContentSection';
 import FeaturedDishes from '../components/FeaturedDishes';
 import Gallery from '../components/Gallery';
@@ -91,7 +92,7 @@ const home = () => {
     <ParallaxProvider>
       <>
         <Modal showModal={showModal} setShowModal={setShowModal}>
-          <Covid />
+          <OpeningSoon />
         </Modal>
         <Hero
           imagePath={HeroImages[Math.floor(Math.random() * HeroImages.length)]}
