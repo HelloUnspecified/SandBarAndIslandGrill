@@ -1,9 +1,6 @@
 {
   "version": "1.0.0",
   "main": "index.js",
-  "engines": {
-    "node": "^14"
-  },
   "scripts": {
     "dev": "next ./ -p 8000",
     "prebuild": "node ./utilities/createPagesJson.js",
