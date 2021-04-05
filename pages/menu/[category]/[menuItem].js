@@ -64,7 +64,7 @@ const menuItem = () => {
 
   const context =
     process.env.NODE_ENV === 'development'
-      ? { context: { uri: 'http://localhost:3000/api/graphql' } }
+      ? { context: { uri: 'http://localhost:8000/api/graphql' } }
       : {};
 
   const { loading, error, data } = useQuery(GET_MENU_ITEM, {
@@ -100,7 +100,7 @@ const menuItem = () => {
           <ModalDetails>
             <h2 style={{ marginBottom: '3rem', marginTop: '0' }}>{name}</h2>
             <p>{description}</p>
-            {price && <ItemPrice className="top-line">${price}</ItemPrice>}
+            {/* {price && <ItemPrice className="top-line">${price}</ItemPrice>} */}
           </ModalDetails>
         </ModalItem>
       </Modal>

@@ -4,8 +4,10 @@ export default [
     imageUrl: '',
     category: 'DINNER_SEAFOOD',
     name: 'Lobster Mac-n-Cheese',
+    // description:
+    //   'Succulent lobster smothered in homemade cheese sauce served with cavatappi pasta. <br/>Buffalo Chicken $13.95<br/>Mac-N-Cheese $7.95',
     description:
-      'Succulent lobster smothered in homemade cheese sauce served with cavatappi pasta.<br/>Buffalo Chicken $13.95<br/>Mac-N-Cheese $7.95',
+      'Succulent lobster smothered in homemade cheese sauce served with cavatappi pasta. Or try our Buffalo Chicken Mac-N-Cheese.',
     price: 17.95,
     isFeatured: false,
     slug: 'lobster-mac-n-cheese',
