@@ -11,8 +11,10 @@ export const categories = [
     key: 'DINNER_LANDFOOD',
     order: 50,
     route: 'dinners',
+    // subtext:
+    //   'Substitue for a Beyond Meat Burger + $4.00 or a Portabella Mushroom Cap + $2.00. Some exclusions may apply.',
     subtext:
-      'Substitue for a Beyond Meat Burger + $4.00 or a Portabella Mushroom Cap + $2.00. Some exclusions may apply.',
+      'Substitue for a Beyond Meat Burger or a Portabella Mushroom Cap. Some exclusions may apply.',
     title: 'Dinner on Land',
   },
   {
@@ -40,15 +42,18 @@ export const categories = [
     key: 'SALAD',
     order: 40,
     route: 'salads',
-    subtext: 'Add Chicken - $4.00<br/>Add Shrimp, Salmon, Tuna or Mahi - $7.00',
+    // subtext: 'Add Chicken - $4.00<br/>Add Shrimp, Salmon, Tuna or Mahi - $7.00',
+    subtext: 'Add Chicken, Shrimp, Salmon, Tuna or Mahi',
     title: 'Salads',
   },
   {
     key: 'WRAP',
     order: 30,
     route: 'wraps',
+    // subtext:
+    //   "All wraps served with your choice of<br>French Fries or Island Slaw.<p class='addon'>Try a side of our Sweet Potato Fries for an additional $0.50 or Onion Rings for $3.00.</p>",
     subtext:
-      "All wraps served with your choice of<br>French Fries or Island Slaw.<p class='addon'>Try a side of our Sweet Potato Fries for an additional $0.50 or Onion Rings for $3.00.</p>",
+      "All wraps served with your choice of<br>French Fries or Island Slaw.<p class='addon'>Try a side of our Sweet Potato Fries or Onion Rings.</p>",
     title: 'Wraps',
   },
 ];

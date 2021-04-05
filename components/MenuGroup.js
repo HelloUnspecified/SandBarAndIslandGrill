@@ -95,9 +95,9 @@ const MenuGroup = ({ title, subtext, items }) => {
               <ItemDescription
                 dangerouslySetInnerHTML={{ __html: item.description }}
               />
-              <ItemPrice>
+              {/* <ItemPrice>
                 {item.price === 0.0 ? 'Market Price' : item.price}
-              </ItemPrice>
+              </ItemPrice> */}
             </MenuItem>
           );
         })}

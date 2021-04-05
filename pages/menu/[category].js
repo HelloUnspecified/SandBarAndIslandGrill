@@ -50,7 +50,7 @@ const menuCategory = () => {
 
   const context =
     process.env.NODE_ENV === 'development'
-      ? { context: { uri: 'http://localhost:3000/api/graphql' } }
+      ? { context: { uri: 'http://localhost:8000/api/graphql' } }
       : {};
 
   const { loading, error, data } = useQuery(GET_MENU_CATEGORY, {
