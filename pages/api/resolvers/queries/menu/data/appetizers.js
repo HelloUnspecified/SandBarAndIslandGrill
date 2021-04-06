@@ -174,17 +174,17 @@ export default [
     isFeatured: false,
     slug: 'bang-bang-shrimp',
   },
-  {
-    id: '1234',
-    imageUrl: '',
-    category: 'APPETIZER',
-    name: 'Lobster Bites',
-    description:
-      'Zesty chunks of lobster marinated in our special blend of sauces and flash fried... Served with drawn butter.',
-    price: 19.95,
-    isFeatured: false,
-    slug: 'lobster-bites',
-  },
+  // {
+  //   id: '1234',
+  //   imageUrl: '',
+  //   category: 'APPETIZER',
+  //   name: 'Lobster Bites',
+  //   description:
+  //     'Zesty chunks of lobster marinated in our special blend of sauces and flash fried... Served with drawn butter.',
+  //   price: 19.95,
+  //   isFeatured: false,
+  //   slug: 'lobster-bites',
+  // },
   {
     id: '1234',
     imageUrl: '',
