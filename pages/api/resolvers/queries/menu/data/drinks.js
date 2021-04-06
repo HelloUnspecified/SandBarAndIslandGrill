@@ -33,16 +33,6 @@ export default [
     id: '4',
     imageUrl: '',
     category: 'DRINK',
-    name: 'Raspberry Pineapple Mule',
-    description:
-      "Blue Chair Bay White Rum, Raspberry Liquor, Pineapple juice, fresh Lime and Barritt's Ginger Beer",
-    isFeatured: false,
-    slug: 'raspberry-pineapple-mule',
-  },
-  {
-    id: '5',
-    imageUrl: '',
-    category: 'DRINK',
     name: 'Beach Front',
     description:
       "Tito's Handmade Vodka, Passion Fruit Liquor, Cranberry juice and Sierra Mist",
@@ -50,17 +40,7 @@ export default [
     slug: 'beach-front',
   },
   {
-    id: '6',
-    imageUrl: '',
-    category: 'DRINK',
-    name: 'Cool Blue Waters',
-    description:
-      'Blue Chair Bay Banana Rum, Blue Curacao, Lemonade and Club Soda',
-    isFeatured: false,
-    slug: 'cool-blue-waters',
-  },
-  {
-    id: '7',
+    id: '5',
     imageUrl: '',
     category: 'DRINK',
     name: 'Cucumber Collins',
@@ -70,7 +50,7 @@ export default [
     slug: 'cucumber-collins',
   },
   {
-    id: '8',
+    id: '6',
     imageUrl: '',
     category: 'DRINK',
     name: 'Tiki Old Fashioned',
@@ -80,37 +60,67 @@ export default [
     slug: 'tiki-old-fashioned',
   },
   {
+    id: '7',
+    imageUrl: '',
+    category: 'DRINK',
+    name: 'Rose All Day',
+    description:
+      "Josh Rose, Tito's Handmade Vodka, Bols Strawberry Liqueur, Strawberry Puree and Sweet & Sour Mix",
+    isFeatured: false,
+    slug: 'raspberry-pineapple-mule',
+  },
+  {
+    id: '8',
+    imageUrl: '',
+    category: 'DRINK',
+    name: 'Tushy In The Sand Beermosa',
+    description:
+      "Blue Chair Bay Banana Rum, Blue Moon White Belguim White, Mango Puree and Orange Juice",
+    isFeatured: false,
+    slug: 'raspberry-pineapple-mule',
+  },
+  {
     id: '9',
     imageUrl: '',
     category: 'DRINK',
-    name: 'A Run On The Beach',
+    name: 'Peanut Colada',
     description:
-      "Blue Chair Bay White Rum, Cruzan Raspberry Rum, Meyer's Dark Rum, and Banana Liquor with Pineapple and Orange juices splashed with Grenadine",
+      'Blue Chair Bay Coconut Rum, Skrewball Peanut Butter Whiskey, Pineapple Juice and Sweet & Sour',
     isFeatured: false,
-    slug: 'a-run-on-the-beach',
+    slug: 'cool-blue-waters',
   },
   {
     id: '10',
     imageUrl: '',
     category: 'DRINK',
-    name: 'Raspberry Limeade',
+    name: 'Island Paloma',
     description:
-      'Cruzan Raspberry Rum with fresh squeezed Lime, Raspberry puree and pressed',
+      "Milagro Silver Tequila, Passau Passion Fruit Liqueur, Orange Juice, Fresh Lime Juice and Sierra Mist",
     isFeatured: false,
-    slug: 'raspberry-limeade',
+    slug: 'a-run-on-the-beach',
   },
   {
     id: '11',
     imageUrl: '',
     category: 'DRINK',
-    name: 'Sand Bar Breeze',
+    name: 'Tiki Whiskey Sour',
     description:
-      "Tito's Handmade Vodka double shot with Pineapple and Cranberry juices",
+      "Jack Daniel's Tennessee Fire, Jack Daniel's Tennessee Honey, Grapefruit Juice and Sierra Mist",
+    isFeatured: false,
+    slug: 'raspberry-limeade',
+  },
+  {
+    id: '12',
+    imageUrl: '',
+    category: 'DRINK',
+    name: 'Pineapple Spice Mule',
+    description:
+      "Tito's Handmade Vodka, Bols Pineapple Chipotle Liqueur, Fresh Lime Juice and Barritt's Ginger Beer",
     isFeatured: false,
     slug: 'sand-bar-freeze',
   },
   {
-    id: '12',
+    id: '13',
     imageUrl: '',
     category: 'DRINK',
     name: 'Chata Tiki Mudslide',
@@ -120,7 +130,7 @@ export default [
     slug: 'chata-tiki-mudslide',
   },
   {
-    id: '13',
+    id: '14',
     imageUrl: '',
     category: 'DRINK',
     name: 'Blue Beach',

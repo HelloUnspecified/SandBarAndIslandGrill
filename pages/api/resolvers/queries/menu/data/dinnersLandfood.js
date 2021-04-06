@@ -57,17 +57,6 @@ export default [
     id: '1234',
     imageUrl: '',
     category: 'DINNER_LANDFOOD',
-    name: 'Maui Burger',
-    description:
-      'Maui Burger, teriyaki glaze, served with grilled pineapple, Swiss cheese, lettuce, tomato and onion.',
-    price: 12.95,
-    isFeatured: false,
-    slug: 'maui-burger',
-  },
-  {
-    id: '1234',
-    imageUrl: '',
-    category: 'DINNER_LANDFOOD',
     name: 'Surfer Burger',
     description:
       'The Surfer Burger! Juicy burger topped with melted provolone, blackened grilled shrimp, bang bang sauce, served with grilled onion and lettuce.',
@@ -85,6 +74,17 @@ export default [
     price: 12.95,
     isFeatured: false,
     slug: 'gouda-burger',
+  },
+  {
+    id: '1234',
+    imageUrl: '',
+    category: 'DINNER_LANDFOOD',
+    name: 'Maui Burger',
+    description:
+      'Maui Burger, teriyaki glaze, served with grilled pineapple, Swiss cheese, lettuce, tomato and onion.',
+    price: 12.95,
+    isFeatured: false,
+    slug: 'maui-burger',
   },
   {
     id: '1234',

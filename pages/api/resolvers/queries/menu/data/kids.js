@@ -33,7 +33,7 @@ export default [
     id: '1234',
     imageUrl: '',
     category: 'KIDS',
-    name: 'Mac-n-cheese',
+    name: 'Mac-N-Cheese',
     description: '',
     price: 7.95,
     isFeatured: false,
