@@ -68,14 +68,14 @@ export default [
   },
   {
     id: '1234',
-    imageUrl: '/images/Gallery-Toast-Sandwich.jpg',
+    imageUrl: '/images/tacos-and-rings.jpg',
     category: 'DINNER_SEAFOOD',
-    name: 'Lobster Roll',
+    name: 'Blackended Seafood Tacos',
     description:
-      'Juicy lobster salad served on a New England style bun with lettuce, tomato, fresh lemon & dijonaise sauce. \n\n May be ordered as a wrap if desired.',
-    price: 16.95,
+      'Blackended Seafood Tacos serverd with your choice of Red Snapper, Grilled Shrimp, Yellowfin Tuna, or Mahi with fresh mango salsa & drizzled in homemade chipotle sauce',
+    price: 15.95,
     isFeatured: true,
-    slug: 'lobster-roll',
+    slug: 'blackened-seafood-tacos',
   },
   {
     id: '1234',
@@ -112,14 +112,14 @@ export default [
   },
   {
     id: '1234',
-    imageUrl: '/images/tacos-and-rings.jpg',
+    imageUrl: '/images/Gallery-Toast-Sandwich.jpg',
     category: 'DINNER_SEAFOOD',
-    name: 'Blackended Seafood Tacos',
+    name: 'Lobster Roll',
     description:
-      'Blackended Seafood Tacos serverd with your choice of Red Snapper, Grilled Shrimp, Yellowfin Tuna, or Mahi with fresh mango salsa & drizzled in homemade chipotle sauce',
-    price: 15.95,
+      'Juicy lobster salad served on a New England style bun with lettuce, tomato, fresh lemon & dijonaise sauce. \n\n May be ordered as a wrap if desired.',
+    price: 16.95,
     isFeatured: true,
-    slug: 'blackened-seafood-tacos',
+    slug: 'lobster-roll',
   },
   {
     id: '1234',
@@ -136,22 +136,22 @@ export default [
     id: '1234',
     imageUrl: '',
     category: 'DINNER_SEAFOOD',
-    name: 'Grouper Reuben',
-    description:
-      'Blackened grouper served on a fresh marble rye with crunchy coleslaw, Swiss cheese & 1000 island.',
-    price: 0.0,
-    isFeatured: false,
-    slug: 'grouper-reuben',
-  },
-  {
-    id: '1234',
-    imageUrl: '',
-    category: 'DINNER_SEAFOOD',
     name: 'Red Snapper Dinner',
     description:
       'Red Snapper Dinner served with Asian Cucumber Salsa, seasonal veggies and quinoa grain blend.',
     price: 17.95,
     isFeatured: false,
     slug: 'red-snapper-dinner',
+  },
+  {
+    id: '1234',
+    imageUrl: '',
+    category: 'DINNER_SEAFOOD',
+    name: 'Grouper Reuben',
+    description:
+      'Blackened grouper served on a fresh marble rye with crunchy coleslaw, Swiss cheese & 1000 island.',
+    price: 0.0,
+    isFeatured: false,
+    slug: 'grouper-reuben',
   },
 ];
