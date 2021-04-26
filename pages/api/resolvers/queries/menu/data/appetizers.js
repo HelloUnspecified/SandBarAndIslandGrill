@@ -87,7 +87,7 @@ export default [
     imageUrl: '',
     category: 'APPETIZER',
     name: 'Bavarian Pretzel Sticks',
-    description: '3 sticks served with Sam Adams Beer Cheese dip',
+    description: '4 sticks served with Sam Adams Beer Cheese dip',
     price: 6.95,
     isFeatured: false,
     slug: 'pretzel-sticks',
