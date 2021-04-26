@@ -86,7 +86,7 @@ const HeroImages = [
 ];
 
 const home = () => {
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <ParallaxProvider>
