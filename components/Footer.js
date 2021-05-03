@@ -134,10 +134,17 @@ const Footer = ({ className }) => {
         </FooterColumn>
         <FooterColumn>
           <Heading>Hours</Heading>
-          <Text>
+          {/* <Text>
             Sunday - Thursday 11-11
             <br />
             Friday & Saturday 11-12
+          </Text> */}
+          <Text>
+             Closed Tuesday and Wednesday
+            <br />
+              Reservations Required - Call ahead
+            <br />
+             Thursday - Monday 11 am - Close
           </Text>
         </FooterColumn>
       </section>
