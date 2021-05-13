@@ -142,8 +142,6 @@ const Footer = ({ className }) => {
           <Text>
              Closed Tuesday and Wednesday
             <br />
-              Reservations Required - Call ahead
-            <br />
              Thursday - Monday 11 am - Close
           </Text>
         </FooterColumn>
