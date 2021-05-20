@@ -1,13 +1,26 @@
 export default [
+  // {
+  //   id: '1234',
+  //   imageUrl: '',
+  //   category: 'DINNER_SEAFOOD',
+  //   name: 'Lobster Mac-n-Cheese',
+  //   // description:
+  //   //   'Succulent lobster smothered in homemade cheese sauce served with cavatappi pasta. <br/>Buffalo Chicken $13.95<br/>Mac-N-Cheese $7.95',
+  //   description:
+  //     'Succulent lobster smothered in homemade cheese sauce served with cavatappi pasta. Or try our Buffalo Chicken Mac-N-Cheese.',
+  //   price: 17.95,
+  //   isFeatured: false,
+  //   slug: 'lobster-mac-n-cheese',
+  // },
   {
     id: '1234',
     imageUrl: '',
     category: 'DINNER_SEAFOOD',
-    name: 'Lobster Mac-n-Cheese',
+    name: 'Blacked Shrimp Mac-n-Cheese',
     // description:
     //   'Succulent lobster smothered in homemade cheese sauce served with cavatappi pasta. <br/>Buffalo Chicken $13.95<br/>Mac-N-Cheese $7.95',
     description:
-      'Succulent lobster smothered in homemade cheese sauce served with cavatappi pasta. Or try our Buffalo Chicken Mac-N-Cheese.',
+      'Blacked Shrimp smothered in homemade cheese sauce served with cavatappi pasta. Or try our Buffalo Chicken Mac-N-Cheese.',
     price: 17.95,
     isFeatured: false,
     slug: 'lobster-mac-n-cheese',
@@ -110,17 +123,17 @@ export default [
     isFeatured: false,
     slug: 'seafood-slider-trio',
   },
-  {
-    id: '1234',
-    imageUrl: '/images/Gallery-Toast-Sandwich.jpg',
-    category: 'DINNER_SEAFOOD',
-    name: 'Lobster Roll',
-    description:
-      'Juicy lobster salad served on a New England style bun with lettuce, tomato, fresh lemon & dijonaise sauce. \n\n May be ordered as a wrap if desired.',
-    price: 16.95,
-    isFeatured: true,
-    slug: 'lobster-roll',
-  },
+  // {
+  //   id: '1234',
+  //   imageUrl: '/images/Gallery-Toast-Sandwich.jpg',
+  //   category: 'DINNER_SEAFOOD',
+  //   name: 'Lobster Roll',
+  //   description:
+  //     'Juicy lobster salad served on a New England style bun with lettuce, tomato, fresh lemon & dijonaise sauce. \n\n May be ordered as a wrap if desired.',
+  //   price: 16.95,
+  //   isFeatured: true,
+  //   slug: 'lobster-roll',
+  // },
   {
     id: '1234',
     imageUrl: '',
